@@ -5,7 +5,7 @@ document.querySelectorAll('[data-copy]').forEach(function (btn) {
     if (!box || !navigator.clipboard) return;
     navigator.clipboard.writeText('https://' + box.textContent.trim()).then(function () {
       var span = btn.querySelector('span'); var old = span.textContent;
-      span.textContent = 'Kopioitu'; setTimeout(function () { span.textContent = old; }, 1500);
+      span.textContent = btn.getAttribute('data-copied') || 'Kopioitu'; setTimeout(function () { span.textContent = old; }, 1500);
     });
   });
 });

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://worldtour.exsports.fi/</loc></url>
-  <url><loc>https://worldtour.exsports.fi/nain-pelaat/</loc></url>
-  <url><loc>https://worldtour.exsports.fi/lista/</loc></url>
-  <url><loc>https://worldtour.exsports.fi/kayttoehdot/</loc></url>
-  <url><loc>https://worldtour.exsports.fi/tietosuoja/</loc></url>
-  <url><loc>https://worldtour.exsports.fi/tili/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://worldtour.exsports.fi/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/"/></url>
+  <url><loc>https://worldtour.exsports.fi/nain-pelaat/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/nain-pelaat/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/nain-pelaat/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/nain-pelaat/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/nain-pelaat/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/nain-pelaat/"/></url>
+  <url><loc>https://worldtour.exsports.fi/lista/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/lista/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/lista/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/lista/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/lista/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/lista/"/></url>
+  <url><loc>https://worldtour.exsports.fi/kayttoehdot/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/kayttoehdot/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/kayttoehdot/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/kayttoehdot/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/kayttoehdot/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/kayttoehdot/"/></url>
+  <url><loc>https://worldtour.exsports.fi/tietosuoja/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/tietosuoja/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/tietosuoja/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/tietosuoja/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/tietosuoja/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/tietosuoja/"/></url>
+  <url><loc>https://worldtour.exsports.fi/tili/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/tili/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/tili/"/></url>
+  <url><loc>https://worldtour.exsports.fi/en/tili/</loc><xhtml:link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/tili/"/><xhtml:link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/tili/"/></url>
 </urlset>
