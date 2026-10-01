@@ -96,6 +96,7 @@ table.lessons td:first-child { font-family: var(--font-display); font-weight: 80
 .legal-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
 .legal-heading .h1 { margin: var(--space-3) 0 var(--space-6); line-height: 1.1; overflow-wrap: anywhere; }
 .legal-languages { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+@media (max-width: 719px) { .legal-heading .h1 { font-size: clamp(28px, 8.5vw, 36px); } }
 .legal-languages a, .legal-sidebar a, .legal-fallback a { color: var(--accent); text-underline-offset: 3px; }
 .legal-languages a { padding: var(--space-2) 0; }
 .legal-sidebar { padding: var(--space-5, 20px); background: var(--surface-raised); border: 1px solid var(--line); align-self: start; }

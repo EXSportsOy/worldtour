@@ -1,8 +1,8 @@
 # EXS World Tourin oikeudellisten sivujen ylläpito
 
-Päivitetty 1.10.2026. Varsinaiset tekstit ovat `fi/`- ja `en/`-hakemistojen HTML-sisältöpalat. `legal_content.py` tuottaa navigoinnin ja sisällysluettelon, ja `build.py` kokoaa sivut. `{{prefix}}` korvataan dokumentin kielen mukaisella polulla. Älä muokkaa generoituja HTML-sivuja käsin.
+Päivitetty 1.10.2026. Käyttöehdot ovat kaikkien 15 kielen omissa hakemistoissa. Muut asiakirjat ovat `fi/`- ja `en/`-hakemistojen HTML-sisältöpalat. `legal_content.py` tuottaa navigoinnin ja sisällysluettelon, ja `build.py` kokoaa sivut. `{{prefix}}` korvataan dokumentin kielen mukaisella polulla. Älä muokkaa generoituja HTML-sivuja käsin.
 
-Asiakirjat: käyttöehdot, tietosuojaseloste, tilin/tietojen poistaminen, ostot ja hyvitykset, World Rank -säännöt sekä evästeet. Suomen- ja englanninkieliset tekstit ovat erilliset, joten muutokset on tehtävä molempiin. Muissa sivuston kielissä näytetään selkeästi merkitty englanninkielinen versio.
+Asiakirjat: käyttöehdot, tietosuojaseloste, tilin/tietojen poistaminen, ostot ja hyvitykset, World Rank -säännöt sekä evästeet. Käyttöehtojen versio 1.1 on käännetty kaikille 15 sivuston kielelle; muutokset on jatkossa vietävä kaikkiin versioihin. Käännökset säilyttävät saman sisällön, eivät lisää maakohtaisia ehtoja. Muiden viiden asiakirjan tekstit ovat suomeksi ja englanniksi; muissa kielissä niiden englanninkielinen varaversio merkitään selvästi. `legal_ui.py` sisältää navigointitekstit ja otsikot.
 
 ## Tila
 
@@ -19,7 +19,7 @@ Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/leg
 5. Vahvista lasten kohdeyleisö, lopullinen sisältöluokitus, verkkotilien ikäkäytäntö ja mahdollinen huoltajan suostumus maittain. Sisältöluokitus ei ratkaise näitä yksin.
 6. Tarkista ostotuotteet, käyttöoikeuksien palautus ja oston yhteydessä annettavat tiedot ennen maksullisen julkaisun avaamista. Julkaisupäivää, uutta rataa tai viikkokisaa ei ole tässä luvattu.
 7. Päivitä palvelukohtaiset ehdot ennen World Rankin tai palkintokilpailun avaamista. Arvioi yleisölle jaettavaan käyttäjäsisältöön soveltuvat DSA-velvoitteet erikseen.
-8. Poista luonnosmerkinnät vasta tarkastuksen ja tarvittavien toteutusmuutosten jälkeen. Säilytä aiemmat käytössä olleet ehdot päivättyinä, kerro muutoksista asianmukaisesti ja päivitä molemmat kielet.
+8. Poista luonnosmerkinnät vasta tarkastuksen ja tarvittavien toteutusmuutosten jälkeen. Säilytä aiemmat käytössä olleet ehdot päivättyinä, kerro muutoksista asianmukaisesti ja päivitä kaikki kyseisen asiakirjan kieliversiot.
 
 ## Tarkistukset
 

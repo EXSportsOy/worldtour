@@ -67,8 +67,8 @@ def hrefs(node):
     return {a.attrs.get("href") for a in node.find("a")}
 
 
-for lang in ("fi", "en"):
-    for slug in LEGAL_SLUGS:
+for lang in LANGS:
+    for slug in (LEGAL_SLUGS if lang in ("fi", "en") else ("kayttoehdot",)):
         source = ROOT / "legal" / lang / f"{slug}.html"
         require(source.is_file(), source.relative_to(ROOT), "missing source fragment")
 if errors:
@@ -93,8 +93,8 @@ def read_document(path):
 
 for lang in LANGS:
     prefix = "" if lang == "fi" else f"{lang}/"
-    content_lang = "fi" if lang == "fi" else "en"
     for slug in LEGAL_SLUGS:
+        content_lang = lang if slug == "kayttoehdot" else ("fi" if lang == "fi" else "en")
         rel = f"{prefix}{slug}/index.html"
         path = ROOT / rel
         require(path.is_file(), rel, "missing generated document")
@@ -116,7 +116,7 @@ for lang in LANGS:
         require(article.attrs.get("lang") == content_lang, rel, "wrong document language")
         layout = doc.find(cls="legal-layout")
         require(len(layout) == 1 and layout[0].attrs.get("lang") == content_lang, rel, "heading and navigation language missing")
-        fragment = (ROOT / "legal" / content_lang / f"{slug}.html").read_text(encoding="utf-8").replace("{{prefix}}", "/" if content_lang == "fi" else "/en/")
+        fragment = (ROOT / "legal" / content_lang / f"{slug}.html").read_text(encoding="utf-8").replace("{{prefix}}", "/" if content_lang == "fi" else f"/{content_lang}/")
         rendered = re.search(r'<article\b[^>]*data-legal-document="' + slug + r'"[^>]*>(.*?)</article>', source, re.S)
         require(rendered is not None and rendered.group(1) == fragment, rel, "generated body differs from its authoritative fragment")
         ids = [n.attrs["id"] for n in doc.find() if "id" in n.attrs]
@@ -135,11 +135,22 @@ for lang in LANGS:
         languages = doc.find("nav", "legal-languages")
         require(len(languages) == 1 and {f"/{slug}/", f"/en/{slug}/"} <= hrefs(languages[0]), rel, "missing FI/EN language links")
         notices = doc.find(cls="legal-fallback")
-        if lang not in ("fi", "en"):
+        if lang != content_lang:
             require(len(notices) == 1 and notices[0].attrs.get("lang") == lang and NOTICES[lang] in notices[0].text(), rel, "missing localized English-fallback notice")
             require(bool(notices) and f"/en/{slug}/" in hrefs(notices[0]), rel, "missing direct English link")
         else:
             require(not notices, rel, "unexpected fallback notice")
+        if slug == "kayttoehdot":
+            expected_languages = {f"/{'' if code == 'fi' else code + '/'}{slug}/" for code in LANGS}
+            require(len(languages) == 1 and expected_languages <= hrefs(languages[0]), rel, "missing translated terms language links")
+            reference = read_document(ROOT / "en/kayttoehdot/index.html").find("article", "legal-document")[0]
+            # Completeness checks catch accidentally omitted paragraphs or behavioural rules.
+            for tag in ("h2", "h3", "p", "li"):
+                require(len(article.find(tag)) == len(reference.find(tag)), rel, f"terms structure differs from source: {tag}")
+            require("1.1" in article.text(), rel, "incorrect terms version")
+            require(not article.find(cls="legal-fallback"), rel, "translated terms cannot use fallback")
+            if lang not in ("fi", "en"):
+                require(article.text() != reference.text(), rel, "terms body was not translated")
         require(f"https://worldtour.exsports.fi/{prefix}{slug}/" in locations, rel, "missing sitemap entry")
         for a in doc.find("a"):
             url = urlsplit(a.attrs.get("href", ""))

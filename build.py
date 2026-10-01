@@ -1,7 +1,7 @@
 """Tuottaa sivuston HTML-sivut. Aja: python build.py
 
 Rakenne on yhteinen kaikille kielille; markkinointitekstit tulevat sanastosta (T).
-Oikeudelliset tekstit luetaan legal/fi- ja legal/en-lähteistä (legal_content.py).
+Oikeudelliset tekstit luetaan legal/<kieli>-lähteistä (legal_content.py).
 Suomi on juuressa (/), muut kielet omassa kansiossaan (/en/). Uusi kieli lisätään
 LANGS-taulukkoon ja sanastoon, muuta ei tarvitse muuttaa.
 """
