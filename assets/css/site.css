@@ -77,6 +77,15 @@ table.lessons { width: 100%; border-collapse: collapse; font-size: 14px; line-he
 table.lessons th { text-align: left; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--line-strong); }
 table.lessons td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--line); vertical-align: top; }
 table.lessons td:first-child { font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 16px; color: var(--accent); }
-.lang-switch { display: flex; gap: var(--space-2); margin-left: var(--space-2); padding-left: var(--space-4); border-left: 1px solid var(--line-strong); }
-.site-nav .lang-switch a { font-size: 14px; color: var(--muted); padding: var(--space-3) 0; }
-.site-nav .lang-switch a[aria-current="true"] { color: var(--text); }
+.lang-switch { position: relative; margin-left: var(--space-2); padding-left: var(--space-4); border-left: 1px solid var(--line-strong); }
+.lang-switch summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: var(--space-1); min-height: 44px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 16px; color: var(--text); }
+.lang-switch summary::-webkit-details-marker { display: none; }
+.lang-switch summary::after { content: ""; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid var(--accent); }
+.lang-switch summary:focus-visible { outline: none; box-shadow: var(--exs-focus); }
+.lang-switch ul { position: absolute; right: 0; top: 100%; z-index: 20; margin: 0; padding: var(--space-2) 0; list-style: none; min-width: 180px; background: var(--panel-solid); border: 1px solid var(--line-strong); border-top: var(--accent-bar-top) solid var(--accent); box-shadow: var(--shadow-hard-sm); max-height: 70vh; overflow-y: auto; }
+.lang-switch ul a { display: block; padding: var(--space-2) var(--space-4); font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--text-soft); text-decoration: none; white-space: nowrap; }
+.lang-switch ul a:hover { color: var(--accent); }
+.lang-switch ul a[aria-current="true"] { color: var(--accent); }
+@media (max-width: 719px) { .lang-switch { padding-left: var(--space-3); } }
+.site-nav .lang-switch ul a { font-family: var(--font-body); font-weight: 600; font-style: normal; font-size: 14px; text-transform: none; letter-spacing: 0; padding: var(--space-2) var(--space-4); }
+@media (max-width: 719px) { .site-header .wrap { flex-wrap: wrap; row-gap: 0; } .site-nav { flex-wrap: wrap; } .site-nav a:not(.exs-btn) { font-size: 15px; } }

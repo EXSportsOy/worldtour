@@ -10,10 +10,8 @@ SITE = "https://worldtour.exsports.fi"
 PLAY = "https://play.google.com/store/apps/details?id=fi.exsports.exsworldtour"
 PAGES = ["", "nain-pelaat/", "lista/", "s/", "kayttoehdot/", "tietosuoja/", "tili/"]
 
-LANGS = {
-    "fi": {"prefix": "", "name": "Suomi", "short": "FI"},
-    "en": {"prefix": "en/", "name": "English", "short": "EN"},
-}
+# Kielet julkaisujärjestyksessä: suomi juuressa, muut omassa kansiossaan.
+LANG_ORDER = ["fi", "en", "sv", "no", "da", "de", "nl", "fr", "es", "it", "pt", "pl", "et", "lv", "lt"]
 
 ROWS = [(1, "Riikka_fin", "BS 540 + Indy", "15 890"), (2, "Snowdog", "Etuvoltti 360 + Nose", "15 660"),
         (3, "Kaamos", "FS 540", "15 020"), (4, "Aino", "Takavoltti 360", "14 780"), (5, "Pihla", "FS 360 + Indy", "14 310"),
@@ -21,179 +19,24 @@ ROWS = [(1, "Riikka_fin", "BS 540 + Indy", "15 890"), (2, "Snowdog", "Etuvoltti 
         (9, "Liisa", "Suora hyppy", "12 640"), (10, "Oskari", "FS 180", "12 100"), (11, "Mea", "Etuvoltti 360", "11 870"),
         (12, "Saku", "BS 540", "11 540")]
 
-TRICK_EN = {"Etuvoltti": "Front flip", "Takavoltti": "Back flip", "Suora hyppy": "Straight air"}
-
-# ---------------------------------------------------------------- sanasto
+# ---------------------------------------------------------------- sanasto (i18n/<kieli>.json)
+import json
 T = {}
-T["fi"] = dict(
-    lang="fi", skip="Siirry sisältöön", brand_aria="EXS World Tour, etusivu", nav_aria="Päävalikko", lang_aria="Kieli",
-    nav_how="Näin pelaat", nav_list="Maailmanlista", nav_play="Hae Playsta", foot_aria="Alatunniste",
-    foot_text="EXS World Tour on EXSports Oy:n peli Androidille. S- ja M-rinteet ovat ilmaisia, L-rinne maksaa 1,95 €.",
-    foot_terms="Käyttöehdot", foot_privacy="Tietosuoja", foot_account="Tilin poisto",
-    sample="Esimerkkidata", watch="Katso", prev="Edellinen", next="Seuraava", verified="Varmennettu",
-    # etusivu
-    home_title="EXS World Tour – lumilautapeli, jossa puhtaus ratkaisee",
-    home_desc="Big Air -lumilautapeli Androidille. Opi temput, katso maailman parhaat suoritukset ja tavoittele omaa paikkaa maailmanlistalla.",
-    hero_kicker="Big Air · World Tour", hero_sub="World Tour",
-    hero_lead="Mitä puhtaampi suoritus, sitä enemmän pisteitä. Lumilautapeli, jossa temppu lasketaan pisteiksi liikkeestä, ei napin painalluksesta.",
-    ticker_title="Maailmanlista · Pieni S", ticker_aria="Maailmanlistan kärki, Pieni S",
-    how_h="Näin se toimii", how_all="Koko ohje",
-    step1_m="1 · Vauhdinotto", step1_h="Ponnista lipistä", step1_p="Kyykkyyn vauhdinotossa, ponnistus lipin kohdalla. Ajoitus ratkaisee korkeuden, ja korkeus antaa aikaa tempulle.",
-    step2_m="2 · Lento", step2_h="Kierrä ja ota ote", step2_p="Kierre ja voltti omilla säätimillään, ote napista: Nose, Tail, Indy tai Weddle. Pidä ote vähintään 0,2 sekuntia ja irrota ennen lunta.",
-    step3_m="3 · Alastulo", step3_h="Laskeudu puhtaasti", step3_p="Lauta suoraan ja kierto valmiina ennen lunta. Clean-alastulo kertoo pisteet, kaatuminen nollaa ne.",
-    top_meta="Kausi 1 · Pieni S", top_h="Kärki juuri nyt", top_all="Koko maailmanlista", top_first="Katso ykkössuoritus",
-    slopes_h="Kolme rinnettä", slope_s="Pieni S", slope_m="Keski M", slope_l="Iso L", free="Ilmainen", paid="Kertaosto 1,95 €",
-    fair_h="Reilu lista", fair_p="Jokainen tulos lasketaan uudelleen palvelimella pelaajan syötteistä. Pelin näyttämä luku ei riitä, ja jokainen listasuoritus on katsottavissa.",
-    # näin pelaat
-    how_title="Näin pelaat – EXS World Tour", how_desc="Aloittaminen, ohjaimet, ponnistus, otteet ja alastulo. Tutoriaalin seitsemän vaihetta ja rataura.",
-    how_kicker="Ohje", how_h1="Näin pelaat",
-    how_intro="Peli alkaa tutoriaalista, joka opettaa laskun, ponnistuksen, otteen ja ensimmäiset temput seitsemässä vaiheessa. Tutoriaali käyttää S- ja M-hyppyreitä, ja sen jälkeen avautuu rataura.",
-    start_h="Aloittaminen",
-    start_steps=["Valitse päävalikosta <strong>Tutoriaali</strong>.", "Valitse vuorossa oleva harjoitus ja lue <strong>Tee näin</strong> sekä <strong>Miksi?</strong>.",
-                 "<strong>Katso esimerkki</strong> näyttää saman tehtävän syötteet. Katselu ei anna suorituksia.",
-                 "Aloita harjoitus ja paina rinteessä <strong>Lähde</strong>. Vaiheissa 5–7 säädä voltti tai kierre ennen lähtöä.",
-                 "Onnistuminen tallentuu ennen seuraavaa tehtävää. Valmiita tehtäviä voi kerrata."],
-    controls_h="Ohjaimet",
-    controls=["<strong>Kyykky</strong> vauhdinotossa: säädin vasemmalla, täyttö kertoo painuman.",
-              "<strong>Ponnista</strong> lähellä lippiä. Ajoitus näkyy lennossa palautteena, täydellinen ponnistus on PERFECT.",
-              "<strong>Kierre ja voltti</strong> omilla säätimillään. Suunta FS tai BS, määrä 180° askelin.",
-              "<strong>Otteet</strong> Nose, Tail, Indy ja Weddle ovat nappeja lennon aikana. Ote tarvitsee vähintään 0,2 sekunnin pidon, ja pitoaika vaikuttaa pyörimiseen.",
-              "<strong>Alastulo</strong> on Clean, Sketchy tai kaatuminen. Irrota ote ennen lunta."],
-    controls_p="Pelaa-tilassa jokainen hyppy alkaa nollatuilla säädöillä. Hahmo lähtee liikkeelle heti, kun kosketat mitä tahansa lähtönäkymän säädintä.",
-    lessons_h="Tutoriaalin seitsemän vaihetta", lessons_cols=["#", "Hyppyri", "Harjoitus", "Tee näin"],
-    lessons=[("1", "S", "Lasku ja alastulo", "Paina Lähde ja seuraa hyppyä valmiilla lähtöasetuksilla."),
-             ("2", "S", "Ponnistus", "Paina Ponnista lähellä reunaa ja vapauta ohjeen mukaan."),
-             ("3", "S", "Ote", "Pidä Indy ilmassa ja irrota ennen maata."),
-             ("4", "S", "Hyppy + Indy", "Yhdistä ajoitettu ponnistus ja Indy-ote."),
-             ("5", "M", "Etuvoltti + Nose", "Säädä etuvoltti; pidä Nose ilmassa ja irrota ennen maata."),
-             ("6", "M", "FS 360 + Indy", "Säädä FS 360; pidä Indy ja irrota ennen maata."),
-             ("7", "M", "FS 180 + Indy", "Tee puoli kierrosta FS-suuntaan, pidä Indy ja suuntaa alastulo pienellä vastakierteellä.")],
-    career_h="Rataura", career_p="Tutoriaalin jälkeen <strong>Pelaa</strong> avaa uran. S-rinteen neljä tehtävää avaavat M-rinteen, ja M-rinteen kuusi tehtävää avaavat L-rinteen tehtävät.",
-    career_s="4 tehtävää · ilmainen", career_m="6 tehtävää · ilmainen", career_l="10 tehtävää · 1,95 €",
-    wr_h="Maailmanlista", wr_p="Kun tulos on sinusta valmis listalle, lähetä se pelin tuloskortista. Palvelin laskee pisteet uudelleen syötteistäsi, ja varmennettu tulos näkyy <a href=\"{list}\">maailmanlistalla</a> nimimerkilläsi.",
-    # lista
-    list_title="Maailmanlista – EXS World Tour", list_desc="Maailman parhaat suoritukset S-, M- ja L-rinteillä. Jokainen tulos on palvelimen varmentama.",
-    list_kicker="Kausi 1", list_h1="Maailmanlista", tabs_aria="Rinne", archive="Arkisto",
-    list_rows="Rivit 1–12 · yksi tulos per pelaaja",
-    own_meta="Omat ennätykset", own_h="Kirjaudu nähdäksesi", own_p="Kirjautuminen Google-tilillä avautuu, kun testikausi alkaa. Tulosten lähettämiseen tarvitset tilin ja nimimerkin.", own_btn="Tilistä",
-    rules_h="Säännöt lyhyesti",
-    rules=["Yksi paras tulos pelaajaa kohden kullakin rinteellä.", "Palvelin laskee pisteet uudelleen syötteistä. Vain varmennetut tulokset näkyvät.",
-           "Vain Google Playsta asennettu Android-peli kelpaa.", "Kauden vaihtuessa lista alkaa tyhjästä ja vanha kausi siirtyy arkistoon."],
-    # suoritus
-    run_title="Suoritus – EXS World Tour", run_desc="Palvelimen varmentama suoritus EXS World Tourin maailmanlistalta.",
-    crumbs_aria="Murupolku", crumb_rank="Sija 1",
-    run_notice="Esimerkkisivu. Oikeat suoritukset avautuvat osoitteesta <strong>worldtour.exsports.fi/s/&lt;tunnus&gt;</strong>, kun testikausi alkaa.",
-    video_aria="Suorituksen video", video_device="Video laitteelta", play_aria="Toista video",
-    run_meta="Pieni S · kausi 1 · 3.10.2026", total="Yhteensä", rank1="Sija 1",
-    score_labels=["Amplitudi", "Rotaatio", "Grab", "Tasapaino", "Tyyli", "Stomp"],
-    coach="Kierre 2° vajaa · Ote koko lennon · Ponnistus täydellinen · Puhdas stomp",
-    share_h="Jaa suoritus", share_p="Linkki aukeaa ilman peliä ja kirjautumista.", copy="Kopioi linkki", download="Lataa video",
-    how_scored_h="Miten pisteet syntyvät", how_scored_p="Palvelin ajoi pelaajan syötteet uudelleen ja laski pisteet itse. Video on tehty pelaajan laitteella samasta hypystä.",
-    report="Ilmoita suoritus", report_subject="Ilmoitus%20suorituksesta",
-    # oikeudelliset
-    terms_title="Käyttöehdot", terms_kicker="World Rank", terms_desc="EXS World Tourin maailmanlistan käyttöehdot.",
-    terms_notice="Käyttöehdot julkaistaan tällä sivulla ennen testikauden alkua. Alla on tiivistelmä periaatteista.",
-    terms=["Maailmanlistalle osallistuminen vaatii 13 vuoden iän ja Google-tilin. Pelaaminen ilman tiliä on aina mahdollista.",
-           "Nimimerkki on julkinen. Loukkaava, toisena esiintyvä tai henkilötietoja sisältävä nimimerkki vaihdetaan, ja toistuva rikkomus johtaa lähetyskieltoon.",
-           "Listalle kelpaa vain itse pelattu suoritus muokkaamattomalla pelillä. Palvelin laskee jokaisen tuloksen uudelleen.",
-           "Testikausi päättyy pelin julkaisuun, ja listat alkavat silloin tyhjästä."],
-    questions="Kysymykset",
-    privacy_title="Tietosuojaseloste", privacy_kicker="Henkilötiedot", privacy_desc="EXS World Tourin tietosuojaseloste.",
-    privacy_notice="Tietosuojaseloste julkaistaan tällä sivulla ennen testikauden alkua.",
-    privacy_p1="Rekisterinpitäjä on EXSports Oy. Maailmanlistaa varten käsitellään Google-tilin tunniste, nimimerkki, lähetetyt suoritukset ja niiden tiedot. Tiedot tallennetaan Google Firebase -palveluun EU:n alueelle. Julkisesti näkyy vain nimimerkki ja suoritus.",
-    privacy_p2="Pelitestin telemetriaa koskeva seloste on pelin hyväksyntäruudussa. Yhteys",
-    account_title="Tili ja tilin poisto", account_kicker="Tili", account_desc="EXS World Tourin tilin poisto.",
-    account_p="Maailmanlistan tili luodaan Google-tilillä pelissä tai tällä sivustolla, kun testikausi alkaa. Tilin voi poistaa pelin asetuksista tai tältä sivulta kirjautumalla sisään. Poisto poistaa nimimerkin, tulokset, toistot ja videot.",
-    account_notice="Kirjautuminen ja tilin poisto avautuvat tähän, kun palvelu on käytössä. Siihen asti pyynnöt", account_subject="Tilin%20poisto",
-    nf_title="Sivua ei löytynyt – EXS World Tour", nf_desc="Sivua ei löytynyt.", nf_h="Kaatui",
-    nf_p="Sivua ei löytynyt. Palaa <a href=\"{home}\">etusivulle</a> tai <a href=\"{list}\">maailmanlistalle</a>.",
-)
-
-T["en"] = dict(
-    lang="en", skip="Skip to content", brand_aria="EXS World Tour, home", nav_aria="Main menu", lang_aria="Language",
-    nav_how="How to play", nav_list="World ranking", nav_play="Get it on Google Play", foot_aria="Footer",
-    foot_text="EXS World Tour is a game by EXSports Oy for Android. The S and M slopes are free; the L slope is a one-time purchase of €1.95.",
-    foot_terms="Terms of use", foot_privacy="Privacy", foot_account="Delete account",
-    sample="Sample data", watch="Watch", prev="Previous", next="Next", verified="Verified",
-    home_title="EXS World Tour – the snowboard game where clean wins",
-    home_desc="A Big Air snowboard game for Android. Learn the tricks, watch the world's best runs and chase your own place on the world ranking.",
-    hero_kicker="Big Air · World Tour", hero_sub="World Tour",
-    hero_lead="The cleaner the run, the higher the score. A snowboard game where tricks are scored from the movement itself, not from a button press.",
-    ticker_title="World ranking · Small S", ticker_aria="Top of the world ranking, Small S",
-    how_h="How it works", how_all="Full guide",
-    step1_m="1 · In-run", step1_h="Pop off the lip", step1_p="Crouch in the in-run, pop at the lip. Timing decides height, and height gives you time for the trick.",
-    step2_m="2 · Air", step2_h="Spin and grab", step2_p="Spin and flip on their own sliders, grab with a button: Nose, Tail, Indy or Weddle. Hold the grab for at least 0.2 seconds and let go before the snow.",
-    step3_m="3 · Landing", step3_h="Land it clean", step3_p="Board straight and rotation finished before the snow. A clean landing banks the points; a crash wipes them.",
-    top_meta="Season 1 · Small S", top_h="Top right now", top_all="Full world ranking", top_first="Watch the #1 run",
-    slopes_h="Three slopes", slope_s="Small S", slope_m="Medium M", slope_l="Large L", free="Free", paid="One-time €1.95",
-    fair_h="A fair ranking", fair_p="Every result is recomputed on the server from the player's inputs. The number the game shows is not enough, and every ranked run can be watched.",
-    how_title="How to play – EXS World Tour", how_desc="Getting started, controls, pop, grabs and landing. The seven tutorial steps and the career track.",
-    how_kicker="Guide", how_h1="How to play",
-    how_intro="The game starts with a tutorial that teaches the run, the pop, the grab and the first tricks in seven steps. The tutorial uses the S and M kickers, and the career track opens after it.",
-    start_h="Getting started",
-    start_steps=["Choose <strong>Tutorial</strong> from the main menu.", "Pick the current exercise and read <strong>Do this</strong> and <strong>Why?</strong>.",
-                 "<strong>Watch example</strong> shows the inputs for the same task. Watching does not count as a completion.",
-                 "Start the exercise and press <strong>Go</strong> on the slope. In steps 5–7, set the flip or spin before you go.",
-                 "A success is saved before the next task. Completed tasks can be repeated."],
-    controls_h="Controls",
-    controls=["<strong>Crouch</strong> in the in-run: the slider on the left, the fill shows how deep you are.",
-              "<strong>Pop</strong> near the lip. Your timing shows as feedback in the air; a perfect pop is PERFECT.",
-              "<strong>Spin and flip</strong> on their own sliders. Direction FS or BS, amount in 180° steps.",
-              "<strong>Grabs</strong> Nose, Tail, Indy and Weddle are buttons during the air. A grab needs a hold of at least 0.2 seconds, and the hold time affects rotation.",
-              "<strong>Landing</strong> is Clean, Sketchy or a crash. Let go of the grab before the snow."],
-    controls_p="In Play mode every jump starts with the sliders reset. The rider sets off as soon as you touch any control on the start screen.",
-    lessons_h="The seven tutorial steps", lessons_cols=["#", "Kicker", "Exercise", "Do this"],
-    lessons=[("1", "S", "Run and landing", "Press Go and follow the jump with the preset settings."),
-             ("2", "S", "Pop", "Press Pop near the lip and release as instructed."),
-             ("3", "S", "Grab", "Hold Indy in the air and let go before the ground."),
-             ("4", "S", "Jump + Indy", "Combine a timed pop with an Indy grab."),
-             ("5", "M", "Front flip + Nose", "Set a front flip; hold Nose in the air and let go before the ground."),
-             ("6", "M", "FS 360 + Indy", "Set an FS 360; hold Indy and let go before the ground."),
-             ("7", "M", "FS 180 + Indy", "Half a rotation frontside, hold Indy and aim the landing with a small counter-spin.")],
-    career_h="Career track", career_p="After the tutorial, <strong>Play</strong> opens the career. The four S tasks unlock the M slope, and the six M tasks unlock the L tasks.",
-    career_s="4 tasks · free", career_m="6 tasks · free", career_l="10 tasks · €1.95",
-    wr_h="World ranking", wr_p="When a result is ready for the ranking, submit it from the result card in the game. The server recomputes the score from your inputs, and the verified result appears on the <a href=\"{list}\">world ranking</a> under your nickname.",
-    list_title="World ranking – EXS World Tour", list_desc="The world's best runs on the S, M and L slopes. Every result is verified on the server.",
-    list_kicker="Season 1", list_h1="World ranking", tabs_aria="Slope", archive="Archive",
-    list_rows="Rows 1–12 · one result per player",
-    own_meta="Your bests", own_h="Sign in to see", own_p="Sign-in with a Google account opens when the test season starts. You need an account and a nickname to submit results.", own_btn="About accounts",
-    rules_h="Rules in brief",
-    rules=["One best result per player on each slope.", "The server recomputes scores from the inputs. Only verified results are shown.",
-           "Only the Android game installed from Google Play qualifies.", "When the season changes, the ranking starts empty and the old season moves to the archive."],
-    run_title="Run – EXS World Tour", run_desc="A server-verified run from the EXS World Tour world ranking.",
-    crumbs_aria="Breadcrumb", crumb_rank="Rank 1",
-    run_notice="Sample page. Real runs open at <strong>worldtour.exsports.fi/s/&lt;id&gt;</strong> when the test season starts.",
-    video_aria="Run video", video_device="Video from device", play_aria="Play video",
-    run_meta="Small S · season 1 · 3 Oct 2026", total="Total", rank1="Rank 1",
-    score_labels=["Amplitude", "Rotation", "Grab", "Balance", "Style", "Stomp"],
-    coach="Spin 2° short · Grab held the whole air · Perfect pop · Clean stomp",
-    share_h="Share this run", share_p="The link opens without the game or a sign-in.", copy="Copy link", download="Download video",
-    how_scored_h="How the score is made", how_scored_p="The server replayed the player's inputs and computed the score itself. The video was rendered on the player's device from the same jump.",
-    report="Report this run", report_subject="Run%20report",
-    terms_title="Terms of use", terms_kicker="World Rank", terms_desc="Terms of use for the EXS World Tour world ranking.",
-    terms_notice="The terms of use will be published on this page before the test season starts. Below is a summary of the principles.",
-    terms=["Taking part in the world ranking requires being 13 or older and a Google account. Playing without an account is always possible.",
-           "Nicknames are public. An offensive or impersonating nickname, or one containing personal data, is changed, and repeated violations lead to a submission ban.",
-           "Only runs you played yourself on an unmodified game qualify. The server recomputes every result.",
-           "The test season ends when the game launches, and the rankings start empty then."],
-    questions="Questions",
-    privacy_title="Privacy policy", privacy_kicker="Personal data", privacy_desc="EXS World Tour privacy policy.",
-    privacy_notice="The privacy policy will be published on this page before the test season starts.",
-    privacy_p1="The controller is EXSports Oy. For the world ranking we process your Google account identifier, nickname, submitted runs and their data. Data is stored in Google Firebase in the EU. Only the nickname and the run are shown publicly.",
-    privacy_p2="The notice covering playtest telemetry is in the game's consent screen. Contact",
-    account_title="Account and account deletion", account_kicker="Account", account_desc="Deleting your EXS World Tour account.",
-    account_p="The world ranking account is created with a Google account in the game or on this site when the test season starts. You can delete the account from the game's settings or from this page after signing in. Deletion removes the nickname, results, replays and videos.",
-    account_notice="Sign-in and account deletion will open here when the service is live. Until then, send requests to", account_subject="Account%20deletion",
-    nf_title="Page not found – EXS World Tour", nf_desc="Page not found.", nf_h="Bailed",
-    nf_p="Page not found. Go back to the <a href=\"{home}\">front page</a> or the <a href=\"{list}\">world ranking</a>.",
-)
+LANGS = {}
+for _lang in LANG_ORDER:
+    _path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n", f"{_lang}.json")
+    if not os.path.exists(_path):
+        continue
+    with open(_path, encoding="utf-8") as _f:
+        _d = json.load(_f)
+    _d["lang"] = _lang
+    T[_lang] = _d
+    LANGS[_lang] = {"prefix": "" if _lang == "fi" else f"{_lang}/", "name": _d["meta"]["name"], "short": _d["meta"]["short"]}
 
 
 def trick(name, lang):
-    if lang == "fi":
-        return name
-    for fi, en in TRICK_EN.items():
-        name = name.replace(fi, en)
+    for fi, tr in T[lang]["meta"].get("tricks", {}).items():
+        name = name.replace(fi, tr)
     return name
 
 
@@ -215,7 +58,7 @@ def page(lang, rel, title, desc, body, current):
     switch = ""
     for l in LANGS:
         cur = ' aria-current="true"' if l == lang else ""
-        switch += f'<a href="/{LANGS[l]["prefix"]}{rel}" hreflang="{l}" lang="{l}"{cur}>{LANGS[l]["short"]}</a>'
+        switch += f'<li><a href="/{LANGS[l]["prefix"]}{rel}" hreflang="{l}" lang="{l}"{cur}>{LANGS[l]["name"]}</a></li>'
 
     head = f'''<!doctype html>
 <html lang="{lang}" data-theme="viimeinen-valo">
@@ -231,7 +74,7 @@ def page(lang, rel, title, desc, body, current):
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/img/og-image.jpg">
-<meta property="og:locale" content="{'fi_FI' if lang == 'fi' else 'en_US'}">
+<meta property="og:locale" content="{t["meta"]["locale"]}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1426">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
@@ -246,7 +89,7 @@ def page(lang, rel, title, desc, body, current):
 <a class="skip" href="#sisalto">{t["skip"]}</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{L("")}" aria-label="{t["brand_aria"]}"><span class="brand__exs">EXS</span><span class="brand__bar"></span><span class="brand__wt">World Tour</span></a>
-<nav class="site-nav" aria-label="{t["nav_aria"]}">{nav(L("nain-pelaat/"), t["nav_how"])}{nav(L("lista/"), t["nav_list"])}<a class="exs-btn exs-btn--sm" href="{PLAY}"><span>{t["nav_play"]}</span></a><div class="lang-switch" role="group" aria-label="{t["lang_aria"]}">{switch}</div></nav>
+<nav class="site-nav" aria-label="{t["nav_aria"]}">{nav(L("nain-pelaat/"), t["nav_how"])}{nav(L("lista/"), t["nav_list"])}<a class="exs-btn exs-btn--sm" href="{PLAY}"><span>{t["nav_play"]}</span></a><details class="lang-switch"><summary aria-label="{t["lang_aria"]}: {LANGS[lang]["name"]}"><span lang="{lang}">{LANGS[lang]["short"]}</span></summary><ul>{switch}</ul></details></nav>
 </div></header>
 <main id="sisalto">
 '''
@@ -398,7 +241,7 @@ def build_lang(lang):
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi/s/esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{'Kopioitu' if lang == 'fi' else 'Copied'}"><span>{t["copy"]}</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>{t["download"]}</span></a></div></div>
+<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi/s/esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>{t["download"]}</span></a></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>{t["slope_s"]}</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>{t["slope_m"]}</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>{t["slope_l"]}</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">{t["how_scored_h"]}</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">{t["how_scored_p"]}</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject={t["report_subject"]}" style="color: var(--muted)">{t["report"]}</a></div></div>
 </div>
