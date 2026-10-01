@@ -79,7 +79,6 @@ def check():
                 assert alts['x-default'] == 'https://worldtour.exsports.fi/en/' + rel, file
             if rel == 's/':
                 assert 'worldtour.exsports.fi/' + prefix + 's/?id=esimerkki' in text, file
-                assert values['video_speed'] in text, file
             if lang != 'fi' and rel in ['', 'lista/']:
                 assert all(word not in text for word in ['Etuvoltti', 'Takavoltti', 'Suora hyppy']), file
             count += 1

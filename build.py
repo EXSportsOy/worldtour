@@ -10,7 +10,7 @@ from html import escape
 from legal_content import LEGAL_SLUGS, footer_links, legal_language, render_document
 
 SITE = "https://worldtour.exsports.fi"
-PLAY = "https://play.google.com/store/apps/details?id=fi.exsports.exsworldtour"
+CONTACT = "mailto:info@exsports.fi?subject=EXS%20World%20Tour"
 PAGES = ["", "nain-pelaat/", "lista/", "s/"] + [f"{slug}/" for slug in LEGAL_SLUGS]
 
 # Kielet julkaisujärjestyksessä: suomi juuressa, muut omassa kansiossaan.
@@ -70,6 +70,8 @@ def page(lang, rel, title, desc, body, current):
 
     alternates = "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}/{LANGS[l]["prefix"]}{rel}">\n' for l in LANGS)
     alternates += f'<link rel="alternate" hreflang="x-default" href="{SITE}/en/{rel}">\n'
+    if rel in ('lista/', 's/'):
+        alternates += '<meta name="robots" content="noindex">\n'
     if is404:
         alternates = '<meta name="robots" content="noindex">\n'
     switch = ""
@@ -77,6 +79,7 @@ def page(lang, rel, title, desc, body, current):
         cur = ' aria-current="true"' if l == lang else ""
         switch += f'<li><a href="{local_link(l, rel)}" data-language="{l}" hreflang="{l}" lang="{l}"{cur}>{LANGS[l]["name"]}</a></li>'
 
+    availability = '' if is_legal else f'<div class="wrap"><p class="notice" data-availability>{t["availability"]}</p></div>'
     head = f'''<!doctype html>
 <html lang="{lang}" data-theme="viimeinen-valo" data-languages="{' '.join(LANGS)}" data-page="{'404' if is404 else rel}">
 <head>
@@ -107,9 +110,10 @@ def page(lang, rel, title, desc, body, current):
 <a class="skip" href="#sisalto">{t["skip"]}</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{L("")}" aria-label="{t["brand_aria"]}"><span class="brand__exs">EXS</span><span class="brand__bar"></span><span class="brand__wt">World Tour</span></a>
-<nav class="site-nav" aria-label="{t["nav_aria"]}">{nav(L("nain-pelaat/"), t["nav_how"])}{nav(L("lista/"), t["nav_list"])}<a class="exs-btn exs-btn--sm" href="{PLAY}"><span>{t["nav_play"]}</span></a><details class="lang-switch"><summary aria-label="{t["lang_aria"]}: {LANGS[lang]["name"]}"><span lang="{lang}">{LANGS[lang]["short"]}</span></summary><ul>{switch}</ul></details></nav>
+<nav class="site-nav" aria-label="{t["nav_aria"]}">{nav(L("nain-pelaat/"), t["nav_how"])}{nav(L("lista/"), t["nav_list"])}<a class="exs-btn exs-btn--sm" href="{CONTACT}"><span>{t["nav_play"]}</span></a><details class="lang-switch"><summary aria-label="{t["lang_aria"]}: {LANGS[lang]["name"]}"><span lang="{lang}">{LANGS[lang]["short"]}</span></summary><ul>{switch}</ul></details></nav>
 </div></header>
 <main id="sisalto">
+{availability}
 '''
     foot = f'''</main>
 <footer class="site-footer"><div class="wrap">
@@ -130,6 +134,9 @@ def row(lang, rank, name, tr, score, podium=False, me=False, L=None):
     cls = "exs-row" + (" exs-row--podium" if podium else "") + (" exs-row--me" if me else "")
     href = L("s/?id=esimerkki")
     btn = f'<a class="exs-btn exs-btn--sm" href="{href}"><span>{t["watch"]}</span></a>' if podium else f'<a class="more" href="{href}">{t["watch"]}</a>'
+    # Only the first example has a matching detail page.
+    if rank != 1:
+        btn = ''
     return (f'<li class="{cls}"><span class="exs-row__rank">{rank}</span><span><span class="exs-row__name">{name}</span>'
             f'<span class="exs-row__trick">{trick(tr, lang)}</span></span><span class="row-actions"><span class="exs-row__score">{score}</span>{btn}</span></li>')
 
@@ -150,11 +157,12 @@ def build_lang(lang):
 <h1 class="exs-hero__title">EXS</h1>
 <p class="exs-hero__sub">{t["hero_sub"]}</p>
 <p class="exs-hero__lead">{t["hero_lead"]}</p>
-<div class="exs-hero__actions"><a class="exs-btn exs-btn--lg" href="{PLAY}"><span>{t["nav_play"]}</span></a><a class="exs-btn exs-btn--secondary" href="{L("nain-pelaat/")}"><span>{t["nav_how"]}</span></a></div>
+<p class="prose hero-offer">{t["offer"]}</p>
+<div class="exs-hero__actions"><a class="exs-btn exs-btn--lg" href="{CONTACT}"><span>{t["nav_play"]}</span></a><a class="exs-btn exs-btn--secondary" href="{L("nain-pelaat/")}"><span>{t["nav_how"]}</span></a></div>
 </div>
 </section>
-<a href="{L("lista/")}" class="exs-ticker" style="text-decoration: none" aria-label="{t["ticker_aria"]}">
-<span class="exs-ticker__title">{t["ticker_title"]}</span>
+<a href="{L("lista/")}" class="exs-ticker" style="text-decoration: none" aria-label="{t["sample"]} · {t["ticker_aria"]}">
+<span class="exs-ticker__title">{t["sample"]} · {t["ticker_title"]}</span>
 {'<span class="exs-ticker__dot">·</span>'.join(f'<span class="exs-ticker__item">{r[0]} {r[1]} {r[3]}</span>' for r in ROWS[:5])}
 </a>
 <section class="section"><div class="wrap">
@@ -177,7 +185,7 @@ def build_lang(lang):
 <div class="row-between"><span class="display-xs" style="text-transform: uppercase; color: var(--text)">{t["slope_s"]}</span><span>{t["free"]}</span></div>
 <div class="row-between"><span class="display-xs" style="text-transform: uppercase; color: var(--text)">{t["slope_m"]}</span><span>{t["free"]}</span></div>
 <div class="row-between"><span class="display-xs" style="text-transform: uppercase; color: var(--text)">{t["slope_l"]}</span><span>{t["paid"]}</span></div>
-</div></div>
+</div><p class="prose" style="font-size:14px">{t["purchase_scope"]}</p></div>
 <div class="exs-panel exs-panel--quiet"><h3 class="exs-panel__title">{t["fair_h"]}</h3><p class="prose" style="margin:0; font-size: 14px; line-height: 20px">{t["fair_p"]}</p></div>
 </div>
 </div></section>
@@ -193,6 +201,8 @@ def build_lang(lang):
 <div class="grid-main">
 <div class="prose">
 <p>{t["how_intro"]}</p>
+<p>{t["offer"]}</p>
+<p>{t["purchase_scope"]}</p>
 <h2>{t["start_h"]}</h2>
 <ol>{li(t["start_steps"])}</ol>
 <h2>{t["controls_h"]}</h2>
@@ -216,16 +226,15 @@ def build_lang(lang):
 <section class="section" style="padding-bottom: 0"><div class="wrap" style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap: 24px">
 <div><div class="kicker">{t["list_kicker"]}</div><h1 class="h1" style="margin: 8px 0 0">{t["list_h1"]}</h1></div>
 <div style="display:flex; align-items:center; gap: 24px; flex-wrap: wrap">
-<div class="exs-tabs tabs-scroll" role="tablist" aria-label="{t["tabs_aria"]}"><a class="exs-tab" role="tab" aria-selected="true" href="{L("lista/?rinne=s")}"><span>{t["slope_s"]}</span></a><a class="exs-tab" role="tab" aria-selected="false" href="{L("lista/?rinne=m")}"><span>{t["slope_m"]}</span></a><a class="exs-tab" role="tab" aria-selected="false" href="{L("lista/?rinne=l")}"><span>{t["slope_l"]}</span></a></div>
-<a class="more" href="{L("lista/?kausi=arkisto")}" style="color: var(--text-soft)">{t["archive"]}</a>
+<span class="exs-badge">{t["sample"]} · {t["slope_s"]}</span>
 </div>
 </div></section>
 <section class="section"><div class="wrap grid-main">
 <div>
-<div class="exs-panel pad-shadow" id="lista" data-rinne="s" data-kausi="kausi-1">
+<div class="exs-panel pad-shadow" id="lista" data-rinne="s" data-kausi="esimerkki">
 <div class="row-between" style="margin-bottom: 24px"><h2 class="exs-panel__title" style="margin:0">{t["slope_s"]}</h2>{NB}</div>
 <ol class="exs-board">{"".join(R(*r, podium=(r[0] <= 3)) for r in ROWS)}</ol>
-<div class="row-between" style="margin-top: 24px; align-items:center; flex-wrap: wrap; gap: 12px"><span class="exs-panel__meta">{t["list_rows"]}</span><div style="display:flex; gap: 8px"><a class="exs-btn exs-btn--sm exs-btn--secondary" href="{L("lista/?sivu=1")}" aria-disabled="true"><span>{t["prev"]}</span></a><a class="exs-btn exs-btn--sm exs-btn--secondary" href="{L("lista/?sivu=2")}"><span>{t["next"]}</span></a></div></div>
+<div class="row-between" style="margin-top: 24px; align-items:center; flex-wrap: wrap; gap: 12px"><span class="exs-panel__meta">{t["list_rows"]}</span></div>
 </div>
 </div>
 <div class="stack">
@@ -246,11 +255,6 @@ def build_lang(lang):
 <section class="section" style="padding-top: 24px"><div class="wrap grid-main">
 <div class="stack">
 <div class="notice">{t["run_notice"]}</div>
-<div class="video pad-shadow" aria-label="{t["video_aria"]}">
-<div class="video__badges"><span class="exs-badge exs-badge--verified">{t["verified"]}</span><span class="exs-badge">{t["video_device"]}</span></div>
-<button type="button" class="video__play" aria-label="{t["play_aria"]}"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l12 8-12 8z"/></svg></button>
-<div class="video__bar"><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0:00 / 0:11</span><div class="video__track"><div class="video__fill"></div></div><span class="label" style="text-transform:uppercase;color:var(--text-soft)">{t["video_speed"]}</span></div>
-</div>
 <section class="exs-panel pad-shadow">
 <div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">{t["run_meta"]}</span></div>
 <div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">{t["total"]}</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">{t["rank1"]}</span></div>
@@ -259,7 +263,7 @@ def build_lang(lang):
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi{L("s/?id=esimerkki")}</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>{t["download"]}</span></a></div></div>
+<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi{L("s/?id=esimerkki")}</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>{t["slope_s"]}</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>{t["slope_m"]}</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>{t["slope_l"]}</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">{t["how_scored_h"]}</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">{t["how_scored_p"]}</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject={t["report_subject"]}" style="color: var(--muted)">{t["report"]}</a></div></div>
 </div>
@@ -279,7 +283,7 @@ def sitemap():
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for rel in PAGES:
-        if rel == "s/":
+        if rel in ("lista/", "s/"):
             continue
         for lang in LANGS:
             alts = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{SITE}/{LANGS[l]["prefix"]}{rel}"/>' for l in LANGS)

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hopp – EXS World Tour</title>
-<meta name="description" content="Et serververifisert hopp fra verdensrankingen i EXS World Tour.">
+<meta name="description" content="Eksempeldata. World Rank er planlagt. Serveren skal etter planen beregne poengene på nytt fra spillerens inndata. Første fase vil vise resultat og poengfordeling på nettstedet, med repriser i spillet. Video i nettleseren er en senere fase.">
 <link rel="canonical" href="https://worldtour.exsports.fi/no/s/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/s/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/s/">
@@ -22,10 +22,11 @@
 <link rel="alternate" hreflang="lv" href="https://worldtour.exsports.fi/lv/s/">
 <link rel="alternate" hreflang="lt" href="https://worldtour.exsports.fi/lt/s/">
 <link rel="alternate" hreflang="x-default" href="https://worldtour.exsports.fi/en/s/">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Hopp – EXS World Tour">
-<meta property="og:description" content="Et serververifisert hopp fra verdensrankingen i EXS World Tour.">
+<meta property="og:description" content="Eksempeldata. World Rank er planlagt. Serveren skal etter planen beregne poengene på nytt fra spillerens inndata. Første fase vil vise resultat og poengfordeling på nettstedet, med repriser i spillet. Video i nettleseren er en senere fase.">
 <meta property="og:url" content="https://worldtour.exsports.fi/no/s/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="nb_NO">
@@ -44,35 +45,31 @@
 <a class="skip" href="#sisalto">Hopp til innholdet</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/no/" aria-label="EXS World Tour, forside"><span class="brand__exs">EXS</span><span class="brand__bar"></span><span class="brand__wt">World Tour</span></a>
-<nav class="site-nav" aria-label="Hovedmeny"><a href="/no/nain-pelaat/">Slik spiller du</a><a href="/no/lista/" aria-current="page">Verdensranking</a><a class="exs-btn exs-btn--sm" href="https://play.google.com/store/apps/details?id=fi.exsports.exsworldtour"><span>Hent på Google Play</span></a><details class="lang-switch"><summary aria-label="Språk: Norsk"><span lang="no">NO</span></summary><ul><li><a href="/s/?lang=fi" data-language="fi" hreflang="fi" lang="fi">Suomi</a></li><li><a href="/en/s/" data-language="en" hreflang="en" lang="en">English</a></li><li><a href="/sv/s/" data-language="sv" hreflang="sv" lang="sv">Svenska</a></li><li><a href="/no/s/" data-language="no" hreflang="no" lang="no" aria-current="true">Norsk</a></li><li><a href="/da/s/" data-language="da" hreflang="da" lang="da">Dansk</a></li><li><a href="/de/s/" data-language="de" hreflang="de" lang="de">Deutsch</a></li><li><a href="/nl/s/" data-language="nl" hreflang="nl" lang="nl">Nederlands</a></li><li><a href="/fr/s/" data-language="fr" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/s/" data-language="es" hreflang="es" lang="es">Español</a></li><li><a href="/it/s/" data-language="it" hreflang="it" lang="it">Italiano</a></li><li><a href="/pt/s/" data-language="pt" hreflang="pt" lang="pt">Português</a></li><li><a href="/pl/s/" data-language="pl" hreflang="pl" lang="pl">Polski</a></li><li><a href="/et/s/" data-language="et" hreflang="et" lang="et">Eesti</a></li><li><a href="/lv/s/" data-language="lv" hreflang="lv" lang="lv">Latviešu</a></li><li><a href="/lt/s/" data-language="lt" hreflang="lt" lang="lt">Lietuvių</a></li></ul></details></nav>
+<nav class="site-nav" aria-label="Hovedmeny"><a href="/no/nain-pelaat/">Slik spiller du</a><a href="/no/lista/" aria-current="page">Verdensranking</a><a class="exs-btn exs-btn--sm" href="mailto:info@exsports.fi?subject=EXS%20World%20Tour"><span>Spør om spillet</span></a><details class="lang-switch"><summary aria-label="Språk: Norsk"><span lang="no">NO</span></summary><ul><li><a href="/s/?lang=fi" data-language="fi" hreflang="fi" lang="fi">Suomi</a></li><li><a href="/en/s/" data-language="en" hreflang="en" lang="en">English</a></li><li><a href="/sv/s/" data-language="sv" hreflang="sv" lang="sv">Svenska</a></li><li><a href="/no/s/" data-language="no" hreflang="no" lang="no" aria-current="true">Norsk</a></li><li><a href="/da/s/" data-language="da" hreflang="da" lang="da">Dansk</a></li><li><a href="/de/s/" data-language="de" hreflang="de" lang="de">Deutsch</a></li><li><a href="/nl/s/" data-language="nl" hreflang="nl" lang="nl">Nederlands</a></li><li><a href="/fr/s/" data-language="fr" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/s/" data-language="es" hreflang="es" lang="es">Español</a></li><li><a href="/it/s/" data-language="it" hreflang="it" lang="it">Italiano</a></li><li><a href="/pt/s/" data-language="pt" hreflang="pt" lang="pt">Português</a></li><li><a href="/pl/s/" data-language="pl" hreflang="pl" lang="pl">Polski</a></li><li><a href="/et/s/" data-language="et" hreflang="et" lang="et">Eesti</a></li><li><a href="/lv/s/" data-language="lv" hreflang="lv" lang="lv">Latviešu</a></li><li><a href="/lt/s/" data-language="lt" hreflang="lt" lang="lt">Lietuvių</a></li></ul></details></nav>
 </div></header>
 <main id="sisalto">
+<div class="wrap"><p class="notice" data-availability>Under utvikling: Android-spillet testes internt og er ennå ikke offentlig tilgjengelig. Ingen lanseringsdato er bekreftet.</p></div>
 
 <div class="wrap"><nav class="crumbs" aria-label="Brødsmulesti"><a href="/no/lista/">Verdensranking</a><span>›</span><span>Liten S</span><span>›</span><span style="color: var(--text)">Plass 1</span></nav></div>
 <section class="section" style="padding-top: 24px"><div class="wrap grid-main">
 <div class="stack">
-<div class="notice">Eksempelside. Ekte hopp åpnes på <strong>worldtour.exsports.fi/s/&lt;id&gt;</strong> når testsesongen starter.</div>
-<div class="video pad-shadow" aria-label="Video av hoppet">
-<div class="video__badges"><span class="exs-badge exs-badge--verified">Verifisert</span><span class="exs-badge">Video fra enheten</span></div>
-<button type="button" class="video__play" aria-label="Spill av video"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l12 8-12 8z"/></svg></button>
-<div class="video__bar"><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0:00 / 0:11</span><div class="video__track"><div class="video__fill"></div></div><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0,5×</span></div>
-</div>
+<div class="notice">Eksempeldata. World Rank er planlagt. Serveren skal etter planen beregne poengene på nytt fra spillerens inndata. Første fase vil vise resultat og poengfordeling på nettstedet, med repriser i spillet. Video i nettleseren er en senere fase.</div>
 <section class="exs-panel pad-shadow">
-<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Liten S · sesong 1 · 3. okt. 2026</span></div>
+<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Liten S · Eksempeldata</span></div>
 <div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">Totalt</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">Plass 1</span></div>
 <div class="exs-score"><div><div class="exs-score__label">Amplitude</div><div class="exs-score__value">6 240</div></div><div><div class="exs-score__label">Rotasjon</div><div class="exs-score__value">4 180</div></div><div><div class="exs-score__label">Grab</div><div class="exs-score__value">1 960</div></div><div><div class="exs-score__label">Balanse</div><div class="exs-score__value">1 420</div></div><div><div class="exs-score__label">Stil</div><div class="exs-score__value">1 090</div></div><div><div class="exs-score__label">Stomp</div><div class="exs-score__value">1 000</div></div></div>
 <div class="exs-callout" style="margin-top: 24px">Spinn 2° for kort · Grab holdt hele svevet · Perfekt popp · Ren stomp</div>
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Del hoppet</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Lenken åpnes uten spillet og uten innlogging.</p><div class="linkbox">worldtour.exsports.fi/no/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopiert"><span>Kopier lenke</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>Last ned video</span></a></div></div>
+<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Del hoppet</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Eksempeldata. Lenken åpnes uten spillet og uten innlogging.</p><div class="linkbox">worldtour.exsports.fi/no/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopiert"><span>Kopier lenke</span></button></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>Liten S</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>Middels M</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>Stor L</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Slik regnes poengene</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">Serveren kjørte spillerens input på nytt og regnet ut poengene selv. Videoen ble laget på spillerens enhet fra det samme hoppet.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Rapport%20om%20hopp" style="color: var(--muted)">Rapporter hoppet</a></div></div>
+<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Slik regnes poengene</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">World Rank er planlagt. Serveren skal etter planen beregne poengene på nytt fra spillerens inndata. Første fase vil vise resultat og poengfordeling på nettstedet, med repriser i spillet. Video i nettleseren er en senere fase.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Rapport%20om%20hopp" style="color: var(--muted)">Rapporter hoppet</a></div></div>
 </div>
 </div></section>
 </main>
 <footer class="site-footer"><div class="wrap">
-<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>EXS World Tour er et spill fra EXSports Oy for Android. S- og M-bakkene er gratis, L-bakken er et engangskjøp til 1,95 €.</span></div>
+<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>EXS World Tour · EXSports Oy · Android. Ved lansering: S og M gratis, Big Air L som engangskjøp til 2,99 € i Finland. Ingen reklame. Lokale priser i andre land vises i Google Play.</span></div>
 <nav aria-label="Bunntekst"><span class="footer-legal-links" lang="no"><a href="/no/kayttoehdot/">Bruksvilkår</a><a href="/no/tietosuoja/">Personvernerklæring</a><a href="/no/tili/">Slett data eller konto</a><a href="/no/ostot/">Kjøpsvilkår</a><a href="/no/saannot/">World Rank-regler</a><a href="/no/evasteet/">Informasjonskapsler og personvern</a><a href="https://www.exsports.fi/legal/imprint.html">Selskapsopplysninger</a></span><a href="mailto:info@exsports.fi">info@exsports.fi</a></nav>
 </div></footer>
 </body>

@@ -20,3 +20,6 @@ print('linkit ok')
 
 from check_i18n import check
 check()
+
+from check_marketing import check as check_marketing
+check_marketing()

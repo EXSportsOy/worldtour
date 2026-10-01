@@ -132,3 +132,5 @@ table.lessons td:first-child { font-family: var(--font-display); font-weight: 80
   .legal-page h1, .legal-page h2, .legal-page h3 { break-after: avoid; }
   .legal-page p, .legal-page li { orphans: 3; widows: 3; }
 }
+
+.hero-offer { max-width: 620px; margin: 16px 0 24px; }

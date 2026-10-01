@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Run – EXS World Tour</title>
-<meta name="description" content="A server-verified run from the EXS World Tour world ranking.">
+<meta name="description" content="Sample data. World Rank is planned. The server is intended to recalculate scores from player inputs. The first phase would show scores and breakdowns on the website, with replays in the game. Browser video is a later phase.">
 <link rel="canonical" href="https://worldtour.exsports.fi/en/s/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/s/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/s/">
@@ -22,10 +22,11 @@
 <link rel="alternate" hreflang="lv" href="https://worldtour.exsports.fi/lv/s/">
 <link rel="alternate" hreflang="lt" href="https://worldtour.exsports.fi/lt/s/">
 <link rel="alternate" hreflang="x-default" href="https://worldtour.exsports.fi/en/s/">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Run – EXS World Tour">
-<meta property="og:description" content="A server-verified run from the EXS World Tour world ranking.">
+<meta property="og:description" content="Sample data. World Rank is planned. The server is intended to recalculate scores from player inputs. The first phase would show scores and breakdowns on the website, with replays in the game. Browser video is a later phase.">
 <meta property="og:url" content="https://worldtour.exsports.fi/en/s/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="en_US">
@@ -44,35 +45,31 @@
 <a class="skip" href="#sisalto">Skip to content</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/en/" aria-label="EXS World Tour, home"><span class="brand__exs">EXS</span><span class="brand__bar"></span><span class="brand__wt">World Tour</span></a>
-<nav class="site-nav" aria-label="Main menu"><a href="/en/nain-pelaat/">How to play</a><a href="/en/lista/" aria-current="page">World ranking</a><a class="exs-btn exs-btn--sm" href="https://play.google.com/store/apps/details?id=fi.exsports.exsworldtour"><span>Get it on Google Play</span></a><details class="lang-switch"><summary aria-label="Language: English"><span lang="en">EN</span></summary><ul><li><a href="/s/?lang=fi" data-language="fi" hreflang="fi" lang="fi">Suomi</a></li><li><a href="/en/s/" data-language="en" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/sv/s/" data-language="sv" hreflang="sv" lang="sv">Svenska</a></li><li><a href="/no/s/" data-language="no" hreflang="no" lang="no">Norsk</a></li><li><a href="/da/s/" data-language="da" hreflang="da" lang="da">Dansk</a></li><li><a href="/de/s/" data-language="de" hreflang="de" lang="de">Deutsch</a></li><li><a href="/nl/s/" data-language="nl" hreflang="nl" lang="nl">Nederlands</a></li><li><a href="/fr/s/" data-language="fr" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/s/" data-language="es" hreflang="es" lang="es">Español</a></li><li><a href="/it/s/" data-language="it" hreflang="it" lang="it">Italiano</a></li><li><a href="/pt/s/" data-language="pt" hreflang="pt" lang="pt">Português</a></li><li><a href="/pl/s/" data-language="pl" hreflang="pl" lang="pl">Polski</a></li><li><a href="/et/s/" data-language="et" hreflang="et" lang="et">Eesti</a></li><li><a href="/lv/s/" data-language="lv" hreflang="lv" lang="lv">Latviešu</a></li><li><a href="/lt/s/" data-language="lt" hreflang="lt" lang="lt">Lietuvių</a></li></ul></details></nav>
+<nav class="site-nav" aria-label="Main menu"><a href="/en/nain-pelaat/">How to play</a><a href="/en/lista/" aria-current="page">World ranking</a><a class="exs-btn exs-btn--sm" href="mailto:info@exsports.fi?subject=EXS%20World%20Tour"><span>Ask about the game</span></a><details class="lang-switch"><summary aria-label="Language: English"><span lang="en">EN</span></summary><ul><li><a href="/s/?lang=fi" data-language="fi" hreflang="fi" lang="fi">Suomi</a></li><li><a href="/en/s/" data-language="en" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/sv/s/" data-language="sv" hreflang="sv" lang="sv">Svenska</a></li><li><a href="/no/s/" data-language="no" hreflang="no" lang="no">Norsk</a></li><li><a href="/da/s/" data-language="da" hreflang="da" lang="da">Dansk</a></li><li><a href="/de/s/" data-language="de" hreflang="de" lang="de">Deutsch</a></li><li><a href="/nl/s/" data-language="nl" hreflang="nl" lang="nl">Nederlands</a></li><li><a href="/fr/s/" data-language="fr" hreflang="fr" lang="fr">Français</a></li><li><a href="/es/s/" data-language="es" hreflang="es" lang="es">Español</a></li><li><a href="/it/s/" data-language="it" hreflang="it" lang="it">Italiano</a></li><li><a href="/pt/s/" data-language="pt" hreflang="pt" lang="pt">Português</a></li><li><a href="/pl/s/" data-language="pl" hreflang="pl" lang="pl">Polski</a></li><li><a href="/et/s/" data-language="et" hreflang="et" lang="et">Eesti</a></li><li><a href="/lv/s/" data-language="lv" hreflang="lv" lang="lv">Latviešu</a></li><li><a href="/lt/s/" data-language="lt" hreflang="lt" lang="lt">Lietuvių</a></li></ul></details></nav>
 </div></header>
 <main id="sisalto">
+<div class="wrap"><p class="notice" data-availability>In development: the Android game is in internal testing and is not yet publicly available. No release date has been confirmed.</p></div>
 
 <div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/en/lista/">World ranking</a><span>›</span><span>Small S</span><span>›</span><span style="color: var(--text)">Rank 1</span></nav></div>
 <section class="section" style="padding-top: 24px"><div class="wrap grid-main">
 <div class="stack">
-<div class="notice">Sample page. Real runs open at <strong>worldtour.exsports.fi/s/&lt;id&gt;</strong> when the test season starts.</div>
-<div class="video pad-shadow" aria-label="Run video">
-<div class="video__badges"><span class="exs-badge exs-badge--verified">Verified</span><span class="exs-badge">Video from device</span></div>
-<button type="button" class="video__play" aria-label="Play video"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l12 8-12 8z"/></svg></button>
-<div class="video__bar"><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0:00 / 0:11</span><div class="video__track"><div class="video__fill"></div></div><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0.5×</span></div>
-</div>
+<div class="notice">Sample data. World Rank is planned. The server is intended to recalculate scores from player inputs. The first phase would show scores and breakdowns on the website, with replays in the game. Browser video is a later phase.</div>
 <section class="exs-panel pad-shadow">
-<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Small S · season 1 · 3 Oct 2026</span></div>
+<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Small S · Sample data</span></div>
 <div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">Total</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">Rank 1</span></div>
 <div class="exs-score"><div><div class="exs-score__label">Amplitude</div><div class="exs-score__value">6 240</div></div><div><div class="exs-score__label">Rotation</div><div class="exs-score__value">4 180</div></div><div><div class="exs-score__label">Grab</div><div class="exs-score__value">1 960</div></div><div><div class="exs-score__label">Balance</div><div class="exs-score__value">1 420</div></div><div><div class="exs-score__label">Style</div><div class="exs-score__value">1 090</div></div><div><div class="exs-score__label">Stomp</div><div class="exs-score__value">1 000</div></div></div>
 <div class="exs-callout" style="margin-top: 24px">Spin 2° short · Grab held the whole air · Perfect pop · Clean stomp</div>
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Share this run</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">The link opens without the game or a sign-in.</p><div class="linkbox">worldtour.exsports.fi/en/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Copied"><span>Copy link</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>Download video</span></a></div></div>
+<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Share this run</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Sample data. The link opens without the game or a sign-in.</p><div class="linkbox">worldtour.exsports.fi/en/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Copied"><span>Copy link</span></button></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>Small S</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>Medium M</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>Large L</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">How the score is made</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">The server replayed the player's inputs and computed the score itself. The video was rendered on the player's device from the same jump.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Run%20report" style="color: var(--muted)">Report this run</a></div></div>
+<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">How the score is made</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">World Rank is planned. The server is intended to recalculate scores from player inputs. The first phase would show scores and breakdowns on the website, with replays in the game. Browser video is a later phase.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Run%20report" style="color: var(--muted)">Report this run</a></div></div>
 </div>
 </div></section>
 </main>
 <footer class="site-footer"><div class="wrap">
-<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>EXS World Tour is a game by EXSports Oy for Android. The S and M slopes are free; the L slope is a one-time purchase of €1.95.</span></div>
+<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>EXS World Tour · EXSports Oy · Android. Release model: S and M free; Big Air L is a one-time purchase of €2.99 in Finland. No ads. Local prices elsewhere will appear in Google Play.</span></div>
 <nav aria-label="Footer"><span class="footer-legal-links" lang="en"><a href="/en/kayttoehdot/">Terms of use</a><a href="/en/tietosuoja/">Privacy notice</a><a href="/en/tili/">Delete your data or account</a><a href="/en/ostot/">Purchase terms</a><a href="/en/saannot/">World Rank rules</a><a href="/en/evasteet/">Cookies and website privacy</a><a href="https://www.exsports.fi/legal/imprint.html">Company information</a></span><a href="mailto:info@exsports.fi">info@exsports.fi</a></nav>
 </div></footer>
 </body>
