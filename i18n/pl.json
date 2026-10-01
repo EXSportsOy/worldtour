@@ -16,7 +16,7 @@
  "prev": "Poprzedni",
  "next": "Następny",
  "verified": "Zweryfikowano",
- "home_title": "EXS World Tour – gra snowboardowa, w której wygrywa czystość",
+ "home_title": "EXS World Tour – gra snowboardowa, w której wygrywa czysty przejazd",
  "home_desc": "Gra snowboardowa Big Air na Androida. Naucz się tricków, oglądaj najlepsze przejazdy świata i walcz o własne miejsce w rankingu światowym.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -33,7 +33,7 @@
  "step2_p": "Obrót i salto mają własne suwaki, grab robisz przyciskiem: Nose, Tail, Indy lub Weddle. Trzymaj grab co najmniej 0,2 sekundy i puść przed śniegiem.",
  "step3_m": "3 · Lądowanie",
  "step3_h": "Wyląduj czysto",
- "step3_p": "Deska prosto i rotacja zakończona przed śniegiem. Czyste lądowanie zalicza punkty, upadek je kasuje.",
+ "step3_p": "Ustaw deskę prosto i zakończ obrót przed lądowaniem. Czyste lądowanie daje mnożnik punktów; upadek zeruje wynik.",
  "top_meta": "Sezon 1 · Mały S",
  "top_h": "Czołówka w tej chwili",
  "top_all": "Pełny ranking światowy",
@@ -45,7 +45,7 @@
  "free": "Za darmo",
  "paid": "Jednorazowo 1,95 €",
  "fair_h": "Uczciwy ranking",
- "fair_p": "Każdy wynik jest przeliczany na serwerze na podstawie wejść gracza. Liczba pokazana w grze nie wystarczy, a każdy przejazd z rankingu można obejrzeć.",
+ "fair_p": "Każdy wynik jest przeliczany na serwerze na podstawie działań gracza. Liczba pokazana w grze nie wystarczy, a każdy przejazd z rankingu można obejrzeć.",
  "how_title": "Jak grać – EXS World Tour",
  "how_desc": "Pierwsze kroki, sterowanie, wybicie, graby i lądowanie. Siedem kroków samouczka i ścieżka kariery.",
  "how_kicker": "Poradnik",
@@ -55,7 +55,7 @@
  "start_steps": [
   "Wybierz <strong>Samouczek</strong> z menu głównego.",
   "Wybierz bieżące ćwiczenie i przeczytaj <strong>Zrób tak</strong> oraz <strong>Dlaczego?</strong>.",
-  "<strong>Obejrzyj przykład</strong> pokazuje wejścia dla tego samego zadania. Oglądanie nie liczy się jako zaliczenie.",
+  "<strong>Obejrzyj przykład</strong> pokazuje sposób sterowania w tym zadaniu. Oglądanie nie liczy się jako zaliczenie.",
   "Rozpocznij ćwiczenie i naciśnij <strong>Start</strong> na stoku. W krokach 5–7 ustaw salto lub obrót przed startem.",
   "Sukces zapisuje się przed następnym zadaniem. Zaliczone zadania można powtarzać."
  ],
@@ -125,7 +125,7 @@
  "career_m": "6 zadań · za darmo",
  "career_l": "10 zadań · 1,95 €",
  "wr_h": "Ranking światowy",
- "wr_p": "Gdy wynik jest gotowy do rankingu, wyślij go z karty wyniku w grze. Serwer przelicza punkty na podstawie twoich wejść, a zweryfikowany wynik pojawia się w <a href=\"{list}\">rankingu światowym</a> pod twoim nickiem.",
+ "wr_p": "Gdy wynik jest gotowy do rankingu, wyślij go z karty wyniku w grze. Serwer przelicza punkty na podstawie twoich działań, a zweryfikowany wynik pojawia się w <a href=\"{list}\">rankingu światowym</a> pod twoim nickiem.",
  "list_title": "Ranking światowy – EXS World Tour",
  "list_desc": "Najlepsze przejazdy świata na stokach S, M i L. Każdy wynik jest weryfikowany na serwerze.",
  "list_kicker": "Sezon 1",
@@ -140,7 +140,7 @@
  "rules_h": "Zasady w skrócie",
  "rules": [
   "Jeden najlepszy wynik na gracza na każdym stoku.",
-  "Serwer przelicza punkty na podstawie wejść. Pokazywane są tylko zweryfikowane wyniki.",
+  "Serwer przelicza punkty na podstawie działań gracza. Pokazywane są tylko zweryfikowane wyniki.",
   "Liczy się tylko gra na Androida zainstalowana z Google Play.",
   "Przy zmianie sezonu ranking zaczyna od zera, a stary sezon trafia do archiwum."
  ],
@@ -169,7 +169,7 @@
  "copy": "Kopiuj link",
  "download": "Pobierz wideo",
  "how_scored_h": "Jak powstaje wynik",
- "how_scored_p": "Serwer odtworzył wejścia gracza i sam obliczył wynik. Wideo zostało wyrenderowane na urządzeniu gracza z tego samego skoku.",
+ "how_scored_p": "Serwer odtworzył działania gracza i sam obliczył wynik. Wideo zostało wyrenderowane na urządzeniu gracza z tego samego skoku.",
  "report": "Zgłoś ten przejazd",
  "report_subject": "Zg%C5%82oszenie%20przejazdu",
  "terms_title": "Regulamin",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Prosty skok"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

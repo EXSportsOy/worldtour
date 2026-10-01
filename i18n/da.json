@@ -33,7 +33,7 @@
  "step2_p": "Spin og flip på hver sin slider, grab med en knap: Nose, Tail, Indy eller Weddle. Hold grabbet i mindst 0,2 sekunder, og slip inden sneen.",
  "step3_m": "3 · Landing",
  "step3_h": "Land rent",
- "step3_p": "Brættet lige og rotationen færdig inden sneen. En ren landing sikrer pointene, et styrt nulstiller dem.",
+ "step3_p": "Hold brættet lige, og afslut rotationen inden landingen. En ren landing giver en pointmultiplikator; et styrt nulstiller pointene.",
  "top_meta": "Sæson 1 · Lille S",
  "top_h": "Toppen lige nu",
  "top_all": "Hele verdensranglisten",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Lige hop"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

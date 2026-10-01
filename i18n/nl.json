@@ -33,7 +33,7 @@
  "step2_p": "Spin en flip hebben elk een eigen slider, de grab doe je met een knop: Nose, Tail, Indy of Weddle. Houd de grab minstens 0,2 seconden vast en laat los voor de sneeuw.",
  "step3_m": "3 · Landing",
  "step3_h": "Land clean",
- "step3_p": "Board recht en rotatie afgerond voor de sneeuw. Een schone landing levert de punten op, een val wist ze.",
+ "step3_p": "Houd het board recht en rond de rotatie af vóór de landing. Een nette landing geeft een puntenvermenigvuldiger; een val zet de score op nul.",
  "top_meta": "Seizoen 1 · Klein S",
  "top_h": "De top van dit moment",
  "top_all": "Volledige wereldranglijst",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

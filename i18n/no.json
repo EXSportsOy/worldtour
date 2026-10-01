@@ -33,7 +33,7 @@
  "step2_p": "Spinn og flipp på hver sin glidebryter, grab med en knapp: Nose, Tail, Indy eller Weddle. Hold grabben i minst 0,2 sekunder og slipp før snøen.",
  "step3_m": "3 · Landing",
  "step3_h": "Land rent",
- "step3_p": "Brettet rett og rotasjonen fullført før snøen. En ren landing sikrer poengene, et fall nuller dem.",
+ "step3_p": "Hold brettet rett og fullfør rotasjonen før landing. En ren landing gir en poengmultiplikator; et fall nuller poengene.",
  "top_meta": "Sesong 1 · Liten S",
  "top_h": "Toppen akkurat nå",
  "top_all": "Hele verdensrankingen",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Rett hopp"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

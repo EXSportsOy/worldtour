@@ -16,7 +16,7 @@
  "prev": "Edellinen",
  "next": "Seuraava",
  "verified": "Varmennettu",
- "home_title": "EXS World Tour – lumilautapeli, jossa puhtaus ratkaisee",
+ "home_title": "EXS World Tour – lumilautapeli, jossa puhdas suoritus ratkaisee",
  "home_desc": "Big Air -lumilautapeli Androidille. Opi temput, katso maailman parhaat suoritukset ja tavoittele omaa paikkaa maailmanlistalla.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -205,5 +205,6 @@
   "locale": "fi_FI",
   "copied": "Kopioitu",
   "tricks": {}
- }
+ },
+ "video_speed": "0,5×"
 }

@@ -1,14 +1,17 @@
 """Tuottaa sivuston HTML-sivut. Aja: python build.py
 
-Rakenne on yhteinen kaikille kielille; tekstit tulevat kielikohtaisesta sanastosta (T).
+Rakenne on yhteinen kaikille kielille; markkinointitekstit tulevat sanastosta (T).
+Oikeudelliset tekstit luetaan legal/fi- ja legal/en-lähteistä (legal_content.py).
 Suomi on juuressa (/), muut kielet omassa kansiossaan (/en/). Uusi kieli lisätään
 LANGS-taulukkoon ja sanastoon, muuta ei tarvitse muuttaa.
 """
 import os
+from html import escape
+from legal_content import LEGAL_SLUGS, footer_links, legal_language, render_document
 
 SITE = "https://worldtour.exsports.fi"
 PLAY = "https://play.google.com/store/apps/details?id=fi.exsports.exsworldtour"
-PAGES = ["", "nain-pelaat/", "lista/", "s/", "kayttoehdot/", "tietosuoja/", "tili/"]
+PAGES = ["", "nain-pelaat/", "lista/", "s/"] + [f"{slug}/" for slug in LEGAL_SLUGS]
 
 # Kielet julkaisujärjestyksessä: suomi juuressa, muut omassa kansiossaan.
 LANG_ORDER = ["fi", "en", "sv", "no", "da", "de", "nl", "fr", "es", "it", "pt", "pl", "et", "lv", "lt"]
@@ -26,7 +29,7 @@ LANGS = {}
 for _lang in LANG_ORDER:
     _path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n", f"{_lang}.json")
     if not os.path.exists(_path):
-        continue
+        raise FileNotFoundError(f"Missing translation: {_path}")
     with open(_path, encoding="utf-8") as _f:
         _d = json.load(_f)
     _d["lang"] = _lang
@@ -40,52 +43,67 @@ def trick(name, lang):
     return name
 
 
+def local_link(lang, rel):
+    """Keep Finnish explicit because unprefixed entry URLs detect the language."""
+    url = f'/{LANGS[lang]["prefix"]}{rel}'
+    if lang == "fi":
+        url += ("&" if "?" in url else "?") + "lang=fi"
+    return escape(url, quote=True)
+
+
 # ---------------------------------------------------------------- runko
 def page(lang, rel, title, desc, body, current):
     is404 = rel == "404"
+    is_legal = rel in [f"{slug}/" for slug in LEGAL_SLUGS]
+    script = '' if is_legal else '<script src="/assets/js/site.js" defer></script>'
+    language_script = '' if is_legal else '<script src="/assets/js/language.js"></script>'
     t = T[lang]
+    footer_text = "EXS World Tour · EXSports Oy" if is_legal else t["foot_text"]
     p = LANGS[lang]["prefix"]
     rel = "" if rel == "404" else rel  # GitHub Pages näyttää vain juuren 404.html:n; sen linkit osoittavat etusivulle
     url = f"{SITE}/{p}{rel}"
-    L = lambda r: f"/{p}{r}"
+    L = lambda r: local_link(lang, r)
 
     def nav(href, label):
         cur = ' aria-current="page"' if href == current else ""
         return f'<a href="{href}"{cur}>{label}</a>'
 
     alternates = "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}/{LANGS[l]["prefix"]}{rel}">\n' for l in LANGS)
-    alternates += f'<link rel="alternate" hreflang="x-default" href="{SITE}/{rel}">\n'
+    alternates += f'<link rel="alternate" hreflang="x-default" href="{SITE}/en/{rel}">\n'
+    if is404:
+        alternates = '<meta name="robots" content="noindex">\n'
     switch = ""
     for l in LANGS:
         cur = ' aria-current="true"' if l == lang else ""
-        switch += f'<li><a href="/{LANGS[l]["prefix"]}{rel}" hreflang="{l}" lang="{l}"{cur}>{LANGS[l]["name"]}</a></li>'
+        switch += f'<li><a href="{local_link(l, rel)}" data-language="{l}" hreflang="{l}" lang="{l}"{cur}>{LANGS[l]["name"]}</a></li>'
 
     head = f'''<!doctype html>
-<html lang="{lang}" data-theme="viimeinen-valo">
+<html lang="{lang}" data-theme="viimeinen-valo" data-languages="{' '.join(LANGS)}" data-page="{'404' if is404 else rel}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
-<meta name="description" content="{desc}">
+<title>{escape(title)}</title>
+<meta name="description" content="{escape(desc, quote=True)}">
 <link rel="canonical" href="{url}">
 {alternates}<meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
+<meta property="og:title" content="{escape(title, quote=True)}">
+<meta property="og:description" content="{escape(desc, quote=True)}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/img/og-image.jpg">
 <meta property="og:locale" content="{t["meta"]["locale"]}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c1426">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'">
+{language_script}
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/BarlowCondensed-ExtraBoldItalic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
-<script src="/assets/js/site.js" defer></script>
+{script}
 </head>
-<body class="exs">
+<body class="exs{' legal-page' if is_legal else ''}">
 <a class="skip" href="#sisalto">{t["skip"]}</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{L("")}" aria-label="{t["brand_aria"]}"><span class="brand__exs">EXS</span><span class="brand__bar"></span><span class="brand__wt">World Tour</span></a>
@@ -95,13 +113,13 @@ def page(lang, rel, title, desc, body, current):
 '''
     foot = f'''</main>
 <footer class="site-footer"><div class="wrap">
-<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>{t["foot_text"]}</span></div>
-<nav aria-label="{t["foot_aria"]}"><a href="{L("kayttoehdot/")}">{t["foot_terms"]}</a><a href="{L("tietosuoja/")}">{t["foot_privacy"]}</a><a href="{L("tili/")}">{t["foot_account"]}</a><a href="mailto:info@exsports.fi">info@exsports.fi</a></nav>
+<div class="stack" style="gap: 12px"><a href="https://www.exsports.fi/" aria-label="EXSports Oy"><img class="site-footer__logo" src="/assets/img/exsports-wordmark.png" alt="EXSports Oy"></a><span>{footer_text}</span></div>
+<nav aria-label="{t["foot_aria"]}"><span class="footer-legal-links" lang="{legal_language(lang)}">{footer_links(lang, p)}</span><a href="mailto:info@exsports.fi">info@exsports.fi</a></nav>
 </div></footer>
 </body>
 </html>
 '''
-    out = "404.html" if is404 else f"{p}{rel}index.html"
+    out = f"{p}404.html" if is404 else f"{p}{rel}index.html"
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(head + body + foot)
@@ -119,7 +137,7 @@ def row(lang, rank, name, tr, score, podium=False, me=False, L=None):
 def build_lang(lang):
     t = T[lang]
     p = LANGS[lang]["prefix"]
-    L = lambda r: f"/{p}{r}"
+    L = lambda r: local_link(lang, r)
     R = lambda *a, **k: row(lang, *a, L=L, **k)
     NB = f'<span class="exs-badge">{t["sample"]}</span>'
     li = lambda items: "".join(f"<li>{x}</li>" for x in items)
@@ -231,7 +249,7 @@ def build_lang(lang):
 <div class="video pad-shadow" aria-label="{t["video_aria"]}">
 <div class="video__badges"><span class="exs-badge exs-badge--verified">{t["verified"]}</span><span class="exs-badge">{t["video_device"]}</span></div>
 <button type="button" class="video__play" aria-label="{t["play_aria"]}"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l12 8-12 8z"/></svg></button>
-<div class="video__bar"><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0:00 / 0:11</span><div class="video__track"><div class="video__fill"></div></div><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0,5×</span></div>
+<div class="video__bar"><span class="label" style="text-transform:uppercase;color:var(--text-soft)">0:00 / 0:11</span><div class="video__track"><div class="video__fill"></div></div><span class="label" style="text-transform:uppercase;color:var(--text-soft)">{t["video_speed"]}</span></div>
 </div>
 <section class="exs-panel pad-shadow">
 <div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">{t["run_meta"]}</span></div>
@@ -241,7 +259,7 @@ def build_lang(lang):
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi/s/esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>{t["download"]}</span></a></div></div>
+<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi{L("s/?id=esimerkki")}</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button><a class="exs-btn exs-btn--sm exs-btn--secondary" href="#" aria-disabled="true"><span>{t["download"]}</span></a></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>{t["slope_s"]}</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>{t["slope_m"]}</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>{t["slope_l"]}</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">{t["how_scored_h"]}</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">{t["how_scored_p"]}</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject={t["report_subject"]}" style="color: var(--muted)">{t["report"]}</a></div></div>
 </div>
@@ -249,18 +267,10 @@ def build_lang(lang):
 ''', L("lista/"))
 
     # oikeudelliset sivut
-    def simple(rel, title, kicker, h1, inner, desc):
-        page(lang, rel, f"{title} – EXS World Tour", desc, f'''<section class="section"><div class="wrap"><div class="kicker">{kicker}</div><h1 class="h1" style="margin: 8px 0 24px">{h1}</h1><div class="prose">{inner}</div></div></section>''', L(rel))
+    for slug in LEGAL_SLUGS:
+        title, desc, body = render_document(lang, slug, p)
+        page(lang, f"{slug}/", f"{title} – EXS World Tour", desc, body, L(f"{slug}/"))
 
-    simple("kayttoehdot/", t["terms_title"], t["terms_kicker"], t["terms_title"],
-           f'<div class="notice" style="margin-bottom: 24px">{t["terms_notice"]}</div><ul>{li(t["terms"])}</ul><p>{t["questions"]}: <a href="mailto:info@exsports.fi">info@exsports.fi</a></p>', t["terms_desc"])
-    simple("tietosuoja/", t["privacy_title"], t["privacy_kicker"], t["privacy_title"],
-           f'<div class="notice" style="margin-bottom: 24px">{t["privacy_notice"]}</div><p>{t["privacy_p1"]}</p><p>{t["privacy_p2"]}: <a href="mailto:info@exsports.fi">info@exsports.fi</a></p>', t["privacy_desc"])
-    simple("tili/", t["account_title"], t["account_kicker"], t["account_title"],
-           f'<p>{t["account_p"]}</p><div class="notice">{t["account_notice"]}: <a href="mailto:info@exsports.fi?subject={t["account_subject"]}">info@exsports.fi</a></div>', t["account_desc"])
-
-    if lang != "fi":
-        return
     page(lang, "404", t["nf_title"], t["nf_desc"],
          f'''<section class="section"><div class="wrap"><div class="kicker">404</div><h1 class="h1" style="margin: 8px 0 24px">{t["nf_h"]}</h1><p class="prose">{t["nf_p"].format(home=L(""), list=L("lista/"))}</p></div></section>''', "")
 

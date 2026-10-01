@@ -16,7 +16,7 @@
  "prev": "Iepriekšējais",
  "next": "Nākamais",
  "verified": "Pārbaudīts",
- "home_title": "EXS World Tour – snovborda spēle, kurā uzvar tīrība",
+ "home_title": "EXS World Tour – snovborda spēle, kurā uzvar tīrs brauciens",
  "home_desc": "Big Air snovborda spēle Android ierīcēm. Apgūsti trikus, skaties pasaules labākos braucienus un cīnies par savu vietu pasaules rangā.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -27,13 +27,13 @@
  "how_all": "Pilns ceļvedis",
  "step1_m": "1 · Ieskrējiens",
  "step1_h": "Atsperies no malas",
- "step1_p": "Pietupies ieskrējienā, atsperies pie malas. Laiks nosaka augstumu, un augstums dod laiku trikam.",
+ "step1_p": "Pietupies ieskrējienā un atsperies pie malas. Atspēriena brīdis nosaka augstumu, un augstums dod laiku trikam.",
  "step2_m": "2 · Lidojums",
  "step2_h": "Griezies un satver",
  "step2_p": "Griezienam un salto ir savi slīdņi, satvērienu veic ar pogu: Nose, Tail, Indy vai Weddle. Turi satvērienu vismaz 0,2 sekundes un atlaid pirms sniega.",
  "step3_m": "3 · Piezemēšanās",
  "step3_h": "Piezemējies tīri",
- "step3_p": "Dēlis taisni un rotācija pabeigta pirms sniega. Tīra piezemēšanās ieskaita punktus, kritiens tos dzēš.",
+ "step3_p": "Turi dēli taisni un pabeidz rotāciju pirms piezemēšanās. Tīra piezemēšanās dod punktu reizinātāju; kritiens atiestata rezultātu uz nulli.",
  "top_meta": "1. sezona · Mazā S",
  "top_h": "Augšgals šobrīd",
  "top_all": "Pilns pasaules rangs",
@@ -80,7 +80,7 @@
    "1",
    "S",
    "Brauciens un piezemēšanās",
-   "Nospied Aiziet un seko lēcienam ar iepriekš iestatītiem iestatījumiem."
+   "Nospied Aiziet un seko lēcienam ar iepriekš iestatītiem parametriem."
   ],
   [
    "2",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Taisnais lēciens"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

@@ -33,7 +33,7 @@
  "step2_p": "El spin y el flip van en sus propios deslizadores; el grab, con un botón: Nose, Tail, Indy o Weddle. Mantén el grab al menos 0,2 segundos y suéltalo antes de la nieve.",
  "step3_m": "3 · Aterrizaje",
  "step3_h": "Aterriza limpio",
- "step3_p": "Tabla recta y rotación terminada antes de la nieve. Un aterrizaje limpio asegura los puntos; una caída los borra.",
+ "step3_p": "Mantén la tabla recta y termina la rotación antes de aterrizar. Un aterrizaje limpio aplica un multiplicador de puntos; una caída pone la puntuación a cero.",
  "top_meta": "Temporada 1 · Pequeña S",
  "top_h": "Lo mejor ahora mismo",
  "top_all": "Ranking mundial completo",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

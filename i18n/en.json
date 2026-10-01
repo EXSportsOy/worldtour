@@ -16,7 +16,7 @@
  "prev": "Previous",
  "next": "Next",
  "verified": "Verified",
- "home_title": "EXS World Tour – the snowboard game where clean wins",
+ "home_title": "EXS World Tour – the snowboard game where clean runs win",
  "home_desc": "A Big Air snowboard game for Android. Learn the tricks, watch the world's best runs and chase your own place on the world ranking.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -33,7 +33,7 @@
  "step2_p": "Spin and flip on their own sliders, grab with a button: Nose, Tail, Indy or Weddle. Hold the grab for at least 0.2 seconds and let go before the snow.",
  "step3_m": "3 · Landing",
  "step3_h": "Land it clean",
- "step3_p": "Board straight and rotation finished before the snow. A clean landing banks the points; a crash wipes them.",
+ "step3_p": "Keep the board straight and finish the rotation before landing. A clean landing applies a score multiplier; a crash resets the score to zero.",
  "top_meta": "Season 1 · Small S",
  "top_h": "Top right now",
  "top_all": "Full world ranking",
@@ -209,5 +209,6 @@
    "Takavoltti": "Back flip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0.5×"
 }

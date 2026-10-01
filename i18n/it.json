@@ -33,7 +33,7 @@
  "step2_p": "Spin e flip sui rispettivi slider, grab con un pulsante: Nose, Tail, Indy o Weddle. Tieni il grab per almeno 0,2 secondi e lascia prima della neve.",
  "step3_m": "3 · Atterraggio",
  "step3_h": "Atterra pulito",
- "step3_p": "Tavola dritta e rotazione completata prima della neve. Un atterraggio pulito incassa i punti; una caduta li azzera.",
+ "step3_p": "Tieni la tavola dritta e completa la rotazione prima di atterrare. Un atterraggio pulito applica un moltiplicatore di punti; una caduta azzera il punteggio.",
  "top_meta": "Stagione 1 · Piccola S",
  "top_h": "I migliori in questo momento",
  "top_all": "Classifica mondiale completa",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

@@ -16,7 +16,7 @@
  "prev": "Eelmine",
  "next": "Järgmine",
  "verified": "Kinnitatud",
- "home_title": "EXS World Tour – lumelauamäng, kus puhtus võidab",
+ "home_title": "EXS World Tour – lumelauamäng, kus võidab puhas sooritus",
  "home_desc": "Big Air lumelauamäng Androidile. Õpi trikid selgeks, vaata maailma parimaid sõite ja püüdle oma koha poole maailma edetabelis.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -33,7 +33,7 @@
  "step2_p": "Pöörlemine ja salto on eraldi liuguritel, grab käib nupust: Nose, Tail, Indy või Weddle. Hoia grabi vähemalt 0,2 sekundit ja lase lahti enne lund.",
  "step3_m": "3 · Maandumine",
  "step3_h": "Maandu puhtalt",
- "step3_p": "Laud otse ja pöörlemine lõpetatud enne lund. Puhas maandumine paneb punktid kirja, kukkumine pühib need ära.",
+ "step3_p": "Hoia laud otse ja lõpeta pöörlemine enne maandumist. Puhas maandumine annab punktikordaja; kukkumine nullib punktid.",
  "top_meta": "Hooaeg 1 · Väike S",
  "top_h": "Tipp praegu",
  "top_all": "Kogu maailma edetabel",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Sirge hüpe"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

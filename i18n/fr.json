@@ -33,7 +33,7 @@
  "step2_p": "Spin et flip sur leurs propres curseurs, grab avec un bouton : Nose, Tail, Indy ou Weddle. Tiens le grab au moins 0,2 seconde et lâche avant la neige.",
  "step3_m": "3 · Réception",
  "step3_h": "Réceptionne proprement",
- "step3_p": "Planche droite et rotation terminée avant la neige. Une réception propre encaisse les points, une chute les efface.",
+ "step3_p": "Garde la planche droite et termine la rotation avant de te poser. Une réception propre applique un multiplicateur de points ; une chute remet le score à zéro.",
  "top_meta": "Saison 1 · Petit S",
  "top_h": "Le top en ce moment",
  "top_all": "Classement mondial complet",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

@@ -33,7 +33,7 @@
  "step2_p": "Spin e flip em sliders próprios, grab com um botão: Nose, Tail, Indy ou Weddle. Mantém o grab pelo menos 0,2 segundos e larga antes da neve.",
  "step3_m": "3 · Aterragem",
  "step3_h": "Aterra limpo",
- "step3_p": "Prancha direita e rotação terminada antes da neve. Uma aterragem limpa garante os pontos; uma queda apaga-os.",
+ "step3_p": "Mantém a prancha direita e termina a rotação antes de aterrar. Uma aterragem limpa aplica um multiplicador de pontos; uma queda repõe a pontuação a zero.",
  "top_meta": "Época 1 · Pequena S",
  "top_h": "O topo neste momento",
  "top_all": "Ranking mundial completo",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

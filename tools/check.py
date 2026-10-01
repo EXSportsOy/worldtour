@@ -17,3 +17,6 @@ for d, _, files in os.walk(root):
 if bad:
     print('\n'.join(bad)); sys.exit(1)
 print('linkit ok')
+
+from check_i18n import check
+check()

@@ -33,7 +33,7 @@
  "step2_p": "Spin und Flip haben eigene Slider, der Grab kommt per Knopf: Nose, Tail, Indy oder Weddle. Halte den Grab mindestens 0,2 Sekunden und lass vor dem Schnee los.",
  "step3_m": "3 · Landung",
  "step3_h": "Sauber landen",
- "step3_p": "Board gerade und Rotation fertig, bevor der Schnee kommt. Eine saubere Landung sichert die Punkte, ein Sturz löscht sie.",
+ "step3_p": "Halte das Board gerade und beende die Rotation vor der Landung. Eine saubere Landung bringt einen Punktemultiplikator; ein Sturz setzt die Punkte auf null.",
  "top_meta": "Saison 1 · Klein S",
  "top_h": "Die Spitze gerade jetzt",
  "top_all": "Ganze Weltrangliste",
@@ -146,7 +146,7 @@
  ],
  "run_title": "Run – EXS World Tour",
  "run_desc": "Ein serververifizierter Run aus der Weltrangliste von EXS World Tour.",
- "crumbs_aria": "Brotkrumen",
+ "crumbs_aria": "Navigationspfad",
  "crumb_rank": "Platz 1",
  "run_notice": "Beispielseite. Echte Runs öffnen sich unter <strong>worldtour.exsports.fi/s/&lt;id&gt;</strong>, sobald die Testsaison beginnt.",
  "video_aria": "Video des Runs",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Straight Air"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

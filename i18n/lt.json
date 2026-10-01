@@ -16,7 +16,7 @@
  "prev": "Ankstesnis",
  "next": "Kitas",
  "verified": "Patvirtinta",
- "home_title": "EXS World Tour – snieglenčių žaidimas, kuriame laimi švara",
+ "home_title": "EXS World Tour – snieglenčių žaidimas, kuriame laimi švarus važiavimas",
  "home_desc": "Big Air snieglenčių žaidimas Android įrenginiams. Išmok trikus, žiūrėk geriausius pasaulio važiavimus ir siek savo vietos pasaulio reitinge.",
  "hero_kicker": "Big Air · World Tour",
  "hero_sub": "World Tour",
@@ -27,13 +27,13 @@
  "how_all": "Visas gidas",
  "step1_m": "1 · Įsibėgėjimas",
  "step1_h": "Atsispirk nuo krašto",
- "step1_p": "Pritūpk įsibėgėjime, atsispirk ties kraštu. Laikas lemia aukštį, o aukštis duoda laiko trikui.",
+ "step1_p": "Pritūpk įsibėgėdamas ir atsispirk ties kraštu. Atsispyrimo momentas lemia aukštį, o aukštis suteikia laiko trikui.",
  "step2_m": "2 · Skrydis",
  "step2_h": "Sukis ir griebk",
  "step2_p": "Sukimasis ir salto turi atskirus slankiklius, griebimas – mygtuku: Nose, Tail, Indy arba Weddle. Laikyk griebimą bent 0,2 sekundės ir paleisk prieš sniegą.",
  "step3_m": "3 · Nusileidimas",
  "step3_h": "Nusileisk švariai",
- "step3_p": "Lenta tiesiai ir sukimasis baigtas prieš sniegą. Švarus nusileidimas įskaito taškus, kritimas juos nubraukia.",
+ "step3_p": "Laikyk lentą tiesiai ir užbaik sukimąsi prieš nusileisdamas. Švarus nusileidimas suteikia taškų daugiklį; kritimas panaikina visus taškus.",
  "top_meta": "1 sezonas · Maža S",
  "top_h": "Viršūnė dabar",
  "top_all": "Visas pasaulio reitingas",
@@ -43,7 +43,7 @@
  "slope_m": "Vidutinė M",
  "slope_l": "Didelė L",
  "free": "Nemokamai",
- "paid": "Vienkartinis 1,95 €",
+ "paid": "Vienkartinis mokėjimas – 1,95 €",
  "fair_h": "Sąžiningas reitingas",
  "fair_p": "Kiekvienas rezultatas perskaičiuojamas serveryje pagal žaidėjo įvestis. Žaidimo rodomo skaičiaus nepakanka, o kiekvieną reitingo važiavimą galima peržiūrėti.",
  "how_title": "Kaip žaisti – EXS World Tour",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Tiesus šuolis"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

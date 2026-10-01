@@ -33,7 +33,7 @@
  "step2_p": "Spinn och volt på varsitt reglage, grab med en knapp: Nose, Tail, Indy eller Weddle. Håll grabben i minst 0,2 sekunder och släpp innan snön.",
  "step3_m": "3 · Landning",
  "step3_h": "Landa rent",
- "step3_p": "Brädan rak och rotationen klar innan snön. En ren landning säkrar poängen, en vurpa nollar dem.",
+ "step3_p": "Håll brädan rak och avsluta rotationen före landningen. En ren landning ger en poängmultiplikator; en vurpa nollar poängen.",
  "top_meta": "Säsong 1 · Liten S",
  "top_h": "Toppen just nu",
  "top_all": "Hela världsrankingen",
@@ -146,7 +146,7 @@
  ],
  "run_title": "Åk – EXS World Tour",
  "run_desc": "Ett serververifierat åk från EXS World Tours världsranking.",
- "crumbs_aria": "Brödsmulor",
+ "crumbs_aria": "Navigeringsstig",
  "crumb_rank": "Plats 1",
  "run_notice": "Exempelsida. Riktiga åk öppnas på <strong>worldtour.exsports.fi/s/&lt;id&gt;</strong> när testsäsongen börjar.",
  "video_aria": "Video av åket",
@@ -209,5 +209,6 @@
    "Takavoltti": "Backflip",
    "Suora hyppy": "Rakt hopp"
   }
- }
+ },
+ "video_speed": "0,5×"
 }

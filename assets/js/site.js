@@ -1,4 +1,18 @@
-// Kopioi linkki -nappi suorituksen sivulla. Ei muuta ajonaikaista toimintaa.
+// Keep filters/run IDs when switching language, and remember an explicit choice.
+document.querySelectorAll('[data-language]').forEach(function (link) {
+  var target = new URL(link.href);
+  var current = new URL(window.location.href);
+  target.search = current.search;
+  target.searchParams.delete('lang');
+  if (link.dataset.language === 'fi') target.searchParams.set('lang', 'fi');
+  target.hash = current.hash;
+  link.href = target.href;
+  link.addEventListener('click', function () {
+    try { localStorage.setItem('worldtour-language', link.dataset.language); } catch (_) {}
+  });
+});
+
+// Kopioi linkki -nappi suorituksen sivulla.
 document.querySelectorAll('[data-copy]').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var box = btn.closest('.exs-panel').querySelector('.linkbox');
