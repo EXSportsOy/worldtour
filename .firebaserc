@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "exsports-verkkosivut"
+  },
+  "targets": {
+    "exsports-verkkosivut": {
+      "hosting": {
+        "worldtour": ["exs-worldtour"]
+      }
+    }
+  }
+}

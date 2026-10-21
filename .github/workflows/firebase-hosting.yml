@@ -1,0 +1,55 @@
+name: Julkaise Firebase Hostingiin
+
+# Pääkanava julkaistaan jokaisesta pushista main-haaraan; saman repon PR:t saavat
+# esikatselukanavan. Julkaisu ohitetaan, kunnes FIREBASE_SERVICE_ACCOUNT_WORLDTOUR
+# on lisätty repon salaisuuksiin (ks. README).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-hosting-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+    env:
+      HAS_FIREBASE_SECRET: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_WORLDTOUR != '' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python build.py
+      - run: python tools/check.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tools/language.test.cjs
+      - if: env.HAS_FIREBASE_SECRET == 'true' && github.event_name != 'pull_request'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_WORLDTOUR }}
+          target: worldtour
+          channelId: live
+      - if: env.HAS_FIREBASE_SECRET == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_WORLDTOUR }}
+          target: worldtour
+          expires: 7d
