@@ -16,6 +16,8 @@ Sivusto julkaistaan pelin Firebase-projektin `exs-worldtour` oletussivustolle `e
 
 Firebase Hosting -sivustolla on yksi julkaisu kerrallaan, joten vain tämä repo julkaisee Hostingin; pelirepon `deploy-accounts.ps1` julkaisee vain Firestore- ja Storage-säännöt. Pelin tilisivut ja `/api/**`-ohjaus Cloud Runiin lisätään tämän repon julkaisuun, kun tilipalvelu avataan (pelirepo: `Docs/architecture/2026-10-21-firebase-kokonaisuus.md`).
 
+Pysyvät osoitteet `/privacy` ja `/terms` (myös `/en/…`) ohjataan `firebase.json`-tiedostossa tietosuojaselosteeseen ja käyttöehtoihin. `/delete-account` ohjataan toistaiseksi (302) poisto-ohjeeseen `/tili/`; kun tilisovellus tulee sivustolle, se ottaa polun itselleen. Pelin tilipalvelin ja Google Play viittaavat näihin osoitteisiin, joten älä poista ohjauksia.
+
 Verkkotunnus `worldtour.exsports.fi` on liitetty sivustoon (Hosting › Custom domains; DNS: CNAME `worldtour` → `exs-worldtour.web.app`).
 
 Automaattinen julkaisu tarvitsee repon salaisuuden `FIREBASE_SERVICE_ACCOUNT_WORLDTOUR`: Google Cloud Console (projekti `exs-worldtour`) › IAM › Service accounts › tili roolilla **Firebase Hosting Admin** (esikatselukanaville lisäksi **API Keys Viewer**) ja sen JSON-avain. Ilman salaisuutta työnkulku ajaa tarkistukset mutta ohittaa julkaisun; käsin julkaisu: `npx firebase-tools deploy --only hosting:worldtour --project exs-worldtour`.
