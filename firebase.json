@@ -23,6 +23,9 @@
         { "source": "/delete-account", "destination": "/tili/", "type": 302 },
         { "source": "/en/delete-account", "destination": "/en/tili/", "type": 302 }
       ],
+      "rewrites": [
+        { "source": "/api/**", "run": { "serviceId": "exs-accounts", "region": "europe-west1" } }
+      ],
       "headers": [
         {
           "source": "**",
