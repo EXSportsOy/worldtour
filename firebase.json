@@ -15,6 +15,12 @@
         "legal/**",
         "tools/**"
       ],
+      "redirects": [
+        { "source": "/privacy", "destination": "/tietosuoja/", "type": 301 },
+        { "source": "/en/privacy", "destination": "/en/tietosuoja/", "type": 301 },
+        { "source": "/terms", "destination": "/kayttoehdot/", "type": 301 },
+        { "source": "/en/terms", "destination": "/en/kayttoehdot/", "type": 301 }
+      ],
       "headers": [
         {
           "source": "**",
