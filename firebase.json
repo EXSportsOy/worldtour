@@ -19,7 +19,9 @@
         { "source": "/privacy", "destination": "/tietosuoja/", "type": 301 },
         { "source": "/en/privacy", "destination": "/en/tietosuoja/", "type": 301 },
         { "source": "/terms", "destination": "/kayttoehdot/", "type": 301 },
-        { "source": "/en/terms", "destination": "/en/kayttoehdot/", "type": 301 }
+        { "source": "/en/terms", "destination": "/en/kayttoehdot/", "type": 301 },
+        { "source": "/delete-account", "destination": "/tili/", "type": 302 },
+        { "source": "/en/delete-account", "destination": "/en/tili/", "type": 302 }
       ],
       "headers": [
         {
