@@ -13,7 +13,7 @@ Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/leg
 ## Ennen lopullisten tekstien käyttöönottoa
 
 1. Korjaa testianalytiikan hyväksyntä ja peruuttaminen niin, että valittu käsittelyperuste toteutuu aidosti. Pelkkä käyttöehdon tai verkkosivun muuttaminen ei korjaa toiminnallisuutta.
-2. Vahvista pilvipalvelujen alueet, tietojenkäsittelysopimukset, siirtoperusteet, käyttöoikeudet ja varmuuskopioiden poistuminen. Supabase on nykyinen vastaanottaja; Firebase on tuleva muutos.
+2. Vahvista pilvipalvelujen alueet, tietojenkäsittelysopimukset, siirtoperusteet, käyttöoikeudet ja varmuuskopioiden poistuminen. Testitelemetria menee nyt Firebaseen (Realtime Database); aiempien testiversioiden tiedot ovat Supabasessa.
 3. Toteuta ja tarkista yksilöitävien testitietojen määräaikainen poisto, tukipyyntöjen kohdistaminen ja lopulliset muiden tietoryhmien säilytysajat.
 4. Toteuta tilin ja siihen liittyvien tietojen poisto pelissä ja ulkoinen pyyntöreitti ennen tilien avaamista. Tarkista Google Play Data safety ja tietosuojalinkit todellista buildia vasten.
 5. Vahvista lasten kohdeyleisö, lopullinen sisältöluokitus, verkkotilien ikäkäytäntö ja mahdollinen huoltajan suostumus maittain. Sisältöluokitus ei ratkaise näitä yksin.
@@ -43,8 +43,8 @@ Tarkistukset kattavat paikalliset linkit ja asiakirjojen rakenteen. Ne eivät va
 - Google Play, käyttäjätiedot: https://support.google.com/googleplay/android-developer/answer/10144311
 - Google Play, tilinpoisto: https://support.google.com/googleplay/android-developer/answer/13327111
 - Google Play, Families: https://support.google.com/googleplay/android-developer/answer/9893335
-- GitHub Pages, tiedonkeruu: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection
-- GitHub, tietosuoja: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+- Firebase, tietosuoja ja säilytysajat: https://firebase.google.com/support/privacy
+- Google Cloud, tietojenkäsittelyehdot: https://cloud.google.com/terms/data-processing-addendum
 - Supabase, tietojenkäsittelyehdot: https://supabase.com/legal/dpa
 - Traficom, evästeet: https://www.kyberturvallisuuskeskus.fi/fi/toimintamme/saantely-ja-valvonta/evasteet
 - EU:n suljetun ODR-palvelun korvaava ohje: https://consumer-redress.ec.europa.eu/site-relocation_en
