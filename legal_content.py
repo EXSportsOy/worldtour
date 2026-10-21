@@ -82,7 +82,8 @@ def render_document(lang, slug, prefix):
 <article class="prose legal-document" lang="{content_lang}" data-legal-document="{slug}">{fragment}</article>
 </div></div></section>'''
     if slug in ("tili", "evasteet"):
-        status = "Ajantasaiset ohjeet, päivitetty 1.10.2026." if fi else "Current guidance, updated 1 October 2026."
+        updated = ("21.10.2026", "21 October 2026") if slug == "evasteet" else ("1.10.2026", "1 October 2026")
+        status = f"Ajantasaiset ohjeet, päivitetty {updated[0]}." if fi else f"Current guidance, updated {updated[1]}."
     else:
         status = UI[content_lang][5]
     desc = f"EXS World Tour: {title}. {status}"

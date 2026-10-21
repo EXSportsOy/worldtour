@@ -60,7 +60,7 @@ def page(lang, rel, title, desc, body, current):
     t = T[lang]
     footer_text = "EXS World Tour · EXSports Oy" if is_legal else t["foot_text"]
     p = LANGS[lang]["prefix"]
-    rel = "" if rel == "404" else rel  # GitHub Pages näyttää vain juuren 404.html:n; sen linkit osoittavat etusivulle
+    rel = "" if rel == "404" else rel  # Firebase Hosting näyttää vain juuren 404.html:n; sen linkit osoittavat etusivulle
     url = f"{SITE}/{p}{rel}"
     L = lambda r: local_link(lang, r)
 
