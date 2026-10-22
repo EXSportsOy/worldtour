@@ -177,7 +177,7 @@
  "terms_desc": "EXS World Touri maailma edetabeli kasutustingimused.",
  "terms_notice": "Kasutustingimused avaldatakse sellel lehel enne testihooaja algust. Allpool on põhimõtete kokkuvõte.",
  "terms": [
-  "Maailma edetabelis osalemiseks pead olema vähemalt 13-aastane ja sul peab olema Google'i konto. Ilma kontota saab mängida alati.",
+  "Maailma edetabelis osalemiseks pead olema vähemalt 16-aastane ja sul peab olema Google'i konto. Ilma kontota saab mängida alati.",
   "Hüüdnimed on avalikud. Solvav, kellegi teisena esinev või isikuandmeid sisaldav hüüdnimi muudetakse ära ja korduvad rikkumised toovad kaasa saatmiskeelu.",
   "Arvesse lähevad ainult sinu enda muutmata mänguga sõidetud sõidud. Server arvutab iga tulemuse uuesti.",
   "Testihooaeg lõpeb mängu avaldamisega ja edetabelid algavad siis tühjalt."
@@ -213,5 +213,5 @@
  "video_speed": "0,5×",
  "availability": "Arenduses: Androidi mäng on sisetestimisel ega ole veel avalikult saadaval. Ilmumiskuupäeva ei ole kinnitatud.",
  "offer": "Avaldamisel: S ja M tasuta, Big Air L ühekordse ostuna 2,99 € Soomes. Ilma reklaamideta. Teiste riikide kohalikud hinnad kuvatakse Google Plays.",
- "purchase_scope": "Ost avab ainult Big Air L-i ja selle 10 ülesannet. Võimalikud tulevased rajad ja kosmeetilised esemed müüakse eraldi."
+ "purchase_scope": "Ühekordne ost avab Big Air L-i ja selle 10 ülesannet ning osalemise World Rankis (vajab mängijakontot, alates 16. eluaastast). Season 1 ajal (1.12.2026–1.3.2027) lõpule viidud ostuga kaasneb ka Season 1 riietus. Iganädalased võistlused ning võimalikud tulevased rajad ja riietused ei ole ostu hinnas."
 }

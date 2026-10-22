@@ -177,7 +177,7 @@
  "terms_desc": "EXS World Tour pasaules ranga lietošanas noteikumi.",
  "terms_notice": "Lietošanas noteikumi tiks publicēti šajā lapā pirms testa sezonas sākuma. Zemāk ir principu kopsavilkums.",
  "terms": [
-  "Dalībai pasaules rangā jābūt vismaz 13 gadus vecam un vajadzīgs Google konts. Spēlēt bez konta var vienmēr.",
+  "Dalībai pasaules rangā jābūt vismaz 16 gadus vecam un vajadzīgs Google konts. Spēlēt bez konta var vienmēr.",
   "Segvārdi ir publiski. Aizskarošs, citu personu atdarinošs vai personas datus saturošs segvārds tiek mainīts, un atkārtoti pārkāpumi noved pie iesniegšanas aizlieguma.",
   "Der tikai paša nobraukti braucieni nemodificētā spēlē. Serveris pārrēķina katru rezultātu.",
   "Testa sezona beidzas ar spēles iznākšanu, un rangi tad sākas tukši."
@@ -213,5 +213,5 @@
  "video_speed": "0,5×",
  "availability": "Izstrādē: Android spēle tiek testēta iekšēji un vēl nav publiski pieejama. Izlaišanas datums nav apstiprināts.",
  "offer": "Izlaišanas modelis: S un M bez maksas; Big Air L ar vienreizēju pirkumu par 2,99 € Somijā. Bez reklāmām. Vietējās cenas citās valstīs būs redzamas Google Play.",
- "purchase_scope": "Pirkums atbloķē tikai Big Air L un tā 10 uzdevumus. Iespējamās nākotnes trases un kosmētiskie elementi tiks pārdoti atsevišķi."
+ "purchase_scope": "Vienreizējais pirkums atbloķē Big Air L un tā 10 uzdevumus, kā arī dalību World Rank (nepieciešams spēlētāja konts, no 16 gadu vecuma). Pirkumiem, kas pabeigti Season 1 laikā (1.12.2026.–1.3.2027.), papildus pienākas Season 1 tērps. Iknedēļas sacensības un iespējamās nākotnes trases un tērpi nav iekļauti."
 }

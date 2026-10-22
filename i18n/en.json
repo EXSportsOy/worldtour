@@ -177,7 +177,7 @@
  "terms_desc": "Terms of use for the EXS World Tour world ranking.",
  "terms_notice": "The terms of use will be published on this page before the test season starts. Below is a summary of the principles.",
  "terms": [
-  "Taking part in the world ranking requires being 13 or older and a Google account. Playing without an account is always possible.",
+  "Taking part in the world ranking requires being 16 or older and a Google account. Playing without an account is always possible.",
   "Nicknames are public. An offensive or impersonating nickname, or one containing personal data, is changed, and repeated violations lead to a submission ban.",
   "Only runs you played yourself on an unmodified game qualify. The server recomputes every result.",
   "The test season ends when the game launches, and the rankings start empty then."
@@ -213,5 +213,5 @@
  "video_speed": "0.5×",
  "availability": "In development: the Android game is in internal testing and is not yet publicly available. No release date has been confirmed.",
  "offer": "Release model: S and M free; Big Air L is a one-time purchase of €2.99 in Finland. No ads. Local prices elsewhere will appear in Google Play.",
- "purchase_scope": "The purchase unlocks only Big Air L and its 10 tasks. Any future tracks and cosmetics will be sold separately."
+ "purchase_scope": "The one-time purchase unlocks Big Air L and its 10 tasks, plus World Rank entry (requires a player account, age 16+). Purchases completed during Season 1 (1 Dec 2026 – 1 Mar 2027) also include the Season 1 outfit. Weekly contests and any future tracks and outfits are not included."
 }

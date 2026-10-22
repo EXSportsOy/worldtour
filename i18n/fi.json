@@ -177,7 +177,7 @@
  "terms_desc": "EXS World Tourin maailmanlistan käyttöehdot.",
  "terms_notice": "Käyttöehdot julkaistaan tällä sivulla ennen testikauden alkua. Alla on tiivistelmä periaatteista.",
  "terms": [
-  "Maailmanlistalle osallistuminen vaatii 13 vuoden iän ja Google-tilin. Pelaaminen ilman tiliä on aina mahdollista.",
+  "Maailmanlistalle osallistuminen vaatii 16 vuoden iän ja Google-tilin. Pelaaminen ilman tiliä on aina mahdollista.",
   "Nimimerkki on julkinen. Loukkaava, toisena esiintyvä tai henkilötietoja sisältävä nimimerkki vaihdetaan, ja toistuva rikkomus johtaa lähetyskieltoon.",
   "Listalle kelpaa vain itse pelattu suoritus muokkaamattomalla pelillä. Palvelin laskee jokaisen tuloksen uudelleen.",
   "Testikausi päättyy pelin julkaisuun, ja listat alkavat silloin tyhjästä."
@@ -209,5 +209,5 @@
  "video_speed": "0,5×",
  "availability": "Kehitysvaihe: Android-peli on sisäisessä testauksessa eikä vielä julkisesti ladattavissa. Julkaisupäivää ei ole vahvistettu.",
  "offer": "Julkaisumalli: S ja M ilmaiseksi, Big Air L kertaostona 2,99 € Suomessa. Ei mainoksia. Muilla alueilla hinta näkyy Google Playssa.",
- "purchase_scope": "Osto avaa vain Big Air L:n ja sen 10 tehtävää. Mahdolliset myöhemmät radat ja kosmetiikka myydään erikseen."
+ "purchase_scope": "Kertaosto avaa Big Air L:n ja sen 10 tehtävää sekä World Rank -osallistumisen (vaatii 16 vuotta täyttäneen pelaajatilin). Season 1:n aikana (1.12.2026–1.3.2027) onnistuneeseen ostoon kuuluu lisäksi Season 1 -asu. Viikkokisat sekä mahdolliset tulevat radat ja asut eivät sisälly ostoon."
 }

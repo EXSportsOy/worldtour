@@ -1,4 +1,5 @@
 """Legal metadata and rendering; terms exist in all site languages, other prose in FI/EN."""
+import re
 from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -84,6 +85,14 @@ def render_document(lang, slug, prefix):
     if slug in ("tili", "evasteet"):
         updated = ("21.10.2026", "21 October 2026")
         status = f"Ajantasaiset ohjeet, päivitetty {updated[0]}." if fi else f"Current guidance, updated {updated[1]}."
+    elif slug in ("kayttoehdot", "tietosuoja"):
+        # Hyväksytyt ja voimassa olevat asiakirjat: kuvaus versiosta ja päivästä, ei luonnosmerkintää.
+        found = re.search(r'<p class="notice"><strong>([^<]+)</strong>', fragment)
+        if not found:
+            raise ValueError(f"No version notice in {content_lang}/{slug}")
+        status = found.group(1).strip()
+        if status.startswith(title + " · "):
+            status = ("Päivitetty " if fi else "Updated ") + status[len(title) + 3:]
     else:
         status = UI[content_lang][5]
     desc = f"EXS World Tour: {title}. {status}"

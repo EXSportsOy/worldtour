@@ -177,7 +177,7 @@
  "terms_desc": "EXS World Tour pasaulio reitingo naudojimo sąlygos.",
  "terms_notice": "Naudojimo sąlygos bus paskelbtos šiame puslapyje prieš prasidedant bandomajam sezonui. Žemiau – principų santrauka.",
  "terms": [
-  "Dalyvauti pasaulio reitinge gali tik 13 metų ar vyresni, turintys Google paskyrą. Žaisti be paskyros galima visada.",
+  "Dalyvauti pasaulio reitinge gali tik 16 metų ar vyresni, turintys Google paskyrą. Žaisti be paskyros galima visada.",
   "Slapyvardžiai vieši. Įžeidžiantis, kitu asmeniu apsimetantis ar asmens duomenų turintis slapyvardis pakeičiamas, o pasikartojantys pažeidimai veda prie pateikimo draudimo.",
   "Tinka tik paties sužaisti važiavimai nemodifikuotame žaidime. Serveris perskaičiuoja kiekvieną rezultatą.",
   "Bandomasis sezonas baigiasi išleidus žaidimą, ir reitingai tada prasideda tušti."
@@ -213,5 +213,5 @@
  "video_speed": "0,5×",
  "availability": "Kuriama: Android žaidimas testuojamas viduje ir dar nėra viešai prieinamas. Išleidimo data nepatvirtinta.",
  "offer": "Išleidimo modelis: S ir M nemokami, Big Air L — vienkartinis 2,99 € pirkinys Suomijoje. Be reklamų. Kitų šalių vietinės kainos bus rodomos Google Play.",
- "purchase_scope": "Pirkinys atrakina tik Big Air L ir jo 10 užduočių. Galimos būsimos trasos ir kosmetiniai elementai bus parduodami atskirai."
+ "purchase_scope": "Vienkartinis pirkinys atrakina Big Air L ir jo 10 užduočių bei dalyvavimą World Rank (reikia žaidėjo paskyros, nuo 16 metų). Pirkiniams, užbaigtiems per Season 1 (2026-12-01 – 2027-03-01), papildomai suteikiama Season 1 apranga. Savaitinės varžybos ir galimos būsimos trasos bei aprangos neįtrauktos."
 }
