@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Classement mondial – EXS World Tour</title>
-<meta name="description" content="Données d&#x27;exemple. World Rank est prévu. Le serveur devrait recalculer les scores à partir des commandes des joueurs. La première phase afficherait les scores et leur détail sur le site, avec les ralentis dans le jeu. La vidéo dans le navigateur viendrait plus tard.">
+<meta name="description" content="Le World Rank ouvre avec la Season 1 le 1/12/2026. Le classement se remplira dès les premiers résultats vérifiés.">
 <link rel="canonical" href="https://worldtour.exsports.fi/fr/lista/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/lista/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/lista/">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Classement mondial – EXS World Tour">
-<meta property="og:description" content="Données d&#x27;exemple. World Rank est prévu. Le serveur devrait recalculer les scores à partir des commandes des joueurs. La première phase afficherait les scores et leur détail sur le site, avec les ralentis dans le jeu. La vidéo dans le navigateur viendrait plus tard.">
+<meta property="og:description" content="Le World Rank ouvre avec la Season 1 le 1/12/2026. Le classement se remplira dès les premiers résultats vérifiés.">
 <meta property="og:url" content="https://worldtour.exsports.fi/fr/lista/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="fr_FR">
@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="/assets/css/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/rank.js" defer></script>
 </head>
 <body class="exs">
 <a class="skip" href="#sisalto">Aller au contenu</a>
@@ -50,18 +51,18 @@
 <main id="sisalto">
 <div class="wrap"><p class="notice" data-availability>En développement : le jeu Android est en test interne et n’est pas encore disponible au public. Aucune date de sortie n’est confirmée.</p></div>
 
-<section class="section" style="padding-bottom: 0"><div class="wrap" style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap: 24px">
-<div><div class="kicker">Données d'exemple</div><h1 class="h1" style="margin: 8px 0 0">Classement mondial</h1></div>
-<div style="display:flex; align-items:center; gap: 24px; flex-wrap: wrap">
-<span class="exs-badge">Données d'exemple · Petit S</span>
-</div>
+<section class="section" style="padding-bottom: 0"><div class="wrap">
+<div><div class="kicker">World Rank</div><h1 class="h1" style="margin: 8px 0 0">Classement mondial</h1></div>
 </div></section>
 <section class="section"><div class="wrap grid-main">
 <div>
-<div class="exs-panel pad-shadow" id="lista" data-rinne="s" data-kausi="esimerkki">
-<div class="row-between" style="margin-bottom: 24px"><h2 class="exs-panel__title" style="margin:0">Petit S</h2><span class="exs-badge">Données d'exemple</span></div>
-<ol class="exs-board"><li class="exs-row exs-row--podium"><span class="exs-row__rank">1</span><span><span class="exs-row__name">Riikka_fin</span><span class="exs-row__trick">BS 540 + Indy</span></span><span class="row-actions"><span class="exs-row__score">15 890</span><a class="exs-btn exs-btn--sm" href="/fr/s/?id=esimerkki"><span>Regarder</span></a></span></li><li class="exs-row exs-row--podium"><span class="exs-row__rank">2</span><span><span class="exs-row__name">Snowdog</span><span class="exs-row__trick">Frontflip 360 + Nose</span></span><span class="row-actions"><span class="exs-row__score">15 660</span></span></li><li class="exs-row exs-row--podium"><span class="exs-row__rank">3</span><span><span class="exs-row__name">Kaamos</span><span class="exs-row__trick">FS 540</span></span><span class="row-actions"><span class="exs-row__score">15 020</span></span></li><li class="exs-row"><span class="exs-row__rank">4</span><span><span class="exs-row__name">Aino</span><span class="exs-row__trick">Backflip 360</span></span><span class="row-actions"><span class="exs-row__score">14 780</span></span></li><li class="exs-row"><span class="exs-row__rank">5</span><span><span class="exs-row__name">Pihla</span><span class="exs-row__trick">FS 360 + Indy</span></span><span class="row-actions"><span class="exs-row__score">14 310</span></span></li><li class="exs-row"><span class="exs-row__rank">6</span><span><span class="exs-row__name">Eero</span><span class="exs-row__trick">BS 360 + Weddle</span></span><span class="row-actions"><span class="exs-row__score">13 960</span></span></li><li class="exs-row"><span class="exs-row__rank">7</span><span><span class="exs-row__name">Noora</span><span class="exs-row__trick">Shifty</span></span><span class="row-actions"><span class="exs-row__score">13 420</span></span></li><li class="exs-row"><span class="exs-row__rank">8</span><span><span class="exs-row__name">Jussi</span><span class="exs-row__trick">BS 360</span></span><span class="row-actions"><span class="exs-row__score">12 980</span></span></li><li class="exs-row"><span class="exs-row__rank">9</span><span><span class="exs-row__name">Liisa</span><span class="exs-row__trick">Straight air</span></span><span class="row-actions"><span class="exs-row__score">12 640</span></span></li><li class="exs-row"><span class="exs-row__rank">10</span><span><span class="exs-row__name">Oskari</span><span class="exs-row__trick">FS 180</span></span><span class="row-actions"><span class="exs-row__score">12 100</span></span></li><li class="exs-row"><span class="exs-row__rank">11</span><span><span class="exs-row__name">Mea</span><span class="exs-row__trick">Frontflip 360</span></span><span class="row-actions"><span class="exs-row__score">11 870</span></span></li><li class="exs-row"><span class="exs-row__rank">12</span><span><span class="exs-row__name">Saku</span><span class="exs-row__trick">BS 540</span></span><span class="row-actions"><span class="exs-row__score">11 540</span></span></li></ol>
-<div class="row-between" style="margin-top: 24px; align-items:center; flex-wrap: wrap; gap: 12px"><span class="exs-panel__meta">Lignes 1–12 · un résultat par joueur</span></div>
+<div class="exs-panel pad-shadow wr" id="lista" data-rinne="s" data-opens="2026-12-01T00:00:00Z" data-t-loading="Chargement du classement mondial…" data-t-closed-h="Ouverture le 1/12/2026" data-t-closed-p="Le World Rank ouvre avec la Season 1 le 1/12/2026. Le classement se remplira dès les premiers résultats vérifiés." data-t-empty="Aucun résultat vérifié sur cette piste pour l’instant." data-t-error="Le classement mondial n’est pas disponible pour le moment. Réessaie dans un instant." data-t-hidden="Nom masqué" data-t-open="En cours" data-t-closing="Résultats en cours de confirmation" data-t-final="Résultats finaux">
+<div class="row-between" style="margin-bottom: 24px; flex-wrap: wrap"><h2 class="exs-panel__title" style="margin:0" data-wr-title>Ouverture le 1/12/2026</h2><span class="exs-badge exs-badge--season" data-wr-season hidden></span></div>
+<div class="exs-tabs wr-tabs" role="tablist" aria-label="Piste" data-wr-tabs hidden><button type="button" class="exs-tab" role="tab" id="wr-tab-s" data-slope="S" aria-controls="wr-board" aria-selected="true"><span>Petit S</span></button><button type="button" class="exs-tab" role="tab" id="wr-tab-m" data-slope="M" aria-controls="wr-board" aria-selected="false" tabindex="-1"><span>Moyen M</span></button><button type="button" class="exs-tab" role="tab" id="wr-tab-l" data-slope="L" aria-controls="wr-board" aria-selected="false" tabindex="-1"><span>Grand L</span></button></div>
+<ol class="exs-board" id="wr-board" role="tabpanel" data-wr-board hidden></ol>
+<p class="notice wr-status" role="status" data-wr-status>Le World Rank ouvre avec la Season 1 le 1/12/2026. Le classement se remplira dès les premiers résultats vérifiés.</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-retry hidden><span>Réessayer</span></button>
+<div class="row-between wr-foot"><span class="exs-panel__meta" data-wr-meta></span><button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-more hidden><span>Afficher plus</span></button></div>
 </div>
 </div>
 <div class="stack">

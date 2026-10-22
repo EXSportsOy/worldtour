@@ -16,6 +16,9 @@ PAGES = ["", "nain-pelaat/", "lista/", "s/"] + [f"{slug}/" for slug in LEGAL_SLU
 # Kielet julkaisujärjestyksessä: suomi juuressa, muut omassa kansiossaan.
 LANG_ORDER = ["fi", "en", "sv", "no", "da", "de", "nl", "fr", "es", "it", "pt", "pl", "et", "lv", "lt"]
 
+# World Rank avautuu Season 1:n alkaessa (pelirepo: firebase/competitions-deployment.json).
+WR_OPENS = "2026-12-01T00:00:00Z"
+
 ROWS = [(1, "Riikka_fin", "BS 540 + Indy", "15 890"), (2, "Snowdog", "Etuvoltti 360 + Nose", "15 660"),
         (3, "Kaamos", "FS 540", "15 020"), (4, "Aino", "Takavoltti 360", "14 780"), (5, "Pihla", "FS 360 + Indy", "14 310"),
         (6, "Eero", "BS 360 + Weddle", "13 960"), (7, "Noora", "Shifty", "13 420"), (8, "Jussi", "BS 360", "12 980"),
@@ -56,6 +59,8 @@ def page(lang, rel, title, desc, body, current):
     is404 = rel == "404"
     is_legal = rel in [f"{slug}/" for slug in LEGAL_SLUGS]
     script = '' if is_legal else '<script src="/assets/js/site.js" defer></script>'
+    if rel == "lista/":
+        script += '\n<script src="/assets/js/rank.js" defer></script>'
     language_script = '' if is_legal else '<script src="/assets/js/language.js"></script>'
     t = T[lang]
     footer_text = "EXS World Tour · EXSports Oy" if is_legal else t["foot_text"]
@@ -221,20 +226,24 @@ def build_lang(lang):
 </div></section>
 ''', L("nain-pelaat/"))
 
-    # lista
-    page(lang, "lista/", t["list_title"], t["list_desc"], f'''
-<section class="section" style="padding-bottom: 0"><div class="wrap" style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap: 24px">
+    # lista: staattinen HTML on aina rehellinen "avautuu"-tila; assets/js/rank.js hakee oikean datan
+    # samasta osoitteesta (/api/seasons, /api/seasons/{id}/rankings|archive), kun palvelu on auki.
+    wr = {k: t[k] for k in ("wr_loading", "wr_closed_h", "wr_closed_p", "wr_empty", "wr_error", "wr_hidden", "wr_open", "wr_closing", "wr_final")}
+    wr_data = "".join(f' data-t-{k[3:].replace("_", "-")}="{escape(v, quote=True)}"' for k, v in wr.items())
+    tabs = "".join(f'<button type="button" class="exs-tab" role="tab" id="wr-tab-{s.lower()}" data-slope="{s}" aria-controls="wr-board" aria-selected="{"true" if s == "S" else "false"}"{"" if s == "S" else ' tabindex="-1"'}><span>{t["slope_" + s.lower()]}</span></button>' for s in "SML")
+    page(lang, "lista/", t["list_title"], t["wr_closed_p"], f'''
+<section class="section" style="padding-bottom: 0"><div class="wrap">
 <div><div class="kicker">{t["list_kicker"]}</div><h1 class="h1" style="margin: 8px 0 0">{t["list_h1"]}</h1></div>
-<div style="display:flex; align-items:center; gap: 24px; flex-wrap: wrap">
-<span class="exs-badge">{t["sample"]} · {t["slope_s"]}</span>
-</div>
 </div></section>
 <section class="section"><div class="wrap grid-main">
 <div>
-<div class="exs-panel pad-shadow" id="lista" data-rinne="s" data-kausi="esimerkki">
-<div class="row-between" style="margin-bottom: 24px"><h2 class="exs-panel__title" style="margin:0">{t["slope_s"]}</h2>{NB}</div>
-<ol class="exs-board">{"".join(R(*r, podium=(r[0] <= 3)) for r in ROWS)}</ol>
-<div class="row-between" style="margin-top: 24px; align-items:center; flex-wrap: wrap; gap: 12px"><span class="exs-panel__meta">{t["list_rows"]}</span></div>
+<div class="exs-panel pad-shadow wr" id="lista" data-rinne="s" data-opens="{WR_OPENS}"{wr_data}>
+<div class="row-between" style="margin-bottom: 24px; flex-wrap: wrap"><h2 class="exs-panel__title" style="margin:0" data-wr-title>{t["wr_closed_h"]}</h2><span class="exs-badge exs-badge--season" data-wr-season hidden></span></div>
+<div class="exs-tabs wr-tabs" role="tablist" aria-label="{t["tabs_aria"]}" data-wr-tabs hidden>{tabs}</div>
+<ol class="exs-board" id="wr-board" role="tabpanel" data-wr-board hidden></ol>
+<p class="notice wr-status" role="status" data-wr-status>{t["wr_closed_p"]}</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-retry hidden><span>{t["wr_retry"]}</span></button>
+<div class="row-between wr-foot"><span class="exs-panel__meta" data-wr-meta></span><button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-more hidden><span>{t["wr_more"]}</span></button></div>
 </div>
 </div>
 <div class="stack">

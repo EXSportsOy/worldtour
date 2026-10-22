@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maailmanlista – EXS World Tour</title>
-<meta name="description" content="Esimerkkidata. World Rank on suunnitteilla. Palvelimen on tarkoitus laskea pisteet uudelleen pelaajan syötteistä. Ensivaiheessa verkkosivulla näkyisivät tulos ja erittely, toisto pelissä. Selainvideo on myöhempi vaihe.">
+<meta name="description" content="World Rank avautuu Season 1:n alkaessa 1.12.2026. Lista täyttyy, kun ensimmäiset varmennetut tulokset tulevat.">
 <link rel="canonical" href="https://worldtour.exsports.fi/lista/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/lista/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/lista/">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Maailmanlista – EXS World Tour">
-<meta property="og:description" content="Esimerkkidata. World Rank on suunnitteilla. Palvelimen on tarkoitus laskea pisteet uudelleen pelaajan syötteistä. Ensivaiheessa verkkosivulla näkyisivät tulos ja erittely, toisto pelissä. Selainvideo on myöhempi vaihe.">
+<meta property="og:description" content="World Rank avautuu Season 1:n alkaessa 1.12.2026. Lista täyttyy, kun ensimmäiset varmennetut tulokset tulevat.">
 <meta property="og:url" content="https://worldtour.exsports.fi/lista/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="fi_FI">
@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="/assets/css/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/rank.js" defer></script>
 </head>
 <body class="exs">
 <a class="skip" href="#sisalto">Siirry sisältöön</a>
@@ -50,18 +51,18 @@
 <main id="sisalto">
 <div class="wrap"><p class="notice" data-availability>Kehitysvaihe: Android-peli on sisäisessä testauksessa eikä vielä julkisesti ladattavissa. Julkaisupäivää ei ole vahvistettu.</p></div>
 
-<section class="section" style="padding-bottom: 0"><div class="wrap" style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap: 24px">
-<div><div class="kicker">Esimerkkidata</div><h1 class="h1" style="margin: 8px 0 0">Maailmanlista</h1></div>
-<div style="display:flex; align-items:center; gap: 24px; flex-wrap: wrap">
-<span class="exs-badge">Esimerkkidata · Pieni S</span>
-</div>
+<section class="section" style="padding-bottom: 0"><div class="wrap">
+<div><div class="kicker">World Rank</div><h1 class="h1" style="margin: 8px 0 0">Maailmanlista</h1></div>
 </div></section>
 <section class="section"><div class="wrap grid-main">
 <div>
-<div class="exs-panel pad-shadow" id="lista" data-rinne="s" data-kausi="esimerkki">
-<div class="row-between" style="margin-bottom: 24px"><h2 class="exs-panel__title" style="margin:0">Pieni S</h2><span class="exs-badge">Esimerkkidata</span></div>
-<ol class="exs-board"><li class="exs-row exs-row--podium"><span class="exs-row__rank">1</span><span><span class="exs-row__name">Riikka_fin</span><span class="exs-row__trick">BS 540 + Indy</span></span><span class="row-actions"><span class="exs-row__score">15 890</span><a class="exs-btn exs-btn--sm" href="/s/?id=esimerkki&amp;lang=fi"><span>Katso</span></a></span></li><li class="exs-row exs-row--podium"><span class="exs-row__rank">2</span><span><span class="exs-row__name">Snowdog</span><span class="exs-row__trick">Etuvoltti 360 + Nose</span></span><span class="row-actions"><span class="exs-row__score">15 660</span></span></li><li class="exs-row exs-row--podium"><span class="exs-row__rank">3</span><span><span class="exs-row__name">Kaamos</span><span class="exs-row__trick">FS 540</span></span><span class="row-actions"><span class="exs-row__score">15 020</span></span></li><li class="exs-row"><span class="exs-row__rank">4</span><span><span class="exs-row__name">Aino</span><span class="exs-row__trick">Takavoltti 360</span></span><span class="row-actions"><span class="exs-row__score">14 780</span></span></li><li class="exs-row"><span class="exs-row__rank">5</span><span><span class="exs-row__name">Pihla</span><span class="exs-row__trick">FS 360 + Indy</span></span><span class="row-actions"><span class="exs-row__score">14 310</span></span></li><li class="exs-row"><span class="exs-row__rank">6</span><span><span class="exs-row__name">Eero</span><span class="exs-row__trick">BS 360 + Weddle</span></span><span class="row-actions"><span class="exs-row__score">13 960</span></span></li><li class="exs-row"><span class="exs-row__rank">7</span><span><span class="exs-row__name">Noora</span><span class="exs-row__trick">Shifty</span></span><span class="row-actions"><span class="exs-row__score">13 420</span></span></li><li class="exs-row"><span class="exs-row__rank">8</span><span><span class="exs-row__name">Jussi</span><span class="exs-row__trick">BS 360</span></span><span class="row-actions"><span class="exs-row__score">12 980</span></span></li><li class="exs-row"><span class="exs-row__rank">9</span><span><span class="exs-row__name">Liisa</span><span class="exs-row__trick">Suora hyppy</span></span><span class="row-actions"><span class="exs-row__score">12 640</span></span></li><li class="exs-row"><span class="exs-row__rank">10</span><span><span class="exs-row__name">Oskari</span><span class="exs-row__trick">FS 180</span></span><span class="row-actions"><span class="exs-row__score">12 100</span></span></li><li class="exs-row"><span class="exs-row__rank">11</span><span><span class="exs-row__name">Mea</span><span class="exs-row__trick">Etuvoltti 360</span></span><span class="row-actions"><span class="exs-row__score">11 870</span></span></li><li class="exs-row"><span class="exs-row__rank">12</span><span><span class="exs-row__name">Saku</span><span class="exs-row__trick">BS 540</span></span><span class="row-actions"><span class="exs-row__score">11 540</span></span></li></ol>
-<div class="row-between" style="margin-top: 24px; align-items:center; flex-wrap: wrap; gap: 12px"><span class="exs-panel__meta">Rivit 1–12 · yksi tulos per pelaaja</span></div>
+<div class="exs-panel pad-shadow wr" id="lista" data-rinne="s" data-opens="2026-12-01T00:00:00Z" data-t-loading="Ladataan maailmanlistaa…" data-t-closed-h="Avautuu 1.12.2026" data-t-closed-p="World Rank avautuu Season 1:n alkaessa 1.12.2026. Lista täyttyy, kun ensimmäiset varmennetut tulokset tulevat." data-t-empty="Tällä rinteellä ei ole vielä varmennettuja tuloksia." data-t-error="Maailmanlista ei ole juuri nyt saatavilla. Yritä hetken kuluttua uudelleen." data-t-hidden="Nimi piilotettu" data-t-open="Käynnissä" data-t-closing="Tuloksia vahvistetaan" data-t-final="Lopputulokset">
+<div class="row-between" style="margin-bottom: 24px; flex-wrap: wrap"><h2 class="exs-panel__title" style="margin:0" data-wr-title>Avautuu 1.12.2026</h2><span class="exs-badge exs-badge--season" data-wr-season hidden></span></div>
+<div class="exs-tabs wr-tabs" role="tablist" aria-label="Rinne" data-wr-tabs hidden><button type="button" class="exs-tab" role="tab" id="wr-tab-s" data-slope="S" aria-controls="wr-board" aria-selected="true"><span>Pieni S</span></button><button type="button" class="exs-tab" role="tab" id="wr-tab-m" data-slope="M" aria-controls="wr-board" aria-selected="false" tabindex="-1"><span>Keski M</span></button><button type="button" class="exs-tab" role="tab" id="wr-tab-l" data-slope="L" aria-controls="wr-board" aria-selected="false" tabindex="-1"><span>Iso L</span></button></div>
+<ol class="exs-board" id="wr-board" role="tabpanel" data-wr-board hidden></ol>
+<p class="notice wr-status" role="status" data-wr-status>World Rank avautuu Season 1:n alkaessa 1.12.2026. Lista täyttyy, kun ensimmäiset varmennetut tulokset tulevat.</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-retry hidden><span>Yritä uudelleen</span></button>
+<div class="row-between wr-foot"><span class="exs-panel__meta" data-wr-meta></span><button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-wr-more hidden><span>Näytä lisää</span></button></div>
 </div>
 </div>
 <div class="stack">
