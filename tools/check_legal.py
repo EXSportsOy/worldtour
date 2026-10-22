@@ -147,7 +147,7 @@ for lang in LANGS:
             # Completeness checks catch accidentally omitted paragraphs or behavioural rules.
             for tag in ("h2", "h3", "p", "li"):
                 require(len(article.find(tag)) == len(reference.find(tag)), rel, f"terms structure differs from source: {tag}")
-            require("1.2" in article.text(), rel, "incorrect terms version")
+            require("1.3" in article.text(), rel, "incorrect terms version")
             require(not article.find(cls="legal-fallback"), rel, "translated terms cannot use fallback")
             if lang not in ("fi", "en"):
                 require(article.text() != reference.text(), rel, "terms body was not translated")
