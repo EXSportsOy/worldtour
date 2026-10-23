@@ -149,7 +149,7 @@
  "rules_h": "Reglerne kort",
  "rules": [
   "Ét bedste resultat pr. spiller på hver bakke.",
-  "Serveren genberegner hvert resultat ud fra spillerens input. Resultat og pointfordeling vises på hjemmesiden, genafspilningen i spillet.",
+  "Serveren genberegner hvert resultat ud fra spillerens input. Resultat og pointfordeling vises på hjemmesiden og i spillet; optagelsen af input offentliggøres ikke.",
   "Kun Android-spillet installeret fra Google Play tæller.",
   "Testsæsonens resultater nulstilles og skjules ved udgivelsen. Et eventuelt arkiv for ordinære sæsoner annonceres separat."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konto og sletning af konto",
  "account_kicker": "Konto",
  "account_desc": "Sletning af din EXS World Tour-konto.",
- "account_p": "Kontoen til verdensranglisten oprettes med en Google-konto i spillet eller på dette websted, når testsæsonen starter. Du kan slette kontoen i spillets indstillinger eller på denne side efter login. Sletningen fjerner spillernavnet, resultaterne, replays og videoerne.",
+ "account_p": "Spillerkontoen oprettes med en Google-konto i spillet eller på dette websted. Du kan slette kontoen i spillets indstillinger eller på denne side efter login. Sletningen fjerner spillernavnet, resultaterne og optagelserne af input.",
  "account_notice": "Login og sletning af konto åbner her, når tjenesten er i drift. Indtil da sender du forespørgsler til",
  "account_subject": "Sletning%20af%20konto",
  "nf_title": "Siden blev ikke fundet – EXS World Tour",

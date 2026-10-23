@@ -149,7 +149,7 @@
  "rules_h": "Regras em resumo",
  "rules": [
   "Um melhor resultado por jogador em cada pista.",
-  "O servidor recalcula cada pontuação a partir dos comandos do jogador. O resultado e os detalhes aparecem no site, e a repetição no jogo.",
+  "O servidor recalcula cada pontuação a partir dos comandos do jogador. O resultado e os detalhes aparecem no site e no jogo; a gravação de comandos não é publicada.",
   "Só conta o jogo Android instalado a partir do Google Play.",
   "Os resultados da época de testes serão reiniciados e ocultados no lançamento do jogo. Um eventual arquivo de épocas regulares será anunciado separadamente."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Conta e eliminação da conta",
  "account_kicker": "Conta",
  "account_desc": "Eliminar a tua conta EXS World Tour.",
- "account_p": "A conta do ranking mundial é criada com uma conta Google no jogo ou neste site quando a época de testes começar. Podes eliminar a conta nas definições do jogo ou nesta página depois de iniciar sessão. A eliminação remove a alcunha, os resultados, as repetições e os vídeos.",
+ "account_p": "A conta de jogador é criada com uma conta Google no jogo ou neste site. Podes eliminar a conta nas definições do jogo ou nesta página depois de iniciar sessão. A eliminação remove a alcunha, os resultados e as gravações de comandos.",
  "account_notice": "O início de sessão e a eliminação da conta abrem aqui quando o serviço estiver ativo. Até lá, envia os pedidos para",
  "account_subject": "Elimina%C3%A7%C3%A3o%20de%20conta",
  "nf_title": "Página não encontrada – EXS World Tour",

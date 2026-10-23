@@ -149,7 +149,7 @@
  "rules_h": "Säännöt lyhyesti",
  "rules": [
   "Yksi paras tulos pelaajaa kohden kullakin rinteellä.",
-  "Palvelin laskee jokaisen tuloksen uudelleen pelaajan syötteistä. Tulos ja erittely näkyvät verkkosivulla, toisto pelissä.",
+  "Palvelin laskee jokaisen tuloksen uudelleen pelaajan syötteistä. Tulos ja erittely näkyvät verkkosivulla ja pelissä; syötetallennetta ei julkaista.",
   "Vain Google Playsta asennettu Android-peli kelpaa.",
   "Testikauden tulokset nollataan ja piilotetaan pelin julkaisussa. Tuotantokausien mahdollisesta arkistosta kerrotaan erikseen."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Tili ja tilin poisto",
  "account_kicker": "Tili",
  "account_desc": "EXS World Tourin tilin poisto.",
- "account_p": "Maailmanlistan tili luodaan Google-tilillä pelissä tai tällä sivustolla, kun testikausi alkaa. Tilin voi poistaa pelin asetuksista tai tältä sivulta kirjautumalla sisään. Poisto poistaa nimimerkin, tulokset, toistot ja videot.",
+ "account_p": "Pelaajatili luodaan Google-tilillä pelissä tai tällä sivustolla. Tilin voi poistaa pelin asetuksista tai tältä sivulta kirjautumalla sisään. Poisto poistaa nimimerkin, tulokset ja syötetallenteet.",
  "account_notice": "Kirjautuminen ja tilin poisto avautuvat tähän, kun palvelu on käytössä. Siihen asti pyynnöt",
  "account_subject": "Tilin%20poisto",
  "nf_title": "Sivua ei löytynyt – EXS World Tour",

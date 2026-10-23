@@ -8,7 +8,7 @@ Asiakirjat: käyttöehdot, tietosuojaseloste, tilin/tietojen poistaminen, ostot 
 
 Käyttöehdot, ostoehdot, World Rank -säännöt ja tietosuojaseloste ovat tarkistettavia luonnoksia. Poisto-ohje ja evästetiedot kuvaavat nykyistä sivustoa/testiä. Luonnoksen päivämäärä ei ole ehtojen takautuva voimaantulopäivä. Päätä käyttöönotto ja versionhallinta erikseen, kun sisältö ja pelin toteutus vastaavat toisiaan.
 
-Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/legal/imprint.html ; info@exsports.fi; testin13vuoden ikäraja; täysversion PEGI3-tavoite; testitiedot enintään90päivää testijakson päättymisestä. Aiemman testiruudun lyhyempää säilytyslupausta ei pidennetä takautuvasti. Automaattinen poistopainike on suunnitelma.
+Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/legal/imprint.html ; info@exsports.fi; koko pelin ikäraja 16 vuotta (päätös 23.10.2026, ei PEGI-lupausta); testitiedot enintään90päivää testijakson päättymisestä. Aiemman testiruudun lyhyempää säilytyslupausta ei pidennetä takautuvasti. Automaattinen poistopainike on suunnitelma.
 
 ## Ennen lopullisten tekstien käyttöönottoa
 
