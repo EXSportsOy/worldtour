@@ -149,7 +149,7 @@
  "rules_h": "Noteikumi īsumā",
  "rules": [
   "Viens labākais rezultāts uz spēlētāju katrā trasē.",
-  "Serveris pārrēķina katru rezultātu no spēlētāja ievades. Rezultāts un tā sadalījums redzams vietnē, atkārtojums spēlē.",
+  "Serveris pārrēķina katru rezultātu no spēlētāja ievades. Rezultāts un tā sadalījums redzams vietnē un spēlē; vadības ierakstu nepublicē.",
   "Der tikai no Google Play instalēta Android spēle.",
   "Testa sezonas rezultāti tiks atiestatīti un paslēpti spēles izlaišanas brīdī. Par iespējamu regulāro sezonu arhīvu tiks paziņots atsevišķi."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konts un konta dzēšana",
  "account_kicker": "Konts",
  "account_desc": "EXS World Tour konta dzēšana.",
- "account_p": "Pasaules ranga konts tiek izveidots ar Google kontu spēlē vai šajā vietnē, kad sāksies testa sezona. Kontu vari dzēst spēles iestatījumos vai šajā lapā pēc pierakstīšanās. Dzēšana noņem segvārdu, rezultātus, atkārtojumus un video.",
+ "account_p": "Spēlētāja konts tiek izveidots ar Google kontu spēlē vai šajā vietnē. Kontu vari dzēst spēles iestatījumos vai šajā lapā pēc pierakstīšanās. Dzēšana noņem segvārdu, rezultātus un vadības ierakstus.",
  "account_notice": "Pierakstīšanās un konta dzēšana šeit atvērsies, kad pakalpojums darbosies. Līdz tam sūti pieprasījumus uz",
  "account_subject": "Konta%20dz%C4%93%C5%A1ana",
  "nf_title": "Lapa nav atrasta – EXS World Tour",

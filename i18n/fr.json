@@ -149,7 +149,7 @@
  "rules_h": "Les règles en bref",
  "rules": [
   "Un seul meilleur résultat par joueur sur chaque piste.",
-  "Le serveur recalcule chaque score à partir des commandes du joueur. Le score et son détail s’affichent sur le site, le ralenti dans le jeu.",
+  "Le serveur recalcule chaque score à partir des commandes du joueur. Le score et son détail s’affichent sur le site et dans le jeu ; l’enregistrement des commandes n’est pas publié.",
   "Seul le jeu Android installé depuis Google Play est admis.",
   "Les résultats de la saison de test seront remis à zéro et masqués à la sortie du jeu. Un éventuel archivage des saisons régulières sera annoncé séparément."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Compte et suppression du compte",
  "account_kicker": "Compte",
  "account_desc": "Supprimer ton compte EXS World Tour.",
- "account_p": "Le compte du classement mondial est créé avec un compte Google dans le jeu ou sur ce site au début de la saison test. Tu peux supprimer le compte depuis les réglages du jeu ou depuis cette page après connexion. La suppression efface le pseudo, les résultats, les replays et les vidéos.",
+ "account_p": "Le compte joueur est créé avec un compte Google dans le jeu ou sur ce site. Tu peux supprimer le compte depuis les réglages du jeu ou depuis cette page après connexion. La suppression efface le pseudo, les résultats et les enregistrements de commandes.",
  "account_notice": "La connexion et la suppression du compte s'ouvriront ici quand le service sera en ligne. D'ici là, envoie tes demandes à",
  "account_subject": "Suppression%20de%20compte",
  "nf_title": "Page introuvable – EXS World Tour",

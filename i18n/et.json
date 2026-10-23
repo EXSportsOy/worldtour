@@ -149,7 +149,7 @@
  "rules_h": "Reeglid lühidalt",
  "rules": [
   "Üks parim tulemus mängija kohta igal nõlval.",
-  "Server arvutab iga tulemuse mängija sisenditest uuesti. Tulemus ja punktijaotus on näha veebis, kordus mängus.",
+  "Server arvutab iga tulemuse mängija sisenditest uuesti. Tulemus ja punktijaotus on näha veebis ja mängus; sisendi salvestist ei avaldata.",
   "Arvesse läheb ainult Google Playst paigaldatud Androidi mäng.",
   "Testihooaja tulemused nullitakse ja peidetakse mängu avaldamisel. Võimalikust tavahooaegade arhiivist teatatakse eraldi."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konto ja konto kustutamine",
  "account_kicker": "Konto",
  "account_desc": "EXS World Touri konto kustutamine.",
- "account_p": "Maailma edetabeli konto luuakse Google'i kontoga mängus või sellel saidil, kui testihooaeg algab. Konto saad kustutada mängu seadetest või sellelt lehelt pärast sisselogimist. Kustutamine eemaldab hüüdnime, tulemused, kordused ja videod.",
+ "account_p": "Mängijakonto luuakse Google'i kontoga mängus või sellel saidil. Konto saad kustutada mängu seadetest või sellelt lehelt pärast sisselogimist. Kustutamine eemaldab hüüdnime, tulemused ja sisendi salvestised.",
  "account_notice": "Sisselogimine ja konto kustutamine avanevad siin, kui teenus on töös. Seni saada päringud aadressile",
  "account_subject": "Konto%20kustutamine",
  "nf_title": "Lehte ei leitud – EXS World Tour",

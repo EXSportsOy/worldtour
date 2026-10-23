@@ -149,7 +149,7 @@
  "rules_h": "Regeln in Kürze",
  "rules": [
   "Ein bestes Ergebnis pro Spieler auf jedem Hang.",
-  "Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. Ergebnis und Aufschlüsselung erscheinen auf der Website, die Wiederholung im Spiel.",
+  "Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. Ergebnis und Aufschlüsselung erscheinen auf der Website und im Spiel; die Eingabeaufzeichnung wird nicht veröffentlicht.",
   "Nur das über Google Play installierte Android-Spiel zählt.",
   "Ergebnisse der Testsaison werden zum Spielstart zurückgesetzt und ausgeblendet. Ein mögliches Archiv regulärer Saisons wird gesondert angekündigt."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konto und Kontolöschung",
  "account_kicker": "Konto",
  "account_desc": "Dein EXS World Tour-Konto löschen.",
- "account_p": "Das Konto für die Weltrangliste wird mit einem Google-Konto im Spiel oder auf dieser Website erstellt, sobald die Testsaison beginnt. Du kannst das Konto in den Einstellungen des Spiels oder nach der Anmeldung auf dieser Seite löschen. Die Löschung entfernt Nickname, Ergebnisse, Replays und Videos.",
+ "account_p": "Das Spielerkonto wird mit einem Google-Konto im Spiel oder auf dieser Website erstellt. Du kannst das Konto in den Einstellungen des Spiels oder nach der Anmeldung auf dieser Seite löschen. Die Löschung entfernt Nickname, Ergebnisse und Eingabeaufzeichnungen.",
  "account_notice": "Anmeldung und Kontolöschung werden hier freigeschaltet, sobald der Dienst läuft. Bis dahin schick Anfragen an",
  "account_subject": "Kontol%C3%B6schung",
  "nf_title": "Seite nicht gefunden – EXS World Tour",
