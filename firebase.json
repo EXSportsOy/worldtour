@@ -20,10 +20,12 @@
         { "source": "/en/privacy", "destination": "/en/tietosuoja/", "type": 301 },
         { "source": "/terms", "destination": "/kayttoehdot/", "type": 301 },
         { "source": "/en/terms", "destination": "/en/kayttoehdot/", "type": 301 },
-        { "source": "/delete-account", "destination": "/tili/", "type": 302 },
         { "source": "/en/delete-account", "destination": "/en/tili/", "type": 302 }
       ],
       "rewrites": [
+        { "source": "/account", "destination": "/account-app/index.html" },
+        { "source": "/delete-account", "destination": "/account-app/index.html" },
+        { "source": "/support", "destination": "/account-app/index.html" },
         { "source": "/api/**", "run": { "serviceId": "exs-accounts", "region": "europe-west1" } }
       ],
       "headers": [
@@ -35,6 +37,32 @@
             { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
             { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" },
             { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" }
+          ]
+        },
+        {
+          "source": "/@(account|delete-account|support)",
+          "headers": [
+            { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" },
+            { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" },
+            { "key": "Cache-Control", "value": "no-cache" }
+          ]
+        },
+        {
+          "source": "/account-app/**",
+          "headers": [
+            { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" },
+            { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+          ]
+        },
+        {
+          "source": "/account-app/assets/**",
+          "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+          "source": "/__/auth/**",
+          "headers": [
+            { "key": "Content-Security-Policy", "value": "frame-ancestors 'self'" },
+            { "key": "Cross-Origin-Opener-Policy", "value": "unsafe-none" }
           ]
         },
         {

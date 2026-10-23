@@ -8,6 +8,7 @@ EXS World Tour -pelin sivusto: esittely, ohje ja maailmanlista. Staattinen sivus
 - `assets/css/tokens.css` ja `assets/css/bundle.css` tulevat pelin suunnittelujärjestelmästä (EXS World Tour, Viimeinen valo -teema). `assets/css/site.css` on sivuston oma asettelu.
 - `assets/fonts/` Barlow-fontit woff2-muodossa (SIL Open Font License).
 - `tools/check.py` tarkistaa sisäiset linkit; GitHub Actions ajaa sen ennen julkaisua.
+- `account-app/` on pelirepon (`Vilippo/EXS-WT-MG`) `web/`-tilisovelluksen valmis build. Älä muokkaa sitä käsin: pelirepossa `npm.cmd --prefix web run check` ja `npm.cmd --prefix web run export:site -- <tämän repon polku>` korvaavat kansion, ja `account-app/.source.json` kertoo lähdecommitin.
 - `lista/` ja `s/` näyttävät nyt esimerkkidataa. Oikea data tulee Firebase-rajapinnasta, kun World Rankin tekninen kokeilu on valmis (pelirepo: `Docs/plans/2026-10-01-sivusto-ja-world-rank.md`).
 
 ## Julkaisu Firebase Hostingiin
@@ -16,7 +17,7 @@ Sivusto julkaistaan pelin Firebase-projektin `exs-worldtour` oletussivustolle `e
 
 Firebase Hosting -sivustolla on yksi julkaisu kerrallaan, joten vain tämä repo julkaisee Hostingin; pelirepon `deploy-accounts.ps1` julkaisee vain Firestore- ja Storage-säännöt. Pelin tilisivut ja `/api/**`-ohjaus Cloud Runiin lisätään tämän repon julkaisuun, kun tilipalvelu avataan (pelirepo: `Docs/architecture/2026-10-21-firebase-kokonaisuus.md`).
 
-Pysyvät osoitteet `/privacy` ja `/terms` (myös `/en/…`) ohjataan `firebase.json`-tiedostossa tietosuojaselosteeseen ja käyttöehtoihin. `/delete-account` ohjataan toistaiseksi (302) poisto-ohjeeseen `/tili/`; kun tilisovellus tulee sivustolle, se ottaa polun itselleen. Pelin tilipalvelin ja Google Play viittaavat näihin osoitteisiin, joten älä poista ohjauksia.
+Pysyvät osoitteet `/privacy` ja `/terms` (myös `/en/…`) ohjataan `firebase.json`-tiedostossa tietosuojaselosteeseen ja käyttöehtoihin. `/account`, `/delete-account` ja `/support` näyttävät pelaajatilin sovelluksen (`account-app/`), ja `/en/delete-account` ohjataan poisto-ohjeeseen `/en/tili/`. Pelin tilipalvelin ja Google Play viittaavat näihin osoitteisiin, joten älä poista ohjauksia.
 
 Verkkotunnus `worldtour.exsports.fi` on liitetty sivustoon (Hosting › Custom domains; DNS: CNAME `worldtour` → `exs-worldtour.web.app`).
 
@@ -29,6 +30,6 @@ Paikallinen esikatselu Firebasen otsakkeilla: `npx firebase-tools emulators:star
 ## Tietoturva
 
 - Sivustolla ei ole eikä saa olla avaimia, joilla voi kirjoittaa tuloksia. Kaikki kirjoitus tapahtuu Cloud Runin tarkistuspalvelusta.
-- CSP ja muut turvaotsakkeet asetetaan `firebase.json`-tiedostossa. Sama CSP on myös `<meta>`-tagissa. Kun Firebase-kirjautuminen lisätään, laajenna `connect-src` ja `script-src` molempiin.
+- CSP ja muut turvaotsakkeet asetetaan `firebase.json`-tiedostossa. Sama CSP on myös `<meta>`-tagissa. Google-kirjautumisen tarvitsema laajempi CSP (`apis.google.com`, `identitytoolkit`- ja `securetoken.googleapis.com`) ja `Cross-Origin-Opener-Policy: same-origin-allow-popups` koskevat vain tilisovelluksen polkuja. Firebase Hosting käyttää samaan otsakkeeseen osuvista säännöistä viimeistä, joten tilisovelluksen säännöt ovat `**`-säännön jälkeen.
 - Ylläpitonäkymä ja tilin poisto toteutetaan tähän samaan Firebase Hosting -sivustoon.
 - Jakolinkkien esikatselu (og-tagit suorituskohtaisesti) vaatii palvelimen: `/s/<tunnus>`-osoitteet ohjataan Cloud Runiin `firebase.json`-tiedoston `rewrites`-säännöllä, kun palvelu on pystyssä. Sääntöä ei voi lisätä etukäteen, koska julkaisu epäonnistuu, jos palvelua ei ole.
