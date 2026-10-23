@@ -40,16 +40,30 @@
           ]
         },
         {
-          "source": "{/account,/delete-account,/support,/account-app/**}",
+          "source": "/@(account|delete-account|support)",
           "headers": [
-            { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'self' https://exs-worldtour.firebaseapp.com https://accounts.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" },
+            { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" },
             { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" },
             { "key": "Cache-Control", "value": "no-cache" }
           ]
         },
         {
+          "source": "/account-app/**",
+          "headers": [
+            { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' https://apis.google.com; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" },
+            { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+          ]
+        },
+        {
           "source": "/account-app/assets/**",
           "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+          "source": "/__/auth/**",
+          "headers": [
+            { "key": "Content-Security-Policy", "value": "frame-ancestors 'self'" },
+            { "key": "Cross-Origin-Opener-Policy", "value": "unsafe-none" }
+          ]
         },
         {
           "source": "/assets/fonts/**",
