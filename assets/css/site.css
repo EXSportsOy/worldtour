@@ -134,3 +134,16 @@ table.lessons td:first-child { font-family: var(--font-display); font-weight: 80
 }
 
 .hero-offer { max-width: 620px; margin: 16px 0 24px; }
+
+/* World Rank list (/lista/, assets/js/rank.js): static empty state, slope tabs, live rows. */
+.wr [hidden] { display: none !important; }
+.wr-tabs { flex-wrap: wrap; margin: 0 0 var(--space-6); }
+.wr-status { margin: 0; }
+.wr .exs-board:not([hidden]) + .wr-status { margin-top: var(--space-4); }
+.wr [data-wr-retry] { margin-top: var(--space-4); }
+.wr-foot { margin-top: var(--space-6); align-items: center; flex-wrap: wrap; gap: var(--space-3); }
+.wr .exs-row__name { overflow-wrap: anywhere; }
+.wr .exs-row__name.wr-hidden { font-family: var(--font-body); font-weight: 600; font-style: italic; font-size: 16px; text-transform: none; color: var(--muted); }
+.wr[aria-busy="true"] .wr-status { animation: wr-pulse 1.4s ease-in-out infinite; }
+@keyframes wr-pulse { 50% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) { .wr[aria-busy="true"] .wr-status { animation: none; } }

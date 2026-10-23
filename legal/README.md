@@ -17,7 +17,7 @@ Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/leg
 3. Toteuta ja tarkista yksilöitävien testitietojen määräaikainen poisto, tukipyyntöjen kohdistaminen ja lopulliset muiden tietoryhmien säilytysajat.
 4. Toteuta tilin ja siihen liittyvien tietojen poisto pelissä ja ulkoinen pyyntöreitti ennen tilien avaamista. Tarkista Google Play Data safety ja tietosuojalinkit todellista buildia vasten.
 5. Vahvista lasten kohdeyleisö, lopullinen sisältöluokitus, verkkotilien ikäkäytäntö ja mahdollinen huoltajan suostumus maittain. Sisältöluokitus ei ratkaise näitä yksin.
-6. Tarkista ostotuotteet, käyttöoikeuksien palautus ja oston yhteydessä annettavat tiedot ennen maksullisen julkaisun avaamista. Julkaisupäivää, uutta rataa tai viikkokisaa ei ole tässä luvattu.
+6. Tarkista ostotuotteet, käyttöoikeuksien palautus ja oston yhteydessä annettavat tiedot ennen maksullisen julkaisun avaamista. Julkaisupäivä 1.12.2026 on vahvistettu; uutta rataa tai viikkokisaa ei ole tässä luvattu.
 7. Päivitä palvelukohtaiset ehdot ennen World Rankin tai palkintokilpailun avaamista. Arvioi yleisölle jaettavaan käyttäjäsisältöön soveltuvat DSA-velvoitteet erikseen.
 8. Poista luonnosmerkinnät vasta tarkastuksen ja tarvittavien toteutusmuutosten jälkeen. Säilytä aiemmat käytössä olleet ehdot päivättyinä, kerro muutoksista asianmukaisesti ja päivitä kaikki kyseisen asiakirjan kieliversiot.
 

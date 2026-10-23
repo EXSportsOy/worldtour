@@ -1,7 +1,11 @@
 """Tarkistaa, että sivuston sisäiset linkit ja tiedostoviittaukset osoittavat olemassa oleviin tiedostoihin."""
-import os, re, sys
+import json, os, re, sys
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 bad = []
+# firebase.jsonin staattiset rewritet (esim. /delete-account -> tilisovellus) ovat kelvollisia kohteita.
+hosting = json.load(open(os.path.join(root, 'firebase.json'), encoding='utf-8'))['hosting'][0]
+rewritten = {r['source'] for r in hosting.get('rewrites', []) if 'destination' in r
+             and os.path.exists(os.path.join(root, r['destination'].lstrip('/')))}
 for d, _, files in os.walk(root):
     if '/.git' in d or '/.github' in d or '/node_modules' in d: continue
     for f in files:
@@ -10,6 +14,7 @@ for d, _, files in os.walk(root):
         html = open(p, encoding='utf-8').read()
         for m in re.finditer(r'(?:href|src)="(/[^"#?]*)', html):
             t = m.group(1)
+            if t in rewritten: continue
             fs = os.path.join(root, t.lstrip('/'))
             if t.endswith('/'): fs = os.path.join(fs, 'index.html')
             if not os.path.exists(fs): bad.append(f'{os.path.relpath(p, root)}: {t}')

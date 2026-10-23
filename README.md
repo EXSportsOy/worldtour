@@ -9,7 +9,8 @@ EXS World Tour -pelin sivusto: esittely, ohje ja maailmanlista. Staattinen sivus
 - `assets/fonts/` Barlow-fontit woff2-muodossa (SIL Open Font License).
 - `tools/check.py` tarkistaa sisäiset linkit; GitHub Actions ajaa sen ennen julkaisua.
 - `account-app/` on pelirepon (`Vilippo/EXS-WT-MG`) `web/`-tilisovelluksen valmis build. Älä muokkaa sitä käsin: pelirepossa `npm.cmd --prefix web run check` ja `npm.cmd --prefix web run export:site -- <tämän repon polku>` korvaavat kansion, ja `account-app/.source.json` kertoo lähdecommitin.
-- `lista/` ja `s/` näyttävät nyt esimerkkidataa. Oikea data tulee Firebase-rajapinnasta, kun World Rankin tekninen kokeilu on valmis (pelirepo: `Docs/plans/2026-10-01-sivusto-ja-world-rank.md`).
+- `lista/` hakee World Rankin samasta osoitteesta (`assets/js/rank.js`: `GET /api/seasons`, `/api/seasons/{id}/rankings?slope=S|M|L&cursor=` ja päättyneelle kaudelle `/archive`; ei CORSia eikä Firebase SDK:ta). Staattinen HTML ja suljettu palvelu näyttävät tilan "avautuu Season 1:n alkaessa 1.12.2026". Sivu on `noindex` ja pois sivukartasta, kunnes listalla on varmennettuja tuloksia.
+- `s/` ja etusivun nauha näyttävät yhä merkittyä esimerkkidataa. Suorituskohtainen data tulee, kun jakolinkit ohjataan palvelimelle (pelirepo: `Docs/plans/2026-10-01-sivusto-ja-world-rank.md`).
 
 ## Julkaisu Firebase Hostingiin
 
