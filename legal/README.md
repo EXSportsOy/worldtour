@@ -19,7 +19,7 @@ Vahvistetut lähtötiedot: EXSports Oy; yritystiedot https://www.exsports.fi/leg
 5. Vahvista lasten kohdeyleisö, lopullinen sisältöluokitus, verkkotilien ikäkäytäntö ja mahdollinen huoltajan suostumus maittain. Sisältöluokitus ei ratkaise näitä yksin.
 6. Tarkista ostotuotteet, käyttöoikeuksien palautus ja oston yhteydessä annettavat tiedot ennen maksullisen julkaisun avaamista. Julkaisupäivä 1.12.2026 on vahvistettu; uutta rataa tai viikkokisaa ei ole tässä luvattu.
 7. Päivitä palvelukohtaiset ehdot ennen World Rankin tai palkintokilpailun avaamista. Arvioi yleisölle jaettavaan käyttäjäsisältöön soveltuvat DSA-velvoitteet erikseen.
-8. Poista luonnosmerkinnät vasta tarkastuksen ja tarvittavien toteutusmuutosten jälkeen. Säilytä aiemmat käytössä olleet ehdot päivättyinä, kerro muutoksista asianmukaisesti ja päivitä kaikki kyseisen asiakirjan kieliversiot.
+8. Poista luonnosmerkinnät vasta tarkastuksen ja tarvittavien toteutusmuutosten jälkeen. Aiemmat versiot säilytetään päivättyinä git-historiassa, mutta niitä ei julkaista sivustolla (päätös 25.10.2026: peliä ei ole julkaistu eikä World Rank ole alkanut, joten julkaisua edeltävillä versioilla ei ole sovittu kenenkään kanssa). Kerro muutoksista asianmukaisesti ja päivitä kaikki kyseisen asiakirjan kieliversiot.
 
 ## Tarkistukset
 
