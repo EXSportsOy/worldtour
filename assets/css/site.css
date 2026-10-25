@@ -147,3 +147,12 @@ table.lessons td:first-child { font-family: var(--font-display); font-weight: 80
 .wr[aria-busy="true"] .wr-status { animation: wr-pulse 1.4s ease-in-out infinite; }
 @keyframes wr-pulse { 50% { opacity: .55; } }
 @media (prefers-reduced-motion: reduce) { .wr[aria-busy="true"] .wr-status { animation: none; } }
+/* Suorituksen sivu (/s/, assets/js/share.js) */
+.run [hidden] { display: none !important; }
+.run [data-run-retry] { margin-top: var(--space-4); }
+.run-name { overflow-wrap: anywhere; }
+.run-name.wr-hidden { font-family: var(--font-body); font-weight: 600; font-style: italic; text-transform: none; color: var(--muted); }
+.run-others a { color: inherit; text-decoration: none; }
+.run-others a:hover span:first-child, .run-others a:focus-visible span:first-child { text-decoration: underline; }
+.run [aria-busy="true"] [data-run-status] { animation: wr-pulse 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .run [aria-busy="true"] [data-run-status] { animation: none; } }

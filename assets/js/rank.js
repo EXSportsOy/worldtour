@@ -207,7 +207,13 @@
     var who = document.createElement('span');
     var name = cell('exs-row__name' + (nickname ? '' : ' wr-hidden'), nickname || text('Hidden'));
     if (nickname) name.dir = 'auto';
-    who.appendChild(name);
+    // Nimetty rivi avaa suorituksen sivun (/s/?season=&row=), jolta saa jakolinkin.
+    if (nickname && /^[0-9a-f]{32}$/.test(entry.rowId || '') && root.dataset.run) {
+      var link = document.createElement('a');
+      link.href = root.dataset.run + '?season=' + encodeURIComponent(season.seasonId) + '&row=' + entry.rowId;
+      link.appendChild(name);
+      who.appendChild(link);
+    } else who.appendChild(name);
     item.appendChild(cell('exs-row__rank', number(entry.placement)));
     item.appendChild(who);
     item.appendChild(cell('exs-row__score', number(entry.officialScore)));
