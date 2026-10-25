@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Run – EXS World Tour</title>
-<meta name="description" content="Beispieldaten. Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. World Rank startet mit Season 1 am 1.12.2026, die Saison läuft bis zum 1.3.2027. Ergebnis und Aufschlüsselung erscheinen auf der Website, die Wiederholung im Spiel. Videos im Browser folgen später.">
+<meta name="description" content="World-Rank-Run: Nickname, Platzierung und offizielle Punktzahl. Der Server berechnet jedes Ergebnis aus den Eingaben des Spielers neu.">
 <link rel="canonical" href="https://worldtour.exsports.fi/de/s/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/s/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/s/">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Run – EXS World Tour">
-<meta property="og:description" content="Beispieldaten. Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. World Rank startet mit Season 1 am 1.12.2026, die Saison läuft bis zum 1.3.2027. Ergebnis und Aufschlüsselung erscheinen auf der Website, die Wiederholung im Spiel. Videos im Browser folgen später.">
+<meta property="og:description" content="World-Rank-Run: Nickname, Platzierung und offizielle Punktzahl. Der Server berechnet jedes Ergebnis aus den Eingaben des Spielers neu.">
 <meta property="og:url" content="https://worldtour.exsports.fi/de/s/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="de_DE">
@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="/assets/css/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/share.js" defer></script>
 </head>
 <body class="exs">
 <a class="skip" href="#sisalto">Zum Inhalt springen</a>
@@ -50,21 +51,20 @@
 <main id="sisalto">
 <div class="wrap"><p class="notice" data-availability>Das Android-Spiel erscheint am 1.12.2026 bei Google Play, und World Rank Season 1 beginnt am selben Tag. Bis dahin wird das Spiel intern getestet und ist nicht öffentlich verfügbar.</p></div>
 
-<div class="wrap"><nav class="crumbs" aria-label="Navigationspfad"><a href="/de/lista/">Weltrangliste</a><span>›</span><span>Klein S</span><span>›</span><span style="color: var(--text)">Platz 1</span></nav></div>
-<section class="section" style="padding-top: 24px"><div class="wrap grid-main">
+<div class="wrap"><nav class="crumbs" aria-label="Navigationspfad"><a href="/de/lista/">Weltrangliste</a><span>›</span><span style="color: var(--text)" data-run-crumb>Run</span></nav></div>
+<section class="section" style="padding-top: 24px"><div class="wrap grid-main run">
 <div class="stack">
-<div class="notice">Beispieldaten. Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. World Rank startet mit Season 1 am 1.12.2026, die Saison läuft bis zum 1.3.2027. Ergebnis und Aufschlüsselung erscheinen auf der Website, die Wiederholung im Spiel. Videos im Browser folgen später.</div>
-<section class="exs-panel pad-shadow">
-<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Klein S · Beispieldaten</span></div>
-<div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">Gesamt</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">Platz 1</span></div>
-<div class="exs-score"><div><div class="exs-score__label">Amplitude</div><div class="exs-score__value">6 240</div></div><div><div class="exs-score__label">Rotation</div><div class="exs-score__value">4 180</div></div><div><div class="exs-score__label">Grab</div><div class="exs-score__value">1 960</div></div><div><div class="exs-score__label">Balance</div><div class="exs-score__value">1 420</div></div><div><div class="exs-score__label">Stil</div><div class="exs-score__value">1 090</div></div><div><div class="exs-score__label">Stomp</div><div class="exs-score__value">1 000</div></div></div>
-<div class="exs-callout" style="margin-top: 24px">Spin 2° zu kurz · Grab den ganzen Flug gehalten · Perfekter Absprung · Sauberer Stomp</div>
+<section class="exs-panel pad-shadow" id="suoritus" data-opens="2026-12-01T00:00:00Z" data-share="https://worldtour.exsports.fi/de/s/" data-list="/de/lista/" data-t-loading="Run wird geladen…" data-t-missing="Run nicht gefunden. Das Ergebnis wurde möglicherweise abgelehnt oder das Konto gelöscht." data-t-notice="Wähl einen Run aus der Weltrangliste." data-t-place="Platz {n}" data-t-error="Die Weltrangliste ist gerade nicht verfügbar. Versuch es gleich noch einmal." data-t-closed-p="World Rank startet mit Season 1 am 1.12.2026. Die Liste füllt sich, sobald die ersten verifizierten Ergebnisse vorliegen." data-t-hidden="Name ausgeblendet" data-slope-s="Klein S" data-slope-m="Mittel M" data-slope-l="Groß L">
+<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title run-name" style="margin:0" data-run-name>Run</h1><span class="exs-panel__meta" data-run-meta hidden></span></div>
+<div class="exs-total" style="margin-top: 16px" data-run-total hidden><span class="exs-total__label">Gesamt</span><span class="exs-total__value" data-run-score></span><span class="exs-total__pb" data-run-place></span></div>
+<p class="notice" role="status" data-run-status style="margin-top: 16px">World Rank startet mit Season 1 am 1.12.2026. Die Liste füllt sich, sobald die ersten verifizierten Ergebnisse vorliegen.</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-run-retry hidden><span>Erneut versuchen</span></button>
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Diesen Run teilen</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Beispieldaten. Der Link öffnet sich ohne Spiel und ohne Anmeldung.</p><div class="linkbox">worldtour.exsports.fi/de/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopiert"><span>Link kopieren</span></button></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>Klein S</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>Mittel M</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>Groß L</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">So entsteht die Punktzahl</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. World Rank startet mit Season 1 am 1.12.2026, die Saison läuft bis zum 1.3.2027. Ergebnis und Aufschlüsselung erscheinen auf der Website, die Wiederholung im Spiel. Videos im Browser folgen später.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Meldung%20zu%20einem%20Run" style="color: var(--muted)">Diesen Run melden</a></div></div>
+<div class="exs-panel pad-shadow" data-run-share hidden><h2 class="exs-panel__title">Diesen Run teilen</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Der Link öffnet sich ohne Spiel und ohne Anmeldung.</p><div class="linkbox" data-run-link></div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopiert"><span>Link kopieren</span></button></div></div>
+<div class="exs-panel exs-panel--quiet" data-run-others hidden><h2 class="exs-panel__title">Andere Schanzen</h2><div class="stack run-others" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)" data-run-others-list></div></div>
+<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">So entsteht die Punktzahl</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">Der Server berechnet jedes Ergebnis anhand der Spielereingaben neu. World Rank startet mit Season 1 am 1.12.2026, die Saison läuft bis zum 1.3.2027. Ergebnis und Platzierung erscheinen auf der Website, die Wiederholung im Spiel. Videos im Browser folgen später.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Meldung%20zu%20einem%20Run" style="color: var(--muted)">Diesen Run melden</a></div></div>
 </div>
 </div></section>
 </main>

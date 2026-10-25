@@ -78,7 +78,7 @@ def check():
                 assert set(alts) == set(data) | {'x-default'}, file
                 assert alts['x-default'] == 'https://worldtour.exsports.fi/en/' + rel, file
             if rel == 's/':
-                assert 'worldtour.exsports.fi/' + prefix + 's/?id=esimerkki' in text, file
+                assert 'data-share="https://worldtour.exsports.fi/' + prefix + 's/"' in text and 'id=esimerkki' not in text, file
             if lang != 'fi' and rel in ['', 'lista/']:
                 assert all(word not in text for word in ['Etuvoltti', 'Takavoltti', 'Suora hyppy']), file
             count += 1

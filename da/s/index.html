@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hop – EXS World Tour</title>
-<meta name="description" content="Eksempeldata. Serveren genberegner hvert resultat ud fra spillerens input. World Rank åbner, når Season 1 starter 1.12.2026, og sæsonen varer til 1.3.2027. Resultat og pointfordeling vises på hjemmesiden, genafspilningen i spillet. Video i browseren kommer senere.">
+<meta name="description" content="World Rank-hop: kaldenavn, placering og officiel score. Serveren genberegner hvert resultat ud fra spillerens input.">
 <link rel="canonical" href="https://worldtour.exsports.fi/da/s/">
 <link rel="alternate" hreflang="fi" href="https://worldtour.exsports.fi/s/">
 <link rel="alternate" hreflang="en" href="https://worldtour.exsports.fi/en/s/">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EXS World Tour">
 <meta property="og:title" content="Hop – EXS World Tour">
-<meta property="og:description" content="Eksempeldata. Serveren genberegner hvert resultat ud fra spillerens input. World Rank åbner, når Season 1 starter 1.12.2026, og sæsonen varer til 1.3.2027. Resultat og pointfordeling vises på hjemmesiden, genafspilningen i spillet. Video i browseren kommer senere.">
+<meta property="og:description" content="World Rank-hop: kaldenavn, placering og officiel score. Serveren genberegner hvert resultat ud fra spillerens input.">
 <meta property="og:url" content="https://worldtour.exsports.fi/da/s/">
 <meta property="og:image" content="https://worldtour.exsports.fi/assets/img/og-image.jpg">
 <meta property="og:locale" content="da_DK">
@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="/assets/css/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/share.js" defer></script>
 </head>
 <body class="exs">
 <a class="skip" href="#sisalto">Gå til indholdet</a>
@@ -50,21 +51,20 @@
 <main id="sisalto">
 <div class="wrap"><p class="notice" data-availability>Android-spillet udkommer på Google Play 1.12.2026, og World Rank Season 1 starter samme dag. Indtil da testes spillet internt og er ikke offentligt tilgængeligt.</p></div>
 
-<div class="wrap"><nav class="crumbs" aria-label="Brødkrummesti"><a href="/da/lista/">Verdensrangliste</a><span>›</span><span>Lille S</span><span>›</span><span style="color: var(--text)">Plads 1</span></nav></div>
-<section class="section" style="padding-top: 24px"><div class="wrap grid-main">
+<div class="wrap"><nav class="crumbs" aria-label="Brødkrummesti"><a href="/da/lista/">Verdensrangliste</a><span>›</span><span style="color: var(--text)" data-run-crumb>Hop</span></nav></div>
+<section class="section" style="padding-top: 24px"><div class="wrap grid-main run">
 <div class="stack">
-<div class="notice">Eksempeldata. Serveren genberegner hvert resultat ud fra spillerens input. World Rank åbner, når Season 1 starter 1.12.2026, og sæsonen varer til 1.3.2027. Resultat og pointfordeling vises på hjemmesiden, genafspilningen i spillet. Video i browseren kommer senere.</div>
-<section class="exs-panel pad-shadow">
-<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">Lille S · Eksempeldata</span></div>
-<div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">I alt</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">Plads 1</span></div>
-<div class="exs-score"><div><div class="exs-score__label">Amplitude</div><div class="exs-score__value">6 240</div></div><div><div class="exs-score__label">Rotation</div><div class="exs-score__value">4 180</div></div><div><div class="exs-score__label">Grab</div><div class="exs-score__value">1 960</div></div><div><div class="exs-score__label">Balance</div><div class="exs-score__value">1 420</div></div><div><div class="exs-score__label">Stil</div><div class="exs-score__value">1 090</div></div><div><div class="exs-score__label">Stomp</div><div class="exs-score__value">1 000</div></div></div>
-<div class="exs-callout" style="margin-top: 24px">Spin 2° for kort · Grab holdt hele vejen · Perfekt pop · Ren stomp</div>
+<section class="exs-panel pad-shadow" id="suoritus" data-opens="2026-12-01T00:00:00Z" data-share="https://worldtour.exsports.fi/da/s/" data-list="/da/lista/" data-t-loading="Indlæser hoppet…" data-t-missing="Hoppet blev ikke fundet. Resultatet kan være afvist, eller kontoen kan være slettet." data-t-notice="Vælg et hop på verdensranglisten." data-t-place="Plads {n}" data-t-error="Verdensranglisten er ikke tilgængelig lige nu. Prøv igen om lidt." data-t-closed-p="World Rank åbner, når Season 1 starter 1.12.2026. Listen fyldes, når de første verificerede resultater kommer ind." data-t-hidden="Navn skjult" data-slope-s="Lille S" data-slope-m="Mellem M" data-slope-l="Stor L">
+<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title run-name" style="margin:0" data-run-name>Hop</h1><span class="exs-panel__meta" data-run-meta hidden></span></div>
+<div class="exs-total" style="margin-top: 16px" data-run-total hidden><span class="exs-total__label">I alt</span><span class="exs-total__value" data-run-score></span><span class="exs-total__pb" data-run-place></span></div>
+<p class="notice" role="status" data-run-status style="margin-top: 16px">World Rank åbner, når Season 1 starter 1.12.2026. Listen fyldes, når de første verificerede resultater kommer ind.</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-run-retry hidden><span>Prøv igen</span></button>
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">Del hoppet</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Eksempeldata. Linket åbnes uden spillet og uden login.</p><div class="linkbox">worldtour.exsports.fi/da/s/?id=esimerkki</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopieret"><span>Kopiér link</span></button></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>Lille S</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>Mellem M</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>Stor L</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Sådan beregnes scoren</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">Serveren genberegner hvert resultat ud fra spillerens input. World Rank åbner, når Season 1 starter 1.12.2026, og sæsonen varer til 1.3.2027. Resultat og pointfordeling vises på hjemmesiden, genafspilningen i spillet. Video i browseren kommer senere.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Rapport%20om%20hop" style="color: var(--muted)">Rapportér hoppet</a></div></div>
+<div class="exs-panel pad-shadow" data-run-share hidden><h2 class="exs-panel__title">Del hoppet</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">Linket åbnes uden spillet og uden login.</p><div class="linkbox" data-run-link></div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="Kopieret"><span>Kopiér link</span></button></div></div>
+<div class="exs-panel exs-panel--quiet" data-run-others hidden><h2 class="exs-panel__title">Andre hop</h2><div class="stack run-others" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)" data-run-others-list></div></div>
+<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Sådan beregnes scoren</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">Serveren genberegner hvert resultat ud fra spillerens input. World Rank åbner, når Season 1 starter 1.12.2026, og sæsonen varer til 1.3.2027. Resultat og placering vises på hjemmesiden, genafspilningen i spillet. Video i browseren kommer senere.</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject=Rapport%20om%20hop" style="color: var(--muted)">Rapportér hoppet</a></div></div>
 </div>
 </div></section>
 </main>

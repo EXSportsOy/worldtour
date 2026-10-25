@@ -14,14 +14,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def check_rank_script():
-    # Nicknames are user content and the list must stay same-origin under connect-src 'self'.
-    source = (ROOT / 'assets/js/rank.js').read_text(encoding='utf-8')
-    for sink in ('innerHTML', 'outerHTML', 'insertAdjacentHTML', 'document.write', 'eval(', 'new Function'):
-        assert sink not in source, f'rank.js: unsafe sink {sink}'
-    assert source.count('fetch(') == 1, 'rank.js: one fetch helper only'
-    paths = re.findall(r"(?<!\+ )'(/[^']*)'", source)  # path literals, not suffixes after base() +
-    assert paths and all(path.startswith('/api/seasons') for path in paths), f'rank.js: unexpected request path {paths}'
-    assert not re.search(r'https?://', source), 'rank.js: absolute URL'
+    # Nicknames are user content and the list and run pages must stay same-origin under connect-src 'self'.
+    for name in ('rank.js', 'share.js'):
+        source = (ROOT / 'assets/js' / name).read_text(encoding='utf-8')
+        for sink in ('innerHTML', 'outerHTML', 'insertAdjacentHTML', 'document.write', 'eval(', 'new Function'):
+            assert sink not in source, f'{name}: unsafe sink {sink}'
+        assert source.count('fetch(') == 1, f'{name}: one fetch helper only'
+        paths = re.findall(r"(?<!\+ )'(/[^']*)'", source)  # path literals, not suffixes after base() +
+        assert paths and all(path.startswith('/api/seasons') for path in paths), f'{name}: unexpected request path {paths}'
+        assert not re.search(r'https?://', source), f'{name}: absolute URL'
 
 
 def check_scripts(path, parsed):
@@ -74,7 +75,14 @@ def check():
                 # Until Season 1 has verified results the page is an empty state: keep it out of search.
                 assert noindex, f'{lang}/{route}: empty list indexed'
             if route == 's/':
-                assert noindex, f'{lang}/{route}: demo indexed'
+                # Real runs come only from the API (assets/js/share.js); static HTML is the honest closed state.
+                assert noindex, f'{lang}/{route}: run page indexed'
+                assert data['sample'] not in html and not any(n in html for n in SAMPLE_NAMES), f'{lang}: sample data on the run page'
+                assert ('script', {'src': '/assets/js/share.js', 'defer': None}) in parsed.tags, f'{lang}: run script missing'
+                panel = next((a for tag, a in parsed.tags if a.get('id') == 'suoritus'), {})
+                assert panel.get('data-opens') == WR_OPENS and panel.get('data-share') == SITE + prefix + 's/', f'{lang}: run page share base'
+                status = re.search(r'<p [^>]*data-run-status[^>]*>(.*?)</p>', html, re.S)
+                assert status and status.group(1) == data['wr_closed_p'], f'{lang}: run page does not show the closed state'
             if route in ('lista/', 's/'):
                 assert 'kausi-1' not in html and 'kausi=arkisto' not in html, f'{lang}: misleading season'
                 assert 'video__play' not in html and 'exs-badge--verified' not in html, f'{lang}: fake video/verification'

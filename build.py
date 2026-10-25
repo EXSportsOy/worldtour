@@ -61,6 +61,8 @@ def page(lang, rel, title, desc, body, current):
     script = '' if is_legal else '<script src="/assets/js/site.js" defer></script>'
     if rel == "lista/":
         script += '\n<script src="/assets/js/rank.js" defer></script>'
+    if rel == "s/":
+        script += '\n<script src="/assets/js/share.js" defer></script>'
     language_script = '' if is_legal else '<script src="/assets/js/language.js"></script>'
     t = T[lang]
     footer_text = "EXS World Tour · EXSports Oy" if is_legal else t["foot_text"]
@@ -137,13 +139,9 @@ def page(lang, rel, title, desc, body, current):
 def row(lang, rank, name, tr, score, podium=False, me=False, L=None):
     t = T[lang]
     cls = "exs-row" + (" exs-row--podium" if podium else "") + (" exs-row--me" if me else "")
-    href = L("s/?id=esimerkki")
-    btn = f'<a class="exs-btn exs-btn--sm" href="{href}"><span>{t["watch"]}</span></a>' if podium else f'<a class="more" href="{href}">{t["watch"]}</a>'
-    # Only the first example has a matching detail page.
-    if rank != 1:
-        btn = ''
+    # Esimerkkirivit eivät linkitä: /s/ näyttää vain oikeita World Rank -rivejä.
     return (f'<li class="{cls}"><span class="exs-row__rank">{rank}</span><span><span class="exs-row__name">{name}</span>'
-            f'<span class="exs-row__trick">{trick(tr, lang)}</span></span><span class="row-actions"><span class="exs-row__score">{score}</span>{btn}</span></li>')
+            f'<span class="exs-row__trick">{trick(tr, lang)}</span></span><span class="row-actions"><span class="exs-row__score">{score}</span></span></li>')
 
 
 def build_lang(lang):
@@ -182,7 +180,7 @@ def build_lang(lang):
 <div class="exs-panel pad-shadow">
 <div class="row-between" style="margin-bottom: 24px"><div><div class="exs-panel__meta">{t["top_meta"]}</div><h2 class="exs-panel__title" style="margin: 4px 0 0">{t["top_h"]}</h2></div>{NB}</div>
 <ol class="exs-board">{R(*ROWS[0], podium=True)}{R(*ROWS[1], podium=True)}{R(*ROWS[2], podium=True)}</ol>
-<div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px"><a class="exs-btn" href="{L("lista/")}"><span>{t["top_all"]}</span></a><a class="exs-btn exs-btn--secondary" href="{L("s/?id=esimerkki")}"><span>{t["top_first"]}</span></a></div>
+<div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px"><a class="exs-btn" href="{L("lista/")}"><span>{t["top_all"]}</span></a></div>
 </div>
 <div class="stack">
 <div class="exs-panel exs-panel--quiet"><h3 class="exs-panel__title">{t["slopes_h"]}</h3>
@@ -237,7 +235,7 @@ def build_lang(lang):
 </div></section>
 <section class="section"><div class="wrap grid-main">
 <div>
-<div class="exs-panel pad-shadow wr" id="lista" data-rinne="s" data-opens="{WR_OPENS}"{wr_data}>
+<div class="exs-panel pad-shadow wr" id="lista" data-rinne="s" data-opens="{WR_OPENS}" data-run="{L("s/")}"{wr_data}>
 <div class="row-between" style="margin-bottom: 24px; flex-wrap: wrap"><h2 class="exs-panel__title" style="margin:0" data-wr-title>{t["wr_closed_h"]}</h2><span class="exs-badge exs-badge--season" data-wr-season hidden></span></div>
 <div class="exs-tabs wr-tabs" role="tablist" aria-label="{t["tabs_aria"]}" data-wr-tabs hidden>{tabs}</div>
 <ol class="exs-board" id="wr-board" role="tabpanel" data-wr-board hidden></ol>
@@ -256,24 +254,26 @@ def build_lang(lang):
 </div></section>
 ''', L("lista/"))
 
-    # suoritus
-    vals = ["6 240", "4 180", "1 960", "1 420", "1 090", "1 000"]
-    cells = "".join(f'<div><div class="exs-score__label">{a}</div><div class="exs-score__value">{b}</div></div>' for a, b in zip(t["score_labels"], vals))
+    # suoritus: staattinen HTML on rehellinen tila ilman riviä; assets/js/share.js hakee rivin
+    # (/api/seasons/{id}/rows/{rowId}) osoitteen ?season=&row= perusteella. Jakolinkki /s/{kausi}/{rivi}
+    # ohjautuu Cloud Runiin, joka antaa esikatselun ja palauttaa selaimen tälle sivulle.
+    run = {k: t[k] for k in ("run_loading", "run_missing", "run_notice", "run_place", "wr_error", "wr_closed_p", "wr_hidden")}
+    run_data = "".join(f' data-t-{k.split("_", 1)[1].replace("_", "-")}="{escape(v, quote=True)}"' for k, v in run.items())
+    slopes = "".join(f' data-slope-{s.lower()}="{escape(t["slope_" + s.lower()], quote=True)}"' for s in "SML")
     page(lang, "s/", t["run_title"], t["run_desc"], f'''
-<div class="wrap"><nav class="crumbs" aria-label="{t["crumbs_aria"]}"><a href="{L("lista/")}">{t["list_h1"]}</a><span>›</span><span>{t["slope_s"]}</span><span>›</span><span style="color: var(--text)">{t["crumb_rank"]}</span></nav></div>
-<section class="section" style="padding-top: 24px"><div class="wrap grid-main">
+<div class="wrap"><nav class="crumbs" aria-label="{t["crumbs_aria"]}"><a href="{L("lista/")}">{t["list_h1"]}</a><span>›</span><span style="color: var(--text)" data-run-crumb>{t["run_h"]}</span></nav></div>
+<section class="section" style="padding-top: 24px"><div class="wrap grid-main run">
 <div class="stack">
-<div class="notice">{t["run_notice"]}</div>
-<section class="exs-panel pad-shadow">
-<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title" style="margin:0">Riikka_fin <span style="color: var(--accent); font-size: 20px">BS 540 + Indy</span></h1><span class="exs-panel__meta">{t["run_meta"]}</span></div>
-<div class="exs-total" style="margin-top: 16px"><span class="exs-total__label">{t["total"]}</span><span class="exs-total__value">15 890</span><span class="exs-total__pb">{t["rank1"]}</span></div>
-<div class="exs-score">{cells}</div>
-<div class="exs-callout" style="margin-top: 24px">{t["coach"]}</div>
+<section class="exs-panel pad-shadow" id="suoritus" data-opens="{WR_OPENS}" data-share="{SITE}/{p}s/" data-list="{L("lista/")}"{run_data}{slopes}>
+<div class="row-between" style="flex-wrap: wrap"><h1 class="exs-panel__title run-name" style="margin:0" data-run-name>{t["run_h"]}</h1><span class="exs-panel__meta" data-run-meta hidden></span></div>
+<div class="exs-total" style="margin-top: 16px" data-run-total hidden><span class="exs-total__label">{t["total"]}</span><span class="exs-total__value" data-run-score></span><span class="exs-total__pb" data-run-place></span></div>
+<p class="notice" role="status" data-run-status style="margin-top: 16px">{t["wr_closed_p"]}</p>
+<button type="button" class="exs-btn exs-btn--sm exs-btn--secondary" data-run-retry hidden><span>{t["wr_retry"]}</span></button>
 </section>
 </div>
 <div class="stack">
-<div class="exs-panel pad-shadow"><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox">worldtour.exsports.fi{L("s/?id=esimerkki")}</div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button></div></div>
-<div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">Riikka_fin</h2><div class="stack" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)"><div class="row-between"><span>{t["slope_s"]}</span><span class="display-xs" style="color: var(--text)">1 · 15 890</span></div><div class="row-between"><span>{t["slope_m"]}</span><span class="display-xs" style="color: var(--text)">4 · 21 330</span></div><div class="row-between"><span>{t["slope_l"]}</span><span class="display-xs" style="color: var(--text)">2 · 27 110</span></div></div></div>
+<div class="exs-panel pad-shadow" data-run-share hidden><h2 class="exs-panel__title">{t["share_h"]}</h2><p class="prose" style="margin:0 0 16px; font-size:14px; line-height:20px">{t["share_p"]}</p><div class="linkbox" data-run-link></div><div style="margin-top: 16px; display:flex; gap: 12px; flex-wrap: wrap"><button type="button" class="exs-btn exs-btn--sm" data-copy data-copied="{t["meta"]["copied"]}"><span>{t["copy"]}</span></button></div></div>
+<div class="exs-panel exs-panel--quiet" data-run-others hidden><h2 class="exs-panel__title">{t["run_others_h"]}</h2><div class="stack run-others" style="gap: 8px; font-size: 14px; line-height: 20px; color: var(--text-soft)" data-run-others-list></div></div>
 <div class="exs-panel exs-panel--quiet"><h2 class="exs-panel__title">{t["how_scored_h"]}</h2><p class="prose" style="margin:0; font-size:14px; line-height:20px">{t["how_scored_p"]}</p><div style="margin-top: 16px"><a class="more" href="mailto:info@exsports.fi?subject={t["report_subject"]}" style="color: var(--muted)">{t["report"]}</a></div></div>
 </div>
 </div></section>
