@@ -83,7 +83,7 @@ def render_document(lang, slug, prefix):
 <article class="prose legal-document" lang="{content_lang}" data-legal-document="{slug}">{fragment}</article>
 </div></div></section>'''
     if slug in ("tili", "evasteet"):
-        updated = ("21.10.2026", "21 October 2026")
+        updated = ("25.10.2026", "25 October 2026")
         status = f"Ajantasaiset ohjeet, päivitetty {updated[0]}." if fi else f"Current guidance, updated {updated[1]}."
     elif slug in ("kayttoehdot", "tietosuoja", "saannot"):
         # Hyväksytyt ja voimassa olevat asiakirjat: kuvaus versiosta ja päivästä, ei luonnosmerkintää.
