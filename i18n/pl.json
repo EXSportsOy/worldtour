@@ -149,7 +149,7 @@
  "rules_h": "Zasady w skrócie",
  "rules": [
   "Jeden najlepszy wynik na gracza na każdym stoku.",
-  "Serwer przelicza każdy wynik na podstawie poleceń gracza. Wynik i jego szczegóły są widoczne na stronie, a powtórka w grze.",
+  "Serwer przelicza każdy wynik na podstawie poleceń gracza. Wynik i jego szczegóły są widoczne na stronie i w grze; nagranie sterowania nie jest publikowane.",
   "Liczy się tylko gra na Androida zainstalowana z Google Play.",
   "Wyniki sezonu testowego zostaną wyzerowane i ukryte przy premierze gry. Ewentualne archiwum regularnych sezonów zostanie ogłoszone oddzielnie."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konto i usuwanie konta",
  "account_kicker": "Konto",
  "account_desc": "Usuwanie konta EXS World Tour.",
- "account_p": "Konto rankingu światowego tworzy się kontem Google w grze lub na tej stronie, gdy ruszy sezon testowy. Konto możesz usunąć w ustawieniach gry lub na tej stronie po zalogowaniu. Usunięcie kasuje nick, wyniki, powtórki i wideo.",
+ "account_p": "Konto gracza tworzy się kontem Google w grze lub na tej stronie. Konto możesz usunąć w ustawieniach gry lub na tej stronie po zalogowaniu. Usunięcie kasuje nick, wyniki i nagrania sterowania.",
  "account_notice": "Logowanie i usuwanie konta otworzą się tutaj, gdy usługa ruszy. Do tego czasu prośby wysyłaj na",
  "account_subject": "Usuni%C4%99cie%20konta",
  "nf_title": "Nie znaleziono strony – EXS World Tour",

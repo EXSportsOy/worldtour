@@ -149,7 +149,7 @@
  "rules_h": "Taisyklės trumpai",
  "rules": [
   "Vienas geriausias rezultatas žaidėjui kiekvienoje trasoje.",
-  "Serveris perskaičiuoja kiekvieną rezultatą pagal žaidėjo įvestis. Rezultatas ir jo išklotinė rodomi svetainėje, pakartojimas – žaidime.",
+  "Serveris perskaičiuoja kiekvieną rezultatą pagal žaidėjo įvestis. Rezultatas ir jo išklotinė rodomi svetainėje ir žaidime; valdymo įrašas neskelbiamas.",
   "Tinka tik iš Google Play įdiegtas Android žaidimas.",
   "Testavimo sezono rezultatai bus nustatyti iš naujo ir paslėpti išleidžiant žaidimą. Apie galimą įprastų sezonų archyvą bus pranešta atskirai."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Paskyra ir paskyros ištrynimas",
  "account_kicker": "Paskyra",
  "account_desc": "EXS World Tour paskyros ištrynimas.",
- "account_p": "Pasaulio reitingo paskyra sukuriama su Google paskyra žaidime arba šioje svetainėje, kai prasidės bandomasis sezonas. Paskyrą gali ištrinti žaidimo nustatymuose arba šiame puslapyje prisijungęs. Ištrynimas pašalina slapyvardį, rezultatus, pakartojimus ir vaizdo įrašus.",
+ "account_p": "Žaidėjo paskyra sukuriama su Google paskyra žaidime arba šioje svetainėje. Paskyrą gali ištrinti žaidimo nustatymuose arba šiame puslapyje prisijungęs. Ištrynimas pašalina slapyvardį, rezultatus ir valdymo įrašus.",
  "account_notice": "Prisijungimas ir paskyros ištrynimas čia atsivers, kai paslauga veiks. Iki tol prašymus siųsk adresu",
  "account_subject": "Paskyros%20i%C5%A1trynimas",
  "nf_title": "Puslapis nerastas – EXS World Tour",

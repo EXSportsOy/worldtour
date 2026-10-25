@@ -149,7 +149,7 @@
  "rules_h": "Reglerna i korthet",
  "rules": [
   "Ett bästa resultat per spelare i varje backe.",
-  "Servern räknar om varje resultat från spelarens inmatningar. Resultat och poängfördelning visas på webbplatsen, reprisen i spelet.",
+  "Servern räknar om varje resultat från spelarens inmatningar. Resultat och poängfördelning visas på webbplatsen och i spelet; inspelningen av styrkommandon publiceras inte.",
   "Bara Android-spelet installerat från Google Play räknas.",
   "Testsäsongens resultat nollställs och döljs när spelet lanseras. Ett eventuellt arkiv för ordinarie säsonger meddelas separat."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Konto och radering av konto",
  "account_kicker": "Konto",
  "account_desc": "Radera ditt EXS World Tour-konto.",
- "account_p": "Kontot för världsrankingen skapas med ett Google-konto i spelet eller på den här webbplatsen när testsäsongen börjar. Du kan radera kontot i spelets inställningar eller på den här sidan efter inloggning. Raderingen tar bort spelarnamnet, resultaten, repriserna och videorna.",
+ "account_p": "Spelarkontot skapas med ett Google-konto i spelet eller på den här webbplatsen. Du kan radera kontot i spelets inställningar eller på den här sidan efter inloggning. Raderingen tar bort spelarnamnet, resultaten och inspelningarna av styrkommandon.",
  "account_notice": "Inloggning och radering av konto öppnar här när tjänsten är igång. Fram till dess skickar du förfrågningar till",
  "account_subject": "Radera%20konto",
  "nf_title": "Sidan hittades inte – EXS World Tour",

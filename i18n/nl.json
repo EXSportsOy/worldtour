@@ -149,7 +149,7 @@
  "rules_h": "Regels in het kort",
  "rules": [
   "Eén beste resultaat per speler op elke piste.",
-  "De server berekent elke score opnieuw uit de spelersinvoer. Score en uitsplitsing staan op de website, de herhaling in de game.",
+  "De server berekent elke score opnieuw uit de spelersinvoer. Score en uitsplitsing staan op de website en in de game; de invoeropname wordt niet gepubliceerd.",
   "Alleen de Android-game die via Google Play is geïnstalleerd komt in aanmerking.",
   "Resultaten van het testseizoen worden bij de release gereset en verborgen. Een eventueel archief voor reguliere seizoenen wordt apart aangekondigd."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Account en account verwijderen",
  "account_kicker": "Account",
  "account_desc": "Je EXS World Tour-account verwijderen.",
- "account_p": "Het account voor de wereldranglijst wordt aangemaakt met een Google-account in de game of op deze site, zodra het testseizoen begint. Je kunt het account verwijderen via de instellingen van de game of na het inloggen op deze pagina. Bij verwijdering worden nickname, resultaten, replays en video's gewist.",
+ "account_p": "Het spelersaccount wordt aangemaakt met een Google-account in de game of op deze site. Je kunt het account verwijderen via de instellingen van de game of na het inloggen op deze pagina. Bij verwijdering worden nickname, resultaten en invoeropnamen gewist.",
  "account_notice": "Inloggen en account verwijderen komen hier beschikbaar zodra de dienst live is. Tot die tijd stuur je verzoeken naar",
  "account_subject": "Account%20verwijderen",
  "nf_title": "Pagina niet gevonden – EXS World Tour",

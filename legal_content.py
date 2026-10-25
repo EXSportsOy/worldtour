@@ -85,7 +85,7 @@ def render_document(lang, slug, prefix):
     if slug in ("tili", "evasteet"):
         updated = ("21.10.2026", "21 October 2026")
         status = f"Ajantasaiset ohjeet, päivitetty {updated[0]}." if fi else f"Current guidance, updated {updated[1]}."
-    elif slug in ("kayttoehdot", "tietosuoja"):
+    elif slug in ("kayttoehdot", "tietosuoja", "saannot"):
         # Hyväksytyt ja voimassa olevat asiakirjat: kuvaus versiosta ja päivästä, ei luonnosmerkintää.
         found = re.search(r'<p class="notice"><strong>([^<]+)</strong>', fragment)
         if not found:

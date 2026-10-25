@@ -149,7 +149,7 @@
  "rules_h": "Rules in brief",
  "rules": [
   "One best result per player on each slope.",
-  "The server recalculates every score from the player's inputs. The score and its breakdown appear on the website, the replay in the game.",
+  "The server recalculates every score from the player's inputs. The score and its breakdown appear on the website and in the game; the input recording is not published.",
   "Only the Android game installed from Google Play qualifies.",
   "Test-season results will be reset and hidden at game launch. Any archive for production seasons will be announced separately."
  ],
@@ -201,7 +201,7 @@
  "account_title": "Account and account deletion",
  "account_kicker": "Account",
  "account_desc": "Deleting your EXS World Tour account.",
- "account_p": "The world ranking account is created with a Google account in the game or on this site when the test season starts. You can delete the account from the game's settings or from this page after signing in. Deletion removes the nickname, results, replays and videos.",
+ "account_p": "The player account is created with a Google account in the game or on this site. You can delete the account from the game's settings or from this page after signing in. Deletion removes the nickname, results and input recordings.",
  "account_notice": "Sign-in and account deletion will open here when the service is live. Until then, send requests to",
  "account_subject": "Account%20deletion",
  "nf_title": "Page not found – EXS World Tour",
